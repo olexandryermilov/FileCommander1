@@ -2,6 +2,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileStore;
 
 public class FileCommanderOperations {
     FileCommanderFrame frame;
@@ -83,6 +84,16 @@ public class FileCommanderOperations {
         try{
             copyFile(from,to);
             deleteFile(from);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    void renameFile(String path, String name){
+        try{
+            FileSystemObject file = new FileSystemObject(path);
+            file.renameTo(new FileSystemObject(file.getParent()+"\\"+name));
+            refreshLists();
         }
         catch (Exception e){
             e.printStackTrace();

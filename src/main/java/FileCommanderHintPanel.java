@@ -35,12 +35,19 @@ public class FileCommanderHintPanel extends JPanel {
         removeFileButton.addActionListener(actionListener);
         this.add(removeFileButton);
     }
+    private void initializeRenameFileButton(){
+        renameFileButton =new JButton("Rename");
+        renameFileButton.setActionCommand("Rename "+ half);
+        renameFileButton.addActionListener(actionListener);
+        this.add(renameFileButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
         initializeNewFolderButton();
         initializeCopyFileButton();
         initializeDeleteFileButton();
         initializeRemoveFileButton();
+        initializeRenameFileButton();
     }
     public FileCommanderHintPanel(FileCommanderFrame frame, String half){
         super();

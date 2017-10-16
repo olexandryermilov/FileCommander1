@@ -47,5 +47,14 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Remove right")){
             frame.getFileCommanderOperations().removeFile(frame.getRightListPanel().getList().getSelectedValue(),frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
         }
+        if(e.getActionCommand().equals("Rename left")){
+            String name = JOptionPane.showInputDialog(frame,"Enter new name of file","Enter name",1);
+            frame.getFileCommanderOperations().renameFile(frame.getLeftListPanel().getList().getSelectedValue(),name);
+        }
+        if(e.getActionCommand().equals("Rename right")){
+            String name = JOptionPane.showInputDialog(frame,"Enter new name of file","Enter name",1);
+            frame.getFileCommanderOperations().renameFile(frame.getRightListPanel().getList().getSelectedValue(),name);
+        }
+        //todo: change both selected directories after actions
     }
 }
