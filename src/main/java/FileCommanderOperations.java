@@ -48,4 +48,35 @@ public class FileCommanderOperations {
             e.printStackTrace();
         }
     }
+    void copyFromLeft(){
+        String from = frame.getLeftListPanel().getList().getSelectedValue();
+        String to = frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory();
+        copyFile(from,to);
+    }
+    void copyFromRight(){
+        String from = frame.getRightListPanel().getList().getSelectedValue();
+        String to = frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory();
+        copyFile(from,to);
+    }
+    void copyFile(String from, String to){
+        try {
+            FileSystemObject fileFrom = new FileSystemObject(from);
+            FileSystemObject fileTo = new FileSystemObject(to + "\\" + fileFrom.getName());
+            if (!fileFrom.isDirectory()) FileUtils.copyFile(fileFrom, fileTo);
+            else FileUtils.copyDirectory(fileFrom,fileTo);
+            refreshLists();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    void deleteFile(String path){
+        try{
+            FileSystemObject file = new FileSystemObject(path);
+            FileUtils.forceDelete(file);
+            refreshLists();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

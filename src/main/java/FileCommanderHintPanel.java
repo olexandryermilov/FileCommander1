@@ -17,9 +17,23 @@ public class FileCommanderHintPanel extends JPanel {
         newFolderButton.addActionListener(actionListener);
         this.add(newFolderButton);
     }
+    private void initializeCopyFileButton(){
+        copyFileButton = new JButton("Copy");
+        copyFileButton.setActionCommand("Copy "+ half);
+        copyFileButton.addActionListener(actionListener);
+        this.add(copyFileButton);
+    }
+    private void initializeDeleteFileButton(){
+        deleteFileButton = new JButton("Delete");
+        deleteFileButton.setActionCommand("Delete "+half);
+        deleteFileButton.addActionListener(actionListener);
+        this.add(deleteFileButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
         initializeNewFolderButton();
+        initializeCopyFileButton();
+        initializeDeleteFileButton();
     }
     public FileCommanderHintPanel(FileCommanderFrame frame, String half){
         super();
