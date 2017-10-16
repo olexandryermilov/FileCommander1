@@ -11,8 +11,15 @@ public class FileCommanderHintPanel extends JPanel {
         newFileButton.addActionListener(actionListener);
         this.add(newFileButton);
     }
+    private void initializeNewFolderButton(){
+        newFolderButton = new JButton("New Folder");
+        newFolderButton.setActionCommand("New Folder "+ half);
+        newFolderButton.addActionListener(actionListener);
+        this.add(newFolderButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
+        initializeNewFolderButton();
     }
     public FileCommanderHintPanel(FileCommanderFrame frame, String half){
         super();

@@ -17,5 +17,15 @@ public class HintPanelActionListener implements ActionListener {
             String name = JOptionPane.showInputDialog(frame,"Enter name of new file","Enter name",1);
             frame.getFileCommanderOperations().createNewFile(frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
         }
+        if(e.getActionCommand().equals("New Folder left")){
+            String name = JOptionPane.showInputDialog(frame,"Enter name of new folder","Enter name",1);
+            //System.out.println(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
+            frame.getFileCommanderOperations().createNewFolder(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
+        }
+        if(e.getActionCommand().equals("New Folder right")){
+            String name = JOptionPane.showInputDialog(frame,"Enter name of new folder","Enter name",1);
+            //System.out.println(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
+            frame.getFileCommanderOperations().createNewFolder(frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
+        }
     }
 }

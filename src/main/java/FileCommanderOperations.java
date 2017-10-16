@@ -1,3 +1,5 @@
+import org.apache.commons.io.FileUtils;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -35,6 +37,15 @@ public class FileCommanderOperations {
             for (File file : selectedDirectoryFile.listFiles()) {
                 if(!file.isHidden())frame.getRightListPanel().getFileCommanderListModel().getListModel().addElement(file.toString());
             }
+        }
+    }
+    void createNewFolder(String path){
+        try{
+            FileSystemObject file = new FileSystemObject(path);
+            FileUtils.forceMkdir(file);
+            refreshLists();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
