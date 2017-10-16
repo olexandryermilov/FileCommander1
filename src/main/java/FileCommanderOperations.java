@@ -77,6 +77,15 @@ public class FileCommanderOperations {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    void removeFile(String from, String to){
+        try{
+            copyFile(from,to);
+            deleteFile(from);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -41,5 +41,11 @@ public class HintPanelActionListener implements ActionListener {
             int confirmation = JOptionPane.showConfirmDialog(frame,"Do you really want to delete this file?","Confirm action",2);
             frame.getFileCommanderOperations().deleteFile(frame.getRightListPanel().getList().getSelectedValue());
         }
+        if(e.getActionCommand().equals("Remove left")){
+            frame.getFileCommanderOperations().removeFile(frame.getLeftListPanel().getList().getSelectedValue(),frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory());
+        }
+        if(e.getActionCommand().equals("Remove right")){
+            frame.getFileCommanderOperations().removeFile(frame.getRightListPanel().getList().getSelectedValue(),frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
+        }
     }
 }
