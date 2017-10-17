@@ -34,12 +34,23 @@ public class HintPanelActionListener implements ActionListener {
             frame.getFileCommanderOperations().copyFromRight();
         }
         if(e.getActionCommand().equals("Delete left")){
-            int confirmation = JOptionPane.showConfirmDialog(frame,"Do you really want to delete this file?","Confirm action",2);
-            frame.getFileCommanderOperations().deleteFile(frame.getLeftListPanel().getList().getSelectedValue());
+            String path = frame.getLeftListPanel().getList().getSelectedValue();
+            if(path=="..")JOptionPane.showMessageDialog(frame,"Cannot delete this file","Info",1);
+            else
+            {
+                int confirmation = JOptionPane.showConfirmDialog(frame,"Do you really want to delete this file?","Confirm action",2);
+                frame.getFileCommanderOperations().deleteFile(path);
+            }
         }
         if(e.getActionCommand().equals("Delete right")){
-            int confirmation = JOptionPane.showConfirmDialog(frame,"Do you really want to delete this file?","Confirm action",2);
-            frame.getFileCommanderOperations().deleteFile(frame.getRightListPanel().getList().getSelectedValue());
+            String path = frame.getRightListPanel().getList().getSelectedValue();
+            if(path==".."){
+                JOptionPane.showMessageDialog(frame,"Cannot delete this file","Info",1);
+            }
+            else {
+                int confirmation = JOptionPane.showConfirmDialog(frame, "Do you really want to delete this file?", "Confirm action", 2);
+                frame.getFileCommanderOperations().deleteFile(path);
+            }
         }
         if(e.getActionCommand().equals("Remove left")){
             frame.getFileCommanderOperations().removeFile(frame.getLeftListPanel().getList().getSelectedValue(),frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory());
