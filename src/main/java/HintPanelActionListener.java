@@ -33,6 +33,7 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Copy right")){
             frame.getFileCommanderOperations().copyFromRight();
         }
+        //todo: delete removes, not deletes
         if(e.getActionCommand().equals("Delete left")){
             String path = frame.getLeftListPanel().getList().getSelectedValue();
             if(path=="..")JOptionPane.showMessageDialog(frame,"Cannot delete this file","Info",1);
@@ -65,6 +66,12 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Rename right")){
             String name = JOptionPane.showInputDialog(frame,"Enter new name of file","Enter name",1);
             frame.getFileCommanderOperations().renameFile(frame.getRightListPanel().getList().getSelectedValue(),name);
+        }
+        if(e.getActionCommand().equals("Open left")){
+            frame.getFileCommanderOperations().openFile(frame.getLeftListPanel().getList().getSelectedValue());
+        }
+        if(e.getActionCommand().equals("Open right")){
+            frame.getFileCommanderOperations().openFile(frame.getRightListPanel().getList().getSelectedValue());
         }
         //todo: change both selected directories after actions
     }

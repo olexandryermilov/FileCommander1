@@ -37,6 +37,7 @@ public class FileCommanderListController {
         FileSystemObject parent = new FileSystemObject(new FileSystemObject(fileCommanderListModel.getSelectedDirectory()).getParent());
         fileCommanderListModel.getListModel().clear();
         fileCommanderListModel.getListModel().addElement("..");
+        fileCommanderListModel.setSelectedDirectory(parent.toString());
         for(File file: parent.listFiles()){
             if(!file.isHidden())fileCommanderListModel.getListModel().addElement(file.toString());
         }

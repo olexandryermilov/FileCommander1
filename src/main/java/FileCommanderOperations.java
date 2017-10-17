@@ -1,5 +1,6 @@
 import org.apache.commons.io.FileUtils;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileStore;
@@ -94,6 +95,17 @@ public class FileCommanderOperations {
             FileSystemObject file = new FileSystemObject(path);
             file.renameTo(new FileSystemObject(file.getParent()+"\\"+name));
             refreshLists();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    void openFile(String path){
+        try{
+            FileSystemObject file = new FileSystemObject(path);
+            FileEditorFrame editor = new FileEditorFrame(file);
+            editor.setVisible(true);
+            editor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
         catch (Exception e){
             e.printStackTrace();

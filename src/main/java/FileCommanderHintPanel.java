@@ -3,7 +3,7 @@ import javax.swing.*;
 public class FileCommanderHintPanel extends JPanel {
     private FileCommanderFrame frame;
     private String half;
-    private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton, renameFileButton;
+    private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton, renameFileButton, openFileButton;
     private HintPanelActionListener actionListener;
     private void initializeNewFileButton(){
         newFileButton = new JButton("New File");
@@ -41,10 +41,17 @@ public class FileCommanderHintPanel extends JPanel {
         renameFileButton.addActionListener(actionListener);
         this.add(renameFileButton);
     }
+    private void initializeOpenFileButton(){
+        openFileButton = new JButton("Open");
+        openFileButton.setActionCommand("Open "+ half);
+        openFileButton.addActionListener(actionListener);
+        this.add(openFileButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
         initializeNewFolderButton();
         initializeCopyFileButton();
+        initializeOpenFileButton();
         initializeDeleteFileButton();
         initializeRemoveFileButton();
         initializeRenameFileButton();
