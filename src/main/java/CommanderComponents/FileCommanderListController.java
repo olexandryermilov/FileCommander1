@@ -1,35 +1,42 @@
+package CommanderComponents;
+
+import Adapters.FileSystemObject;
+import CommanderComponents.FileCommanderFrame;
+
 import java.io.File;
 
-public class FileCommanderListController {
+
+class FileCommanderListController {
     private FileCommanderListModel fileCommanderListModel;
     private FileCommanderFrame frame;
     FileCommanderListController(FileCommanderListModel fileCommanderListModel, FileCommanderFrame frame){
         this.fileCommanderListModel = fileCommanderListModel;
         this.frame=frame;
     }
-    public void addRootsToListModel(){
+    void addRootsToListModel(){
+        fileCommanderListModel.getListModel().clear();
         File[] roots = File.listRoots();
         for(File file: roots){
             if(file.isHidden())fileCommanderListModel.getListModel().addElement(file.toString());
         }
     }
-    public void handleDoubleClick(String path){
+    void handleDoubleClick(String path){
         FileSystemObject file = new FileSystemObject(path);
         if(path.equals("..")){
             uploadParent();
 
-        }else
-        if(file.isDirectory()){
+        }
+        else if(file.isDirectory()){
             uploadChildren(file);
         }
-        else
-        {
-            //
+        else {
+            frame.getFileCommanderOperations().openFile(path);
         }
     }
-    void uploadParent(){
+    private void uploadParent(){
         FileSystemObject selectedDirectoryFile = new FileSystemObject(fileCommanderListModel.getSelectedDirectory());
         if(selectedDirectoryFile.isRoot()){
+            fileCommanderListModel.setSelectedDirectory("");
             fileCommanderListModel.getListModel().clear();
             addRootsToListModel();
             return;
@@ -43,7 +50,7 @@ public class FileCommanderListController {
         }
     }
 
-    void refreshList(){
+    private void refreshList(){
         FileSystemObject selectedDirectoryFile = new FileSystemObject(fileCommanderListModel.getSelectedDirectory());
         if(!fileCommanderListModel.getSelectedDirectory().equals("")){
             fileCommanderListModel.getListModel().clear();
@@ -53,7 +60,7 @@ public class FileCommanderListController {
             }
         }
     }
-    void uploadChildren(FileSystemObject fileDir){
+    private void uploadChildren(FileSystemObject fileDir){
         fileCommanderListModel.setSelectedDirectory(fileDir.toString());
         refreshList();
     }

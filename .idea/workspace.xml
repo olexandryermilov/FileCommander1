@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bccdd8a-5dc6-484e-8dd9-9fa0fce93d51" name="Default" comment="" />
+    <list default="true" id="8bccdd8a-5dc6-484e-8dd9-9fa0fce93d51" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderHintPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderListController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderListModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderListPanel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderListPanel$FileCommanderMouseListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderListPanel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderMenuBar.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileCommanderOperations.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/FileSystemObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/GridBagConstraintsAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/HintPanelActionListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/FileCommanderFrame.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/FileCommanderHintPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/FileCommanderListController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/FileCommanderListModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/FileCommanderListPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/FileCommanderMenuBar.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/FileCommanderOperations.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/FileSystemObject.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/GridBagConstraintsAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/HintPanelActionListener.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/FileEditorFrame.java" afterPath="$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/FileEditorFrame.class" afterPath="$PROJECT_DIR$/out/production/classes/FileEditorFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -18,118 +47,133 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="FileCommanderFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="40" column="5" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="714">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#556#557#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#640#641#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
-                <element signature="e#1741#1742#0" expanded="true" />
-                <element signature="e#1787#1788#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileEditorFrame.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FileEditorFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#667#668#0" expanded="true" />
+                <element signature="e#715#716#0" expanded="true" />
+                <element signature="e#752#753#0" expanded="true" />
+                <element signature="e#1816#1817#0" expanded="true" />
+                <element signature="e#1862#1863#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="FileCommanderListPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderListPanel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#336#337#0" expanded="true" />
-                <element signature="e#363#364#0" expanded="true" />
-                <element signature="e#679#680#0" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
+                <element signature="e#512#513#0" expanded="true" />
+                <element signature="e#539#540#0" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+                <element signature="e#900#901#0" expanded="true" />
+                <element signature="e#1807#1808#0" expanded="true" />
+                <element signature="e#1857#1858#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileCommanderListController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderListController.java">
+      <file leaf-file-name="FileCommanderMenuBar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderMenuBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="36" column="136" lean-forward="true" selection-start-line="36" selection-start-column="136" selection-end-line="36" selection-end-column="136" />
+            <state relative-caret-position="68">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileCommanderListController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="FileCommanderHintPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderHintPanel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="68">
+              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="HintPanelActionListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/HintPanelActionListener.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="73" column="112" lean-forward="false" selection-start-line="73" selection-start-column="112" selection-end-line="73" selection-end-column="112" />
+              <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#244#245#0" expanded="true" />
-                <element signature="e#277#278#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="FileCommanderOperations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderOperations.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="110" column="32" lean-forward="true" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
+            <state relative-caret-position="646">
+              <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#267#268#0" expanded="true" />
-                <element signature="e#301#302#0" expanded="true" />
+                <element signature="e#357#358#0" expanded="true" />
+                <element signature="e#391#392#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="FileSystemObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FileSystemObject.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/FileSystemObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+              <folding>
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#153#154#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileEditorFrame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-240">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GridBagConstraintsAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/GridBagConstraintsAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -143,6 +187,14 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>newFile</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -435,15 +487,26 @@
         <option value="$PROJECT_DIR$/src/main/java/GridBagConstraintsAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/FileSystemObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/FileCommanderListModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FileEditorFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/FileCommanderListPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FileCommanderFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FileSystemObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/HintPanelActionListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FileCommanderOperations.java" />
         <option value="$PROJECT_DIR$/src/main/java/FileCommanderListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/FileCommanderHintPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FileCommanderOperations.java" />
-        <option value="$PROJECT_DIR$/src/main/java/HintPanelActionListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FileEditorFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FileCommanderFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderMenuBar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Adapters/GridBagConstraintsAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Adapters/FileSystemObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java" />
       </list>
     </option>
   </component>
@@ -452,6 +515,10 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -468,15 +535,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
               <item name="FileCommander1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FileCommander1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="File-Commander" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
@@ -495,6 +567,30 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FileCommander1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Adapters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FileCommander1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CommanderComponents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FileCommander1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Editor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -634,44 +730,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1508184671405</updated>
-      <workItem from="1508184680639" duration="10878000" />
+      <workItem from="1508184680639" duration="16124000" />
+      <workItem from="1508494091445" duration="1528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10878000" />
+    <option name="totallyTimeSpent" value="17652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2237037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -688,19 +784,112 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderMenuBar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        <state relative-caret-position="714">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#1816#1817#0" expanded="true" />
+            <element signature="e#1862#1863#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#1807#1808#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GridBagConstraintsAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        <state relative-caret-position="833">
+          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/FileSystemObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding>
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#153#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/GridBagConstraintsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -715,10 +904,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -726,108 +912,129 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="269" column="0" lean-forward="false" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderListModel.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/caf033a4a7c37b4a8ff3ea084cba591539b0b69/commons-io-2.5-sources.jar!/org/apache/commons/io/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="81" lean-forward="false" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="130">
+          <caret line="1087" column="0" lean-forward="false" selection-start-line="1087" selection-start-column="0" selection-end-line="1087" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileSystemObject.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderListController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="36" column="136" lean-forward="true" selection-start-line="36" selection-start-column="136" selection-end-line="36" selection-end-column="136" />
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/HintPanelActionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/GridBagConstraintsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#1816#1817#0" expanded="true" />
+            <element signature="e#1862#1863#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#1807#1808#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="73" column="112" lean-forward="false" selection-start-line="73" selection-start-column="112" selection-end-line="73" selection-end-column="112" />
+          <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderOperations.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/FileSystemObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="110" column="32" lean-forward="true" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
+        <state relative-caret-position="170">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#153#154#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderHintPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileCommanderListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FileEditorFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="-240">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

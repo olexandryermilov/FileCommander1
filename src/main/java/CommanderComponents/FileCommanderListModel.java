@@ -1,5 +1,9 @@
+package CommanderComponents;
+
+import CommanderComponents.FileCommanderFrame;
+import CommanderComponents.FileCommanderListController;
+
 import javax.swing.*;
-import javax.swing.tree.DefaultTreeModel;
 
 public class FileCommanderListModel {
     private FileCommanderListController fileCommanderListController;

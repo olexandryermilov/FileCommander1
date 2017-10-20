@@ -1,6 +1,10 @@
+package CommanderComponents;
+
+import CommanderComponents.FileCommanderFrame;
+
 import javax.swing.*;
 
-public class FileCommanderHintPanel extends JPanel {
+class FileCommanderHintPanel extends JPanel {
     private FileCommanderFrame frame;
     private String half;
     private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton, renameFileButton, openFileButton;

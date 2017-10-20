@@ -1,12 +1,13 @@
+package Editor;
+
+import Adapters.FileSystemObject;
+import Adapters.GridBagConstraintsAdapter;
 import org.apache.commons.io.FileUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
-import static org.apache.commons.io.FileUtils.openInputStream;
 
 public class FileEditorFrame extends JFrame {
     private static final String TITLE = "File Editor";

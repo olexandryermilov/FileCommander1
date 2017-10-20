@@ -1,3 +1,5 @@
+package Adapters;
+
 import java.awt.*;
 
 public class GridBagConstraintsAdapter extends GridBagConstraints {

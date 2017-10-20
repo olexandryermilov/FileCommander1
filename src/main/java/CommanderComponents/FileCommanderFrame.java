@@ -1,5 +1,10 @@
+package CommanderComponents;
+
+import Adapters.GridBagConstraintsAdapter;
+
 import javax.swing.*;
 import java.awt.*;
+
 
 public class FileCommanderFrame extends JFrame{
     private final static String TITLE = "File Commander";

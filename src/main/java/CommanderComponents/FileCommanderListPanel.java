@@ -1,11 +1,15 @@
-import sun.plugin.javascript.JSClassLoader;
+package CommanderComponents;
+
+import Adapters.GridBagConstraintsAdapter;
+import CommanderComponents.FileCommanderFrame;
+import CommanderComponents.FileCommanderHintPanel;
+import CommanderComponents.FileCommanderListController;
+import CommanderComponents.FileCommanderListModel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.File;
 
 public class FileCommanderListPanel extends JPanel {
     private JList<String> list;
@@ -39,6 +43,11 @@ public class FileCommanderListPanel extends JPanel {
         splitPane.setResizeWeight(0.8);
         this.add(splitPane,new GridBagConstraintsAdapter(1,1,1,1,1,1).setFill(GridBagConstraintsAdapter.BOTH));
     }
+
+    public FileCommanderListController getFileCommanderListController() {
+        return fileCommanderListController;
+    }
+
     private class FileCommanderMouseListener extends MouseAdapter{
 
         @Override
