@@ -18,18 +18,20 @@ public class FileCommanderFrame extends JFrame{
         mainPanel = new JPanel();
         mainPanel.setLayout(new GridBagLayout());
     }
-    FileCommanderListPanel getLeftListPanel(){
+    public FileCommanderListPanel getLeftListPanel(){
         return leftListPanel;
     }
-    FileCommanderListPanel getRightListPanel(){
+    public FileCommanderListPanel getRightListPanel(){
         return rightListPanel;
     }
+
     public FileCommanderFrame(){
         super();
         this.setTitle(TITLE);
         this.setLayout(new GridBagLayout());
         setFrameSize();
-        fileCommanderOperations = new FileCommanderOperations(this);
+        this.fileCommanderOperations = new FileCommanderOperations(this);
+        this.fileCommanderOperations.setFrame(this);
         leftListPanel = new FileCommanderListPanel(this,"left");
         rightListPanel = new FileCommanderListPanel(this,"right");
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,leftListPanel,rightListPanel);

@@ -11,9 +11,16 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class FileCommanderOperations {
-    FileCommanderFrame frame;
+    private FileCommanderFrame frame;
+    public FileCommanderFrame getFrame(){
+        return frame;
+    }
     FileCommanderOperations(FileCommanderFrame frame){
         this.frame = frame;
+    }
+    public FileCommanderOperations(){}
+    public void setFrame(FileCommanderFrame frame){
+        this.frame=frame;
     }
     void createNewFile(String path){
         try {
@@ -34,7 +41,7 @@ public class FileCommanderOperations {
         }
 
     }
-    void refreshLists(){
+    public void refreshLists(){
         FileSystemObject selectedDirectoryFile = new FileSystemObject(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
         if(!selectedDirectoryFile.toString().equals("")){
             while(!selectedDirectoryFile.exists()){
@@ -51,7 +58,8 @@ public class FileCommanderOperations {
         }
         else
         {
-            frame.getLeftListPanel().getFileCommanderListController().addRootsToListModel();
+            frame.getLeftListPanel().getFileCommanderListModel().getListModel().clear();
+            frame.getLeftListPanel().getFileCommanderListModel().getFileCommanderListController().addRootsToListModel();
         }
 
         selectedDirectoryFile = new FileSystemObject(frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory());
@@ -69,7 +77,8 @@ public class FileCommanderOperations {
             }
         }
         else{
-            frame.getRightListPanel().getFileCommanderListController().addRootsToListModel();
+            frame.getRightListPanel().getFileCommanderListModel().getListModel().clear();
+            frame.getRightListPanel().getFileCommanderListModel().getFileCommanderListController().addRootsToListModel();
         }
     }
     void createNewFolder(String path){
@@ -110,7 +119,9 @@ public class FileCommanderOperations {
     void deleteFile(String path){
         try{
             FileSystemObject file = new FileSystemObject(path);
-            FileUtils.forceDelete(file);
+            com.sun.jna.platform.FileUtils fileUtils = com.sun.jna.platform.FileUtils.getInstance();
+            fileUtils.moveToTrash(new File[] {file});
+            //FileUtils.forceDelete(file);
         } catch (IOException e) {
             e.printStackTrace();
         }

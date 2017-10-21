@@ -8,10 +8,15 @@ import java.io.File;
 
 class FileCommanderListController {
     private FileCommanderListModel fileCommanderListModel;
+    private FileCommanderListPanel listPanel;
     private FileCommanderFrame frame;
-    FileCommanderListController(FileCommanderListModel fileCommanderListModel, FileCommanderFrame frame){
+    public void setFrame(FileCommanderFrame frame){
+        this.frame=frame;
+    }
+    FileCommanderListController(FileCommanderListModel fileCommanderListModel, FileCommanderFrame frame, FileCommanderListPanel listPanel){
         this.fileCommanderListModel = fileCommanderListModel;
         this.frame=frame;
+        this.listPanel = listPanel;
     }
     void addRootsToListModel(){
         fileCommanderListModel.getListModel().clear();
@@ -37,6 +42,7 @@ class FileCommanderListController {
         FileSystemObject selectedDirectoryFile = new FileSystemObject(fileCommanderListModel.getSelectedDirectory());
         if(selectedDirectoryFile.isRoot()){
             fileCommanderListModel.setSelectedDirectory("");
+            listPanel.watchServiceHelper.changeObservableDirectory("");
             fileCommanderListModel.getListModel().clear();
             addRootsToListModel();
             return;
@@ -45,6 +51,7 @@ class FileCommanderListController {
         fileCommanderListModel.getListModel().clear();
         fileCommanderListModel.getListModel().addElement("..");
         fileCommanderListModel.setSelectedDirectory(parent.toString());
+        listPanel.watchServiceHelper.changeObservableDirectory(parent.toString());
         for(File file: parent.listFiles()){
             if(!file.isHidden())fileCommanderListModel.getListModel().addElement(file.toString());
         }
@@ -61,6 +68,7 @@ class FileCommanderListController {
         }
     }
     private void uploadChildren(FileSystemObject fileDir){
+        listPanel.watchServiceHelper.changeObservableDirectory(fileDir.toString());
         fileCommanderListModel.setSelectedDirectory(fileDir.toString());
         refreshList();
     }

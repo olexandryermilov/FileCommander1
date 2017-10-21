@@ -8,6 +8,7 @@ class FileCommanderHintPanel extends JPanel {
     private FileCommanderFrame frame;
     private String half;
     private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton, renameFileButton, openFileButton;
+    private JButton editFileButton;
     private HintPanelActionListener actionListener;
     private void initializeNewFileButton(){
         newFileButton = new JButton("New File");
@@ -51,6 +52,12 @@ class FileCommanderHintPanel extends JPanel {
         openFileButton.addActionListener(actionListener);
         this.add(openFileButton);
     }
+    private void initializeEditFileButton(){
+        editFileButton = new JButton("Edit");
+        editFileButton.setActionCommand("Edit "+half);
+        editFileButton.addActionListener(actionListener);
+        this.add(editFileButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
         initializeNewFolderButton();
@@ -59,6 +66,7 @@ class FileCommanderHintPanel extends JPanel {
         initializeDeleteFileButton();
         initializeRemoveFileButton();
         initializeRenameFileButton();
+        initializeEditFileButton();
     }
     public FileCommanderHintPanel(FileCommanderFrame frame, String half){
         super();

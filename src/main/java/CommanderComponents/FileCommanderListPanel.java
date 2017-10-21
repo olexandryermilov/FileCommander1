@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.nio.file.WatchService;
 
 public class FileCommanderListPanel extends JPanel {
     private JList<String> list;
@@ -19,13 +20,14 @@ public class FileCommanderListPanel extends JPanel {
     }
 
     private FileCommanderListModel fileCommanderListModel;
-    FileCommanderListController fileCommanderListController;
+   ///FileCommanderListController fileCommanderListController;
     FileCommanderHintPanel hintPanel;
     JScrollPane scrollPane;
     JSplitPane splitPane;
     FileCommanderFrame frame;
     String half;
-    FileCommanderListModel getFileCommanderListModel(){
+    WatchServiceHelper watchServiceHelper;
+    public FileCommanderListModel getFileCommanderListModel(){
         return fileCommanderListModel;
     }
     public FileCommanderListPanel(FileCommanderFrame frame, String half){
@@ -33,27 +35,29 @@ public class FileCommanderListPanel extends JPanel {
         this.frame = frame;
         this.half = half;
         this.setLayout(new GridBagLayout());
-        fileCommanderListModel = new FileCommanderListModel();
-        fileCommanderListController = new FileCommanderListController(fileCommanderListModel,frame);
+        fileCommanderListModel = new FileCommanderListModel(this);
         list = new JList<>(fileCommanderListModel.getListModel());
         list.addMouseListener(new FileCommanderMouseListener());
         scrollPane = new JScrollPane(list);
         hintPanel = new FileCommanderHintPanel(frame,half);
         splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,scrollPane,hintPanel);
         splitPane.setResizeWeight(0.8);
+
         this.add(splitPane,new GridBagConstraintsAdapter(1,1,1,1,1,1).setFill(GridBagConstraintsAdapter.BOTH));
     }
-
-    public FileCommanderListController getFileCommanderListController() {
-        return fileCommanderListController;
+    public void setWatchServiceHelper(WatchServiceHelper watchServiceHelper){
+        this.watchServiceHelper = watchServiceHelper;
     }
+    //public FileCommanderListController getFileCommanderListController() {
+        //return fileCommanderListController;
+    //}
 
     private class FileCommanderMouseListener extends MouseAdapter{
 
         @Override
         public void mouseClicked(MouseEvent e) {
             if(e.getClickCount()==2){
-                fileCommanderListController.handleDoubleClick(list.getSelectedValue());
+                fileCommanderListModel.getFileCommanderListController().handleDoubleClick(list.getSelectedValue());
             }
         }
     }
