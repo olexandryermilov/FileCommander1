@@ -14,12 +14,11 @@ public class WatchServiceHelper {
     private volatile Thread watchThread;
     private String currentDirectory;
 
-    public WatchServiceHelper(FileCommanderOperations operations) {
+    public WatchServiceHelper(FileCommanderOperations operations,FileCommanderListPanel listPanel) {
 
         try {
             watchService = FileSystems.getDefault().newWatchService();
-            watchKey =new FileSystemObject(operations.getFrame().
-                    getLeftListPanel().
+            watchKey =new FileSystemObject(listPanel.
                     getFileCommanderListModel().
                     getSelectedDirectory()).toPath().register(watchService, StandardWatchEventKinds.ENTRY_CREATE,
                     StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
@@ -29,6 +28,7 @@ public class WatchServiceHelper {
         }
         watchThread = new Thread(()->{
             while(true){
+                if(currentDirectory==null||currentDirectory.equals(""))continue;
                 try {
                     WatchKey tempWatchKey = watchService.take();
                     tempWatchKey.pollEvents();

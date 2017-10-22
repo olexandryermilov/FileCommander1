@@ -30,14 +30,19 @@ public class FileCommanderFrame extends JFrame{
         this.setTitle(TITLE);
         this.setLayout(new GridBagLayout());
         setFrameSize();
+        menuBar = new FileCommanderMenuBar(this);
         this.fileCommanderOperations = new FileCommanderOperations(this);
         this.fileCommanderOperations.setFrame(this);
         leftListPanel = new FileCommanderListPanel(this,"left");
+        leftListPanel.setWatchServiceHelper(new WatchServiceHelper(fileCommanderOperations,leftListPanel));
+
         rightListPanel = new FileCommanderListPanel(this,"right");
+        rightListPanel.setWatchServiceHelper(new WatchServiceHelper(fileCommanderOperations,rightListPanel));
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,leftListPanel,rightListPanel);
         splitPane.setResizeWeight(0.5);
         initializeMainPanel();
-        mainPanel.add(splitPane,new GridBagConstraintsAdapter(0, 0, 1, 1, 1, 1).setFill(GridBagConstraintsAdapter.BOTH));
+        mainPanel.add(splitPane,new GridBagConstraintsAdapter(1, 1, 1, 1, 1, 12).setFill(GridBagConstraintsAdapter.BOTH));
+        this.setJMenuBar(menuBar);
         this.add(mainPanel, new GridBagConstraintsAdapter(1,1,1,1,1,1).setFill(GridBagConstraintsAdapter.BOTH));
     }
     private void setFrameSize(){

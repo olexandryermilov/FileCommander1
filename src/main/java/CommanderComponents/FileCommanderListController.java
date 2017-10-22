@@ -10,15 +10,12 @@ class FileCommanderListController {
     private FileCommanderListModel fileCommanderListModel;
     private FileCommanderListPanel listPanel;
     private FileCommanderFrame frame;
-    public void setFrame(FileCommanderFrame frame){
-        this.frame=frame;
-    }
     FileCommanderListController(FileCommanderListModel fileCommanderListModel, FileCommanderFrame frame, FileCommanderListPanel listPanel){
         this.fileCommanderListModel = fileCommanderListModel;
         this.frame=frame;
         this.listPanel = listPanel;
     }
-    void addRootsToListModel(){
+    public void addRootsToListModel(){
         fileCommanderListModel.getListModel().clear();
         File[] roots = File.listRoots();
         for(File file: roots){
@@ -42,7 +39,7 @@ class FileCommanderListController {
         FileSystemObject selectedDirectoryFile = new FileSystemObject(fileCommanderListModel.getSelectedDirectory());
         if(selectedDirectoryFile.isRoot()){
             fileCommanderListModel.setSelectedDirectory("");
-            listPanel.watchServiceHelper.changeObservableDirectory("");
+            listPanel.watchServiceHelper.changeObservableDirectory("C:\\");
             fileCommanderListModel.getListModel().clear();
             addRootsToListModel();
             return;
@@ -65,6 +62,10 @@ class FileCommanderListController {
             for(File file: selectedDirectoryFile.listFiles()){
                 if(!file.isHidden())fileCommanderListModel.getListModel().addElement(file.toString());
             }
+        }
+        else{
+            fileCommanderListModel.getListModel().clear();
+            addRootsToListModel();
         }
     }
     private void uploadChildren(FileSystemObject fileDir){
