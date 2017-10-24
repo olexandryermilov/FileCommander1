@@ -38,6 +38,8 @@ public class FileCommanderFrame extends JFrame{
 
         rightListPanel = new FileCommanderListPanel(this,"right");
         rightListPanel.setWatchServiceHelper(new WatchServiceHelper(fileCommanderOperations,rightListPanel));
+        leftListPanel.setAnotherListPanel(rightListPanel);
+        rightListPanel.setAnotherListPanel(leftListPanel);
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,leftListPanel,rightListPanel);
         splitPane.setResizeWeight(0.5);
         initializeMainPanel();
