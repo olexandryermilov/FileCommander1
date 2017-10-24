@@ -35,7 +35,7 @@ public class FileCommanderListPanel extends JPanel {
         this.frame = frame;
         this.half = half;
         this.setLayout(new GridBagLayout());
-        fileCommanderListModel = new FileCommanderListModel(this);
+        fileCommanderListModel = new FileCommanderListModel(frame,this);
         list = new JList<>(fileCommanderListModel.getListModel());
         list.addMouseListener(new FileCommanderMouseListener());
         scrollPane = new JScrollPane(list);
@@ -56,7 +56,7 @@ public class FileCommanderListPanel extends JPanel {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            if(e.getClickCount()==2){
+            if(e.getButton()== MouseEvent.BUTTON1&&e.getClickCount()>=2){
                 fileCommanderListModel.getFileCommanderListController().handleDoubleClick(list.getSelectedValue());
             }
         }

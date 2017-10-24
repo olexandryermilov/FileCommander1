@@ -8,7 +8,7 @@ class FileCommanderHintPanel extends JPanel {
     private FileCommanderFrame frame;
     private String half;
     private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton, renameFileButton, openFileButton;
-    private JButton editFileButton;
+    private JButton editFileButton,copyFileWithoutRepeatingLinesButton,convertFileFromHtmlToRtfButton;
     private HintPanelActionListener actionListener;
     private void initializeNewFileButton(){
         newFileButton = new JButton("New File");
@@ -58,6 +58,18 @@ class FileCommanderHintPanel extends JPanel {
         editFileButton.addActionListener(actionListener);
         this.add(editFileButton);
     }
+    private void initializeCopyFileWithoutRepeatingLinesButton(){
+        copyFileWithoutRepeatingLinesButton = new JButton("Non-repeating copy");
+        copyFileWithoutRepeatingLinesButton.setActionCommand("Copy without repeating lines "+half);
+        copyFileWithoutRepeatingLinesButton.addActionListener(actionListener);
+        this.add(copyFileWithoutRepeatingLinesButton);
+    }
+    private void initializeConvertFileFromHtmlToRtfButton(){
+        convertFileFromHtmlToRtfButton = new JButton("Html to RTF");
+        convertFileFromHtmlToRtfButton.addActionListener(actionListener);
+        convertFileFromHtmlToRtfButton.setActionCommand("Html to RTF "+half);
+        this.add(convertFileFromHtmlToRtfButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
         initializeNewFolderButton();
@@ -67,6 +79,8 @@ class FileCommanderHintPanel extends JPanel {
         initializeRemoveFileButton();
         initializeRenameFileButton();
         initializeEditFileButton();
+        initializeCopyFileWithoutRepeatingLinesButton();
+        initializeConvertFileFromHtmlToRtfButton();
     }
     public FileCommanderHintPanel(FileCommanderFrame frame, String half){
         super();

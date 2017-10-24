@@ -19,7 +19,8 @@ public class FileCommanderListModel {
         return listModel;
     }
 
-    public FileCommanderListModel(FileCommanderListPanel listPanel){
+    public FileCommanderListModel(FileCommanderFrame frame, FileCommanderListPanel listPanel){
+        this.frame = frame;
         selectedDirectory = "";
         listModel = new DefaultListModel<>();
         fileCommanderListController = new FileCommanderListController(this, frame,listPanel);

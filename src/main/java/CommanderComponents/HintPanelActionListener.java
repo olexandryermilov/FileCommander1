@@ -8,15 +8,21 @@ import java.awt.event.ActionListener;
 
 public class HintPanelActionListener implements ActionListener {
     FileCommanderFrame frame;
-    HintPanelActionListener(FileCommanderFrame frame){
+    FileCommanderOperations operations;
+    FileCommanderListPanel left, right;
+    HintPanelActionListener(FileCommanderFrame frame) {
         this.frame= frame;
+        this.operations = frame.getFileCommanderOperations();
+        this.left=frame.getLeftListPanel();
+        this.right = frame.getRightListPanel();
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        operations=frame.getFileCommanderOperations();
         if(e.getActionCommand().equals("New File left")){
             String name = JOptionPane.showInputDialog(frame,"Enter name of new file","Enter name",1);
             if(name!=null)
-            frame.getFileCommanderOperations().createNewFile(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
+                operations.createNewFile(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
         }
         if(e.getActionCommand().equals("New File right")){
             String name = JOptionPane.showInputDialog(frame,"Enter name of new file","Enter name",1);
@@ -38,7 +44,7 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Copy right")){
             frame.getFileCommanderOperations().copyFromRight();
         }
-        //todo: delete removes, not deletes
+
         if(e.getActionCommand().equals("Delete left")){
             String path = frame.getLeftListPanel().getList().getSelectedValue();
             if(path=="..")JOptionPane.showMessageDialog(frame,"Cannot delete this file","Info",1);
@@ -77,6 +83,12 @@ public class HintPanelActionListener implements ActionListener {
         }
         if(e.getActionCommand().equals("Open right")) {
             frame.getFileCommanderOperations().openFile(frame.getRightListPanel().getList().getSelectedValue());
+        }
+        if(e.getActionCommand().equals("Copy without repeating lines left")){
+            frame.getFileCommanderOperations().copyFileWithoutRepeatingLines(frame.getLeftListPanel().getList().getSelectedValue(),frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory());
+        }
+        if(e.getActionCommand().equals("Html to RTF left")){
+            frame.getFileCommanderOperations().convertHtmlToRtf(frame.getLeftListPanel().getList().getSelectedValue());
         }
         frame.getFileCommanderOperations().refreshLists();
     }
