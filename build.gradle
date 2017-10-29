@@ -16,5 +16,6 @@ dependencies {
     compile group: 'net.java.dev.jna', name: 'jna-platform', version: '4.0.0'
     // https://mvnrepository.com/artifact/org.aioobe.cloudconvert/client
     compile group: 'org.aioobe.cloudconvert', name: 'client', version: '1.1'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.3'
 
 }

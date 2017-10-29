@@ -13,6 +13,7 @@
     <orderEntry type="library" name="Gradle: commons-io:commons-io:2.5" level="project" />
     <orderEntry type="library" name="Gradle: net.java.dev.jna:jna-platform:4.0.0" level="project" />
     <orderEntry type="library" name="Gradle: org.aioobe.cloudconvert:client:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.10.3" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: net.java.dev.jna:jna:4.0.0" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.core:jersey-client:2.10" level="project" />

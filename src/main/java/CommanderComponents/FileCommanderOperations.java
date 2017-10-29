@@ -3,6 +3,9 @@ package CommanderComponents;
 import Adapters.FileSystemObject;
 
 import org.apache.commons.io.FileUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import javax.swing.*;
 import javax.swing.text.BadLocationException;
@@ -12,6 +15,7 @@ import javax.swing.text.rtf.RTFEditorKit;
 import java.awt.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 public class FileCommanderOperations {
     private FileCommanderFrame frame;
@@ -326,5 +330,49 @@ public class FileCommanderOperations {
         panel.getFileCommanderListModel().setSelectedExtension(extension);
         refreshList(panel,extension);
     }
+    void copyHtmlFile(String chosenHalf){
+        FileCommanderListPanel panel = (chosenHalf.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
+        FileCommanderListPanel anotherPanel = (chosenHalf.equals("right"))?frame.getLeftListPanel():frame.getRightListPanel();
+        String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
+        String htmlFile = panel.getList().getSelectedValue();
+        ArrayList<FileSystemObject> filesList = new ArrayList<>();
+        filesList.add(new FileSystemObject(htmlFile));
+        try{
+            org.jsoup.nodes.Document doc = Jsoup.parse(new File(htmlFile),"UTF-8");
+            //System.out.println(doc);
+            Elements links = doc.select("a[href]");
+            Elements media = doc.select("[src]");
+            Elements imports = doc.select("link[href]");
+            for(Element src : media){
+                //System.out.println(src.attr("abs:src"));
+                filesList.add(new FileSystemObject(src.attr("abs:src")));
+            }
+            for(Element link : links){
+                //System.out.println(link.attr("href"));
+                //System.out.println(link.text());
+                filesList.add(new FileSystemObject(link.attr("href")));
+            }
+            for(Element link : imports){
+                //System.out.println(link.attr("href"));
+                filesList.add(new FileSystemObject(link.attr("abs:href")));
+            }
+            for(FileSystemObject file : filesList){
+                System.out.println(file);
+                try{
+                    String filePath = ((file.toString().startsWith("C:\\"))?"":(panel.getFileCommanderListModel().getSelectedDirectory()+"\\"))+file.toString();
+                    System.out.println(filePath);
+                    copyFile(filePath,to);
+                }
+                catch (RuntimeException e){
+                    continue;
+                }
+            }
+            Element title = doc.select("title").first();
+            JOptionPane.showMessageDialog(frame,title.text(),"Title",1);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

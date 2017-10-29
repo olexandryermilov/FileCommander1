@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bccdd8a-5dc6-484e-8dd9-9fa0fce93d51" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderFrame.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderHintPanel.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderHintPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderListController.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderListController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderListModel.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderListModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderListPanel$FileCommanderMouseListener.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderListPanel$FileCommanderMouseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderListPanel.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderListPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderOperations.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderOperations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/WatchServiceHelper.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/WatchServiceHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/FileCommander_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/FileCommander_main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/FileCommander_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/FileCommander_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListModel.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" />
     </list>
@@ -56,8 +47,18 @@
       <file leaf-file-name="FileCommanderOperations.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
+            <state relative-caret-position="85">
+              <caret line="341" column="14" lean-forward="false" selection-start-line="341" selection-start-column="14" selection-end-line="341" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicButtonListener.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,8 +67,8 @@
       <file leaf-file-name="FileCommanderHintPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="111" column="51" lean-forward="false" selection-start-line="111" selection-start-column="51" selection-end-line="111" selection-end-column="51" />
+            <state relative-caret-position="170">
+              <caret line="83" column="41" lean-forward="false" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="51" />
               <folding>
                 <element signature="e#4646#4647#0" expanded="true" />
                 <element signature="e#4686#4687#0" expanded="true" />
@@ -76,21 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileCommanderListController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HintPanelActionListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="83" column="55" lean-forward="true" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
+            <state relative-caret-position="137">
+              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -306,8 +297,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4525077221037" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="1356552048" />
+        <entry key="$PROJECT_DIR$" value="4525683160091" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="1383910554" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -435,14 +426,14 @@
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Adapters/InputStreamAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Adapters/OutputStreamAdapter.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/WatchServiceHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" />
       </list>
     </option>
@@ -672,12 +663,12 @@
       <workItem from="1508881017657" duration="3128000" />
       <workItem from="1508960812973" duration="1206000" />
       <workItem from="1509010214105" duration="1321000" />
-      <workItem from="1509209809462" duration="7758000" />
+      <workItem from="1509209809462" duration="11418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59194000" />
+    <option name="totallyTimeSpent" value="62854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1032,22 +1023,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/InputStreamAdapter.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/OutputStreamAdapter.java" />
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/javax/swing/text/rtf/RTFGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1139,26 +1116,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="83" column="55" lean-forward="true" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="-30">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="111" column="51" lean-forward="false" selection-start-line="111" selection-start-column="51" selection-end-line="111" selection-end-column="51" />
+        <state relative-caret-position="170">
+          <caret line="83" column="41" lean-forward="false" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="51" />
           <folding>
             <element signature="e#4646#4647#0" expanded="true" />
             <element signature="e#4686#4687#0" expanded="true" />
@@ -1166,10 +1143,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
+        <state relative-caret-position="85">
+          <caret line="341" column="14" lean-forward="false" selection-start-line="341" selection-start-column="14" selection-end-line="341" selection-end-column="14" />
           <folding />
         </state>
       </provider>

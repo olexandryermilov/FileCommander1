@@ -99,6 +99,12 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Copy extension right")){
             frame.getFileCommanderOperations().copySelectedExtension((String)frame.getRightListPanel().getHintPanel().getExtensionComboBox().getSelectedItem(),"right");
         }
+        if(e.getActionCommand().equals("Copy HTML left")){
+            frame.getFileCommanderOperations().copyHtmlFile("left");
+        }
+        if(e.getActionCommand().equals("Copy HTML right")){
+            frame.getFileCommanderOperations().copyHtmlFile("right");
+        }
         frame.getFileCommanderOperations().refreshLists();
     }
 }
