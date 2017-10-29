@@ -52,7 +52,7 @@ class FileCommanderListController {
         fileCommanderListModel.setSelectedDirectory(parent.toString());
         listPanel.watchServiceHelper.changeObservableDirectory(parent.toString());
         for(File file: parent.listFiles()){
-            if(!file.isHidden())fileCommanderListModel.getListModel().addElement(file.toString());
+            if(!file.isHidden()&&file.toString().endsWith(fileCommanderListModel.getSelectedExtension()))fileCommanderListModel.getListModel().addElement(file.toString());
         }
     }
 
@@ -62,7 +62,7 @@ class FileCommanderListController {
             fileCommanderListModel.getListModel().clear();
             fileCommanderListModel.getListModel().addElement("..");
             for(File file: selectedDirectoryFile.listFiles()){
-                if(!file.isHidden())fileCommanderListModel.getListModel().addElement(file.toString());
+                if(!file.isHidden()&&file.toString().endsWith(fileCommanderListModel.getSelectedExtension()))fileCommanderListModel.getListModel().addElement(file.toString());
             }
         }
         else{

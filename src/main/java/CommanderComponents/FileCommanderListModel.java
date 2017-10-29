@@ -14,6 +14,16 @@ public class FileCommanderListModel {
 
     private FileCommanderFrame frame;
     private String selectedDirectory;
+
+    public String getSelectedExtension() {
+        return selectedExtension;
+    }
+
+    public void setSelectedExtension(String selectedExtension) {
+        this.selectedExtension = selectedExtension;
+    }
+
+    private String selectedExtension;
     private DefaultListModel<String> listModel;
     DefaultListModel<String> getListModel(){
         return listModel;
@@ -22,6 +32,7 @@ public class FileCommanderListModel {
     FileCommanderListModel(FileCommanderFrame frame, FileCommanderListPanel listPanel){
         this.frame = frame;
         selectedDirectory = "";
+        selectedExtension="";
         listModel = new DefaultListModel<>();
         fileCommanderListController = new FileCommanderListController(this, frame,listPanel);
         fileCommanderListController.addRootsToListModel();

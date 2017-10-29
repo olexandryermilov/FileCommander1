@@ -28,6 +28,11 @@ public class FileCommanderListPanel extends JPanel {
     private FileCommanderHintPanel hintPanel;
     private JScrollPane scrollPane;
     private JSplitPane splitPane;
+
+    public FileCommanderHintPanel getHintPanel() {
+        return hintPanel;
+    }
+
     private FileCommanderFrame frame;
     private String half;
     WatchServiceHelper watchServiceHelper;
@@ -56,8 +61,6 @@ public class FileCommanderListPanel extends JPanel {
     void setWatchServiceHelper(WatchServiceHelper watchServiceHelper){
         this.watchServiceHelper = watchServiceHelper;
     }
-
-
     private class FileCommanderMouseListener extends MouseAdapter{
 
         @Override

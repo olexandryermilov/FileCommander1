@@ -3,12 +3,14 @@ package CommanderComponents;
 import CommanderComponents.FileCommanderFrame;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 class FileCommanderHintPanel extends JPanel {
     private FileCommanderFrame frame;
     private String half;
     private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton, renameFileButton, openFileButton;
-    private JButton editFileButton,copyFileWithoutRepeatingLinesButton,convertFileFromHtmlToRtfButton;
+    private JButton editFileButton,copyFileWithoutRepeatingLinesButton,convertFileFromHtmlToRtfButton,copySelectedExtensionButton,copyHtmlButton;
     private HintPanelActionListener actionListener;
     private void initializeNewFileButton(){
         newFileButton = new JButton("New File");
@@ -70,6 +72,18 @@ class FileCommanderHintPanel extends JPanel {
         convertFileFromHtmlToRtfButton.setActionCommand("Html to RTF "+half);
         this.add(convertFileFromHtmlToRtfButton);
     }
+    private void initializeCopySelectedExtensionButton(){
+        copySelectedExtensionButton = new JButton("Copy selected extension");
+        copySelectedExtensionButton.setActionCommand("Copy extension "+ half);
+        copySelectedExtensionButton.addActionListener(actionListener);
+        this.add(copySelectedExtensionButton);
+    }
+    private void initializeCopyHtmlButton(){
+        copyHtmlButton = new JButton("Copy HTML");
+        copyHtmlButton.addActionListener(actionListener);
+        copyHtmlButton.setActionCommand("Copy HTML "+half);
+        this.add(copyHtmlButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
         initializeNewFolderButton();
@@ -81,6 +95,25 @@ class FileCommanderHintPanel extends JPanel {
         initializeEditFileButton();
         initializeCopyFileWithoutRepeatingLinesButton();
         initializeConvertFileFromHtmlToRtfButton();
+        initializeCopyHtmlButton();
+        initializeCopySelectedExtensionButton();
+    }
+    private JLabel extensionLabel;
+    private String[] extensions = {".*", ".txt",".jpg",".html",".rtf",".doc"};
+
+    public JComboBox<String> getExtensionComboBox() {
+        return extensionComboBox;
+    }
+
+    private JComboBox<String> extensionComboBox;
+    private void addExtensionSelection(){
+        extensionLabel = new JLabel("Select extension");
+        extensionComboBox = new JComboBox<>(extensions);
+        extensionComboBox.addActionListener((e -> {
+            frame.getFileCommanderOperations().updateListWithExtension((String)extensionComboBox.getSelectedItem(),half);
+        }));
+        this.add(extensionLabel);
+        this.add(extensionComboBox);
     }
     FileCommanderHintPanel(FileCommanderFrame frame, String half){
         super();
@@ -88,5 +121,6 @@ class FileCommanderHintPanel extends JPanel {
         this.half = half;
         actionListener = new HintPanelActionListener(frame);
         addButtons();
+        addExtensionSelection();
     }
 }

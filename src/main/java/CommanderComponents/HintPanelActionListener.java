@@ -87,8 +87,17 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Copy without repeating lines left")){
             frame.getFileCommanderOperations().copyFileWithoutRepeatingLines(frame.getLeftListPanel().getList().getSelectedValue(),frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory());
         }
+        if(e.getActionCommand().equals("Copy without repeating lines right")) {
+            frame.getFileCommanderOperations().copyFileWithoutRepeatingLines(frame.getRightListPanel().getList().getSelectedValue(),frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
+        }
         if(e.getActionCommand().equals("Html to RTF left")){
             frame.getFileCommanderOperations().convertHtmlToRtf(frame.getLeftListPanel().getList().getSelectedValue());
+        }
+        if(e.getActionCommand().equals("Copy extension left")){
+            frame.getFileCommanderOperations().copySelectedExtension((String)frame.getLeftListPanel().getHintPanel().getExtensionComboBox().getSelectedItem(),"left");
+        }
+        if(e.getActionCommand().equals("Copy extension right")){
+            frame.getFileCommanderOperations().copySelectedExtension((String)frame.getRightListPanel().getHintPanel().getExtensionComboBox().getSelectedItem(),"right");
         }
         frame.getFileCommanderOperations().refreshLists();
     }

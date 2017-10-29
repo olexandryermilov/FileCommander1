@@ -45,8 +45,31 @@ public class FileCommanderOperations {
             }
 
     }
+    void refreshList(FileCommanderListPanel panel, String extension){
+        FileSystemObject selectedDirectoryFile = new FileSystemObject(panel.getFileCommanderListModel().getSelectedDirectory());
+        if(!selectedDirectoryFile.toString().equals("")){
+            while(!selectedDirectoryFile.exists()){
+                selectedDirectoryFile=new FileSystemObject(selectedDirectoryFile.getParent());
+            }
+            panel.getFileCommanderListModel().setSelectedDirectory(selectedDirectoryFile.toString());
+        }
+        if(!panel.getFileCommanderListModel().getSelectedDirectory().equals("")){
+            panel.getFileCommanderListModel().getListModel().clear();
+            panel.getFileCommanderListModel().getListModel().addElement("..");
+            for(File file: selectedDirectoryFile.listFiles()){
+                if(file!=null&&!file.isHidden()&&file.toString().endsWith(extension))panel.getFileCommanderListModel().getListModel().addElement(file.toString());
+            }
+        }
+        else
+        {
+            panel.getFileCommanderListModel().getListModel().clear();
+            panel.getFileCommanderListModel().getFileCommanderListController().addRootsToListModel();
+        }
+    }
     void refreshLists(){
-        FileSystemObject selectedDirectoryFile = new FileSystemObject(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
+        refreshList(frame.getLeftListPanel(),frame.getLeftListPanel().getFileCommanderListModel().getSelectedExtension());
+        refreshList(frame.getRightListPanel(),frame.getRightListPanel().getFileCommanderListModel().getSelectedExtension());
+        /*FileSystemObject selectedDirectoryFile = new FileSystemObject(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
         if(!selectedDirectoryFile.toString().equals("")){
             while(!selectedDirectoryFile.exists()){
                 selectedDirectoryFile=new FileSystemObject(selectedDirectoryFile.getParent());
@@ -83,7 +106,7 @@ public class FileCommanderOperations {
         else{
             frame.getRightListPanel().getFileCommanderListModel().getListModel().clear();
             frame.getRightListPanel().getFileCommanderListModel().getFileCommanderListController().addRootsToListModel();
-        }
+        }*/
     }
     void createNewFolder(String path){
         if(handleExistingFile(path))return;
@@ -104,6 +127,20 @@ public class FileCommanderOperations {
         String from = frame.getRightListPanel().getList().getSelectedValue();
         String to = frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory();
         copyFile(from,to);
+    }
+    void copySelectedExtension(String selectedExtension, String chosenHalf){
+        FileCommanderListPanel panel = (chosenHalf.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
+        String directory = panel.getFileCommanderListModel().getSelectedDirectory();
+        FileCommanderListPanel anotherPanel = (chosenHalf.equals("right"))?frame.getLeftListPanel():frame.getRightListPanel();
+        String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
+        if(directory.equals("")||to.equals("")){
+            JOptionPane.showMessageDialog(frame,"Can't copy here", "Error",1);
+        }
+        for(File file: new FileSystemObject(directory).listFiles()){
+            if(file!=null&&!file.isHidden()&&!file.isDirectory()&&file.toString().endsWith(selectedExtension)){
+                copyFile(file.toString(),to);
+            }
+        }
     }
     private void copyFile(String from, String to){
         try {
@@ -275,4 +312,19 @@ public class FileCommanderOperations {
             e.printStackTrace();
         }
     }
+    void updateListWithExtension(String selectedItem, String half){
+        String extension;
+        FileCommanderListPanel panel;
+        if(half.equals("left")){
+            panel=frame.getLeftListPanel();
+        }
+        else{
+            panel = frame.getRightListPanel();
+        }
+        if(selectedItem.equals(".*"))extension="";
+        else extension=selectedItem;
+        panel.getFileCommanderListModel().setSelectedExtension(extension);
+        refreshList(panel,extension);
+    }
+
 }
