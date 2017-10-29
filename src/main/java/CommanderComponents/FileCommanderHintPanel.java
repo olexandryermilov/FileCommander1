@@ -82,7 +82,7 @@ class FileCommanderHintPanel extends JPanel {
         initializeCopyFileWithoutRepeatingLinesButton();
         initializeConvertFileFromHtmlToRtfButton();
     }
-    public FileCommanderHintPanel(FileCommanderFrame frame, String half){
+    FileCommanderHintPanel(FileCommanderFrame frame, String half){
         super();
         this.frame = frame;
         this.half = half;

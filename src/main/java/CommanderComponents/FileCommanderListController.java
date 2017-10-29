@@ -15,7 +15,7 @@ class FileCommanderListController {
         this.frame=frame;
         this.listPanel = listPanel;
     }
-    public void addRootsToListModel(){
+    void addRootsToListModel(){
         fileCommanderListModel.getListModel().clear();
         File[] roots = File.listRoots();
         for(File file: roots){

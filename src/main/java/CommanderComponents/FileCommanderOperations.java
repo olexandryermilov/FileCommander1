@@ -22,7 +22,7 @@ public class FileCommanderOperations {
         this.frame = frame;
     }
     public FileCommanderOperations(){}
-    public void setFrame(FileCommanderFrame frame){
+    void setFrame(FileCommanderFrame frame){
         this.frame=frame;
     }
     void createNewFile(String path){
@@ -45,7 +45,7 @@ public class FileCommanderOperations {
             }
 
     }
-    public void refreshLists(){
+    void refreshLists(){
         FileSystemObject selectedDirectoryFile = new FileSystemObject(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
         if(!selectedDirectoryFile.toString().equals("")){
             while(!selectedDirectoryFile.exists()){
@@ -178,7 +178,7 @@ public class FileCommanderOperations {
         }while(is.available()>0&&t!='\n');
         return new String(sb);
     }
-    public void writeLine(OutputStream os,String line){
+    private void writeLine(OutputStream os, String line){
         for(int i=0;i<line.length();i++){
             try{
                 os.write((byte)line.charAt(i));
@@ -240,7 +240,7 @@ public class FileCommanderOperations {
         }
         return false;
     }
-    public void convertHtmlToRtf(String path){
+    void convertHtmlToRtf(String path){
         FileSystemObject htmlFile = new FileSystemObject(path);
         String rtfFileName = path.substring(0,path.length()-4)+"rtf";
         System.out.println(rtfFileName);

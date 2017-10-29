@@ -24,17 +24,17 @@ public class FileCommanderListPanel extends JPanel {
 
     private FileCommanderListModel fileCommanderListModel;
    ///FileCommanderListController fileCommanderListController;
-    FileCommanderListPanel anotherListPanel;
-    FileCommanderHintPanel hintPanel;
-    JScrollPane scrollPane;
-    JSplitPane splitPane;
-    FileCommanderFrame frame;
-    String half;
+    private FileCommanderListPanel anotherListPanel;
+    private FileCommanderHintPanel hintPanel;
+    private JScrollPane scrollPane;
+    private JSplitPane splitPane;
+    private FileCommanderFrame frame;
+    private String half;
     WatchServiceHelper watchServiceHelper;
-    public FileCommanderListModel getFileCommanderListModel(){
+    FileCommanderListModel getFileCommanderListModel(){
         return fileCommanderListModel;
     }
-    public FileCommanderListPanel(FileCommanderFrame frame, String half){
+    FileCommanderListPanel(FileCommanderFrame frame, String half){
         super();
         this.frame = frame;
         this.half = half;
@@ -50,23 +50,13 @@ public class FileCommanderListPanel extends JPanel {
 
         this.add(splitPane,new GridBagConstraintsAdapter(1,1,1,1,1,1).setFill(GridBagConstraintsAdapter.BOTH));
     }
-    public void setAnotherListPanel(FileCommanderListPanel anotherListPanel){
+    void setAnotherListPanel(FileCommanderListPanel anotherListPanel){
         this.anotherListPanel=anotherListPanel;
-        list.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                //anotherListPanel.getList().setSelectedValue(null,false);
-                //anotherListPanel.getList().setSelectionBackground(Color.LIGHT_GRAY);
-                //list.setSelectionBackground(Color.BLUE);
-            }
-        });
     }
-    public void setWatchServiceHelper(WatchServiceHelper watchServiceHelper){
+    void setWatchServiceHelper(WatchServiceHelper watchServiceHelper){
         this.watchServiceHelper = watchServiceHelper;
     }
-    //public FileCommanderListController getFileCommanderListController() {
-        //return fileCommanderListController;
-    //}
+
 
     private class FileCommanderMouseListener extends MouseAdapter{
 

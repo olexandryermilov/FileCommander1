@@ -14,7 +14,7 @@ public class WatchServiceHelper {
     private volatile Thread watchThread;
     private String currentDirectory;
 
-    public WatchServiceHelper(FileCommanderOperations operations,FileCommanderListPanel listPanel) {
+    WatchServiceHelper(FileCommanderOperations operations, FileCommanderListPanel listPanel) {
 
         try {
             watchService = FileSystems.getDefault().newWatchService();
@@ -42,7 +42,7 @@ public class WatchServiceHelper {
         watchThread.start();
     }
 
-    public void changeObservableDirectory(String newDirectory) {
+    void changeObservableDirectory(String newDirectory) {
 
         if (currentDirectory!=null&&currentDirectory.equals(newDirectory)) return;
         watchKey.cancel();

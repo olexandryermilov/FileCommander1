@@ -14,14 +14,14 @@ public class FileCommanderFrame extends JFrame{
     private FileCommanderOperations fileCommanderOperations;
     private JSplitPane splitPane;
 
-    public void initializeMainPanel(){
+    private void initializeMainPanel(){
         mainPanel = new JPanel();
         mainPanel.setLayout(new GridBagLayout());
     }
-    public FileCommanderListPanel getLeftListPanel(){
+    FileCommanderListPanel getLeftListPanel(){
         return leftListPanel;
     }
-    public FileCommanderListPanel getRightListPanel(){
+    FileCommanderListPanel getRightListPanel(){
         return rightListPanel;
     }
 
@@ -54,7 +54,7 @@ public class FileCommanderFrame extends JFrame{
         super.setSize((4 * x) / 5, 4 * y / 5);
     }
 
-    public FileCommanderOperations getFileCommanderOperations() {
+    FileCommanderOperations getFileCommanderOperations() {
         return fileCommanderOperations;
     }
 }

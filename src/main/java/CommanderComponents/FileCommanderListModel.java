@@ -6,7 +6,7 @@ import CommanderComponents.FileCommanderListController;
 import javax.swing.*;
 
 public class FileCommanderListModel {
-    public FileCommanderListController getFileCommanderListController() {
+    FileCommanderListController getFileCommanderListController() {
         return fileCommanderListController;
     }
 
@@ -15,11 +15,11 @@ public class FileCommanderListModel {
     private FileCommanderFrame frame;
     private String selectedDirectory;
     private DefaultListModel<String> listModel;
-    public DefaultListModel<String> getListModel(){
+    DefaultListModel<String> getListModel(){
         return listModel;
     }
 
-    public FileCommanderListModel(FileCommanderFrame frame, FileCommanderListPanel listPanel){
+    FileCommanderListModel(FileCommanderFrame frame, FileCommanderListPanel listPanel){
         this.frame = frame;
         selectedDirectory = "";
         listModel = new DefaultListModel<>();
@@ -27,11 +27,11 @@ public class FileCommanderListModel {
         fileCommanderListController.addRootsToListModel();
     }
 
-    public String getSelectedDirectory() {
+    String getSelectedDirectory() {
         return selectedDirectory;
     }
 
-    public void setSelectedDirectory(String selectedDirectory) {
+    void setSelectedDirectory(String selectedDirectory) {
         this.selectedDirectory = selectedDirectory;
     }
 }
