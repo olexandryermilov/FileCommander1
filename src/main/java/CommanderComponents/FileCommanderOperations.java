@@ -2,6 +2,9 @@ package CommanderComponents;
 
 import Adapters.FileSystemObject;
 
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfWriter;
+import org.aioobe.cloudconvert.ProcessStatus;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -16,6 +19,7 @@ import java.awt.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import com.itextpdf.tool.xml.XMLWorkerHelper;
 
 public class FileCommanderOperations {
     private FileCommanderFrame frame;
@@ -175,7 +179,7 @@ public class FileCommanderOperations {
     }
 
     void removeFile(String from, String to){
-        if(handleExistingFile(to))return;
+        //if(handleExistingFile(to))return;
         try{
             copyFile(from,to);
             deleteFile(from);
@@ -374,5 +378,45 @@ public class FileCommanderOperations {
             e.printStackTrace();
         }
 
+    }
+    void convertHtmlToPdf(String half)  {
+        FileCommanderListPanel panel =(half.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
+        String htmlFilePath =(String)panel.getList().getSelectedValue();
+        if(!htmlFilePath.endsWith(".html")){
+            JOptionPane.showMessageDialog(frame,"Please, select html file.","Error",1);
+            return;
+        }
+        String pdfFilePath =htmlFilePath.substring(0,htmlFilePath.length()-"html".length())+"pdf";
+        System.out.println(pdfFilePath);
+        File pdfFile = new File(pdfFilePath);
+        File htmlFile = new File(htmlFilePath);
+        Runtime runtime = Runtime.getRuntime();
+        try {
+            Process process = runtime.exec("C:\\programming\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe C:\\programming\\phantomjs-2.1.1-windows\\examples\\rasterize.js "+
+                    htmlFile.getName()+" "+pdfFile.getName(),null,htmlFile.getParentFile());
+            BufferedReader input =
+                    new BufferedReader
+                            (new InputStreamReader(process.getInputStream()));
+            String line;
+            while ((line = input.readLine()) != null) {
+                System.out.println(line);
+            }
+            input.close();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(frame,"Couldn't convert file: "+e.getCause(),"Error",1);
+        }
+       /* com.itextpdf.text.Document document = new com.itextpdf.text.Document();
+        try {
+            PdfWriter writer = PdfWriter.getInstance(document,new FileOutputStream(pdfFilePath));
+            document.open();
+            XMLWorkerHelper.getInstance().parseXHtml(writer,document,new FileInputStream(htmlFilePath));
+            document.close();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
     }
 }
