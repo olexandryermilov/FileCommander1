@@ -50,7 +50,7 @@ public class FileCommanderListPanel extends JPanel {
         scrollPane = new JScrollPane(list);
         hintPanel = new FileCommanderHintPanel(frame,half);
         splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,scrollPane,hintPanel);
-        splitPane.setResizeWeight(0.8);
+        splitPane.setResizeWeight(0.75);
 
         this.add(splitPane,new GridBagConstraintsAdapter(1,1,1,1,1,1).setFill(GridBagConstraintsAdapter.BOTH));
     }

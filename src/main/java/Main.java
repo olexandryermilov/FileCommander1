@@ -16,10 +16,8 @@ public class Main {
 
         EventQueue.invokeLater(()-> {
             frame = new FileCommanderFrame();
-            //frame.getLeftListPanel().setWatchServiceHelper(new WatchServiceHelper(frame.getFileCommanderOperations(),frame.getLeftListPanel()));
-            //frame.getRightListPanel().setWatchServiceHelper(new WatchServiceHelper(frame.getFileCommanderOperations(),frame.getRightListPanel()));
             frame.setVisible(true);
-
+            frame.setLocation(15,15);
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         });
 

@@ -12,6 +12,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 
 public class FileCommanderOperations {
@@ -161,12 +164,12 @@ public class FileCommanderOperations {
             e.printStackTrace();
         }
     }
-    private String readLine(InputStream is) throws IOException{
+    private String readLine(InputStream is, boolean flag) throws IOException{
         StringBuilder sb = new StringBuilder();
         char t;
         do {
             t = (char)is.read();
-            sb.append(t);
+            if(flag&&t!='\n'&&t!='\r')sb.append(t);
         }while(is.available()>0&&t!='\n');
         return new String(sb);
     }
@@ -177,6 +180,13 @@ public class FileCommanderOperations {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        try{
+            os.write((byte)'\r');
+            os.write((byte)'\n');
+        }
+        catch (Exception e){
+            e.printStackTrace();
         }
     }
     void copyFileWithoutRepeatingLines(String from, String to)  {
@@ -190,7 +200,7 @@ public class FileCommanderOperations {
             OutputStream outputStream =  FileUtils.openOutputStream(toFile);
             String prevLine = null;
             while(inputStream.available()>0){
-                String line = readLine(inputStream);
+                String line = readLine(inputStream,false);
                 if(prevLine == null || !line.equals(prevLine)){
                     writeLine(outputStream,line);
                 }
@@ -291,5 +301,46 @@ public class FileCommanderOperations {
         FileCommanderListPanel panel = getPanelFromHalf(half);
         FileCommanderListPanel anotherPanel = getPanelFromHalf(anotherHalf);
         panel.getFileCommanderListModel().setSelectedDirectory(anotherPanel.getFileCommanderListModel().getSelectedDirectory());
+    }
+    private boolean isWord(String word){
+        if(word.length()<1)return false;
+        for(int i=0;i<word.length();i++){
+            char ch = word.charAt(i);
+            if(!((ch>='a'&&ch<='z')||(ch<='Z'&&ch>='A'))){System.out.println("qdfsafdas");return false;}
+        }
+        return true;
+    }
+    void calculateAppearances(String half){
+        FileCommanderListPanel panel = getPanelFromHalf(half);
+        String path = (panel.getList().getSelectedValue());
+        if(!path.endsWith(".txt")){
+            JOptionPane.showMessageDialog(frame,"Should be txt file","Error",1);
+            return;
+        }
+        File file = new File(path);
+        File resultFile = new File(path.substring(0,path.length()-".txt".length())+"resultOfMapping.txt");
+        String line;
+        HashMap<String, Integer> frequencyMap = new HashMap<>();
+        try {
+            InputStream is = FileUtils.openInputStream(file);
+            while(is.available()>0){
+                line = readLine(is,true);
+                String[] words= line.split(" ");
+                for(String word:words){
+                    System.out.println(word);
+                    if(!isWord(word))continue;
+                    int v =(frequencyMap.containsKey(word))?frequencyMap.get(word):0;
+                    frequencyMap.put(word,v+1);
+                }
+            }
+            OutputStream os = FileUtils.openOutputStream(resultFile);
+            for(Map.Entry<String,Integer> entry : frequencyMap.entrySet()){
+                writeLine(os,entry.getKey()+": "+entry.getValue().toString());
+                System.out.println(entry.getKey());
+            }
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

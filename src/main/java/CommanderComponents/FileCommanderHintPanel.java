@@ -6,7 +6,7 @@ class FileCommanderHintPanel extends JPanel {
     private FileCommanderFrame frame;
     private String half;
     private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton, renameFileButton, openFileButton;
-    private JButton editFileButton,copyFileWithoutRepeatingLinesButton,convertFileFromHtmlToRtfButton,copySelectedExtensionButton,copyHtmlButton;
+    private JButton editFileButton,copyFileWithoutRepeatingLinesButton,convertFileFromHtmlToRtfButton,copySelectedExtensionButton,copyHtmlButton,frequencyButton;
     private HintPanelActionListener actionListener;
     private void initializeNewFileButton(){
         newFileButton = new JButton("New File");
@@ -80,6 +80,12 @@ class FileCommanderHintPanel extends JPanel {
         copyHtmlButton.setActionCommand("Copy HTML "+half);
         this.add(copyHtmlButton);
     }
+    private void initializeFrequencyButton(){
+        frequencyButton = new JButton("Frequency");
+        frequencyButton.setActionCommand("Frequency "+ half);
+        frequencyButton.addActionListener(actionListener);
+        this.add(frequencyButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
         initializeNewFolderButton();
@@ -92,10 +98,11 @@ class FileCommanderHintPanel extends JPanel {
         initializeCopyFileWithoutRepeatingLinesButton();
         initializeConvertFileFromHtmlToRtfButton();
         initializeCopyHtmlButton();
+        initializeFrequencyButton();
         initializeCopySelectedExtensionButton();
     }
     private JLabel extensionLabel;
-    private String[] extensions = {".*", ".txt",".jpg",".html",".rtf",".doc"};
+    private String[] extensions = {".*", ".txt",".jpg",".html",".rtf",".doc",".pdf"};
 
     public JComboBox<String> getExtensionComboBox() {
         return extensionComboBox;
@@ -103,7 +110,7 @@ class FileCommanderHintPanel extends JPanel {
 
     private JComboBox<String> extensionComboBox;
     private void addExtensionSelection(){
-        extensionLabel = new JLabel("Select extension");
+        extensionLabel = new JLabel("Select extension filter to show");
         extensionComboBox = new JComboBox<>(extensions);
         extensionComboBox.addActionListener((e -> {
             frame.getFileCommanderOperations().updateListWithExtension((String)extensionComboBox.getSelectedItem(),half);

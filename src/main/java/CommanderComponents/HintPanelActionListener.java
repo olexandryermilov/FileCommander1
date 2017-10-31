@@ -112,6 +112,12 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Open same dir right")){
             frame.getFileCommanderOperations().openSameDir("right","left");
         }
+        if(e.getActionCommand().equals("Frequency left")){
+            frame.getFileCommanderOperations().calculateAppearances("left");
+        }
+        if(e.getActionCommand().equals("Frequency right")){
+            frame.getFileCommanderOperations().calculateAppearances("right");
+        }
         frame.getFileCommanderOperations().refreshLists();
     }
 }
