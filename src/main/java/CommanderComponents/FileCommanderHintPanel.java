@@ -55,8 +55,8 @@ class FileCommanderHintPanel extends JPanel {
         this.add(openFileButton);
     }
     private void initializeEditFileButton(){
-        editFileButton = new JButton("Edit");
-        editFileButton.setActionCommand("Edit "+half);
+        editFileButton = new JButton("Open same dir");
+        editFileButton.setActionCommand("Open same dir "+half);
         editFileButton.addActionListener(actionListener);
         this.add(editFileButton);
     }
@@ -67,9 +67,9 @@ class FileCommanderHintPanel extends JPanel {
         this.add(copyFileWithoutRepeatingLinesButton);
     }
     private void initializeConvertFileFromHtmlToRtfButton(){
-        convertFileFromHtmlToRtfButton = new JButton("Html to RTF");
+        convertFileFromHtmlToRtfButton = new JButton("Html to PDF");
         convertFileFromHtmlToRtfButton.addActionListener(actionListener);
-        convertFileFromHtmlToRtfButton.setActionCommand("Html to RTF "+half);
+        convertFileFromHtmlToRtfButton.setActionCommand("Html to PDF "+half);
         this.add(convertFileFromHtmlToRtfButton);
     }
     private void initializeCopySelectedExtensionButton(){

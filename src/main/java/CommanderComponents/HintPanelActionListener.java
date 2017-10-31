@@ -90,8 +90,11 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Copy without repeating lines right")) {
             frame.getFileCommanderOperations().copyFileWithoutRepeatingLines(frame.getRightListPanel().getList().getSelectedValue(),frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
         }
-        if(e.getActionCommand().equals("Html to RTF left")){
+        if(e.getActionCommand().equals("Html to PDF left")){
             frame.getFileCommanderOperations().convertHtmlToPdf("left");
+        }
+        if(e.getActionCommand().equals("Html to PDF right")){
+            frame.getFileCommanderOperations().convertHtmlToPdf("right");
         }
         if(e.getActionCommand().equals("Copy extension left")){
             frame.getFileCommanderOperations().copySelectedExtension((String)frame.getLeftListPanel().getHintPanel().getExtensionComboBox().getSelectedItem(),"left");
@@ -104,6 +107,12 @@ public class HintPanelActionListener implements ActionListener {
         }
         if(e.getActionCommand().equals("Copy HTML right")){
             frame.getFileCommanderOperations().copyHtmlFile("right");
+        }
+        if(e.getActionCommand().equals("Open same dir left")){
+            frame.getFileCommanderOperations().openSameDir("left","right");
+        }
+        if(e.getActionCommand().equals("Open same dir right")){
+            frame.getFileCommanderOperations().openSameDir("right","left");
         }
         frame.getFileCommanderOperations().refreshLists();
     }

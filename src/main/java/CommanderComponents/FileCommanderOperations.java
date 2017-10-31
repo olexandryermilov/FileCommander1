@@ -233,7 +233,6 @@ public class FileCommanderOperations {
         }
     }
     void copyFileWithoutRepeatingLines(String from, String to)  {
-
         FileSystemObject fromFile = new FileSystemObject(from);
         FileSystemObject toFile = new FileSystemObject(to+"\\"+fromFile.getName());
         if(handleExistingFile(toFile.toString()))return;
@@ -254,29 +253,7 @@ public class FileCommanderOperations {
             e.printStackTrace();
         }
     }
-    private static String convertToRTF(String htmlStr) {
 
-        OutputStream os = new ByteArrayOutputStream();
-        HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
-        RTFEditorKit rtfEditorKit = new RTFEditorKit();
-        String rtfStr = null;
-
-        htmlStr = htmlStr.replaceAll("<br.*?>","#NEW_LINE#");
-        htmlStr = htmlStr.replaceAll("</p>","#NEW_LINE#");
-        htmlStr = htmlStr.replaceAll("<p.*?>","");
-        InputStream is = new ByteArrayInputStream(htmlStr.getBytes(StandardCharsets.UTF_16));
-        try {
-            Document doc = htmlEditorKit.createDefaultDocument();
-            htmlEditorKit.read(is, doc, 0);
-            rtfEditorKit.write(os, doc, 0, doc.getLength());
-            rtfStr = os.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (BadLocationException e) {
-            e.printStackTrace();
-        }
-        return rtfStr;
-    }
     private boolean handleExistingFile(String path){
         FileSystemObject file = new FileSystemObject(path);
         if(file.exists()){
@@ -285,57 +262,20 @@ public class FileCommanderOperations {
         }
         return false;
     }
-    void convertHtmlToRtf(String path){
-        FileSystemObject htmlFile = new FileSystemObject(path);
-        String rtfFileName = path.substring(0,path.length()-4)+"rtf";
-        System.out.println(rtfFileName);
-        FileSystemObject rtfFile = new FileSystemObject(rtfFileName);
-        if(!rtfFile.exists()){
-            try{
-                rtfFile.createNewFile();
-            }
-            catch(IOException e){
-                e.printStackTrace();
-            }
-        }
-        StringBuilder sb = new StringBuilder();
-        try {
-            InputStream is = FileUtils.openInputStream(htmlFile);
-            while(is.available()>0){
-                sb.append((char)is.read());
-            }
-            is.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(new String(sb));
-        String rtfString = convertToRTF(new String(sb));
-        try{
-            OutputStream os = FileUtils.openOutputStream(rtfFile);
-            for(int i=0;i<rtfString.length();i++){
-                os.write((byte)rtfString.charAt(i));
-            }
-            os.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
     void updateListWithExtension(String selectedItem, String half){
         String extension;
-        FileCommanderListPanel panel;
-        if(half.equals("left")){
-            panel=frame.getLeftListPanel();
-        }
-        else{
-            panel = frame.getRightListPanel();
-        }
+        FileCommanderListPanel panel = getPanelFromHalf(half);
         if(selectedItem.equals(".*"))extension="";
         else extension=selectedItem;
         panel.getFileCommanderListModel().setSelectedExtension(extension);
         refreshList(panel,extension);
     }
+    FileCommanderListPanel getPanelFromHalf(String half){
+        return (half.equals("left"))? frame.getLeftListPanel(): frame.getRightListPanel();
+    }
     void copyHtmlFile(String chosenHalf){
-        FileCommanderListPanel panel = (chosenHalf.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
+        FileCommanderListPanel panel = getPanelFromHalf(chosenHalf);
         FileCommanderListPanel anotherPanel = (chosenHalf.equals("right"))?frame.getLeftListPanel():frame.getRightListPanel();
         String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
         String htmlFile = panel.getList().getSelectedValue();
@@ -380,7 +320,7 @@ public class FileCommanderOperations {
 
     }
     void convertHtmlToPdf(String half)  {
-        FileCommanderListPanel panel =(half.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
+        FileCommanderListPanel panel = getPanelFromHalf(half);
         String htmlFilePath =(String)panel.getList().getSelectedValue();
         if(!htmlFilePath.endsWith(".html")){
             JOptionPane.showMessageDialog(frame,"Please, select html file.","Error",1);
@@ -418,5 +358,10 @@ public class FileCommanderOperations {
         } catch (IOException e) {
             e.printStackTrace();
         }*/
+    }
+    void openSameDir(String half,String anotherHalf){
+        FileCommanderListPanel panel = getPanelFromHalf(half);
+        FileCommanderListPanel anotherPanel = getPanelFromHalf(anotherHalf);
+        panel.getFileCommanderListModel().setSelectedDirectory(anotherPanel.getFileCommanderListModel().getSelectedDirectory());
     }
 }
