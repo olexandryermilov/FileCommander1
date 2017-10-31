@@ -5,7 +5,6 @@ import javax.swing.*;
 public class FileCommanderMenuBar extends JMenuBar {
     JMenu file,operations,help;
     JMenuItem open,edit;
-    //JMenuItem ;
     FileCommanderFrame frame;
     HintPanelActionListener actionListener;
     private void initializeFileItem(){

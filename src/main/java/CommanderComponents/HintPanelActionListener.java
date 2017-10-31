@@ -30,12 +30,10 @@ public class HintPanelActionListener implements ActionListener {
         }
         if(e.getActionCommand().equals("New Folder left")){
             String name = JOptionPane.showInputDialog(frame,"Enter name of new folder","Enter name",1);
-            //System.out.println(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
             if(name!=null)frame.getFileCommanderOperations().createNewFolder(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
         }
         if(e.getActionCommand().equals("New Folder right")){
             String name = JOptionPane.showInputDialog(frame,"Enter name of new folder","Enter name",1);
-            //System.out.println(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
             if(name!=null)frame.getFileCommanderOperations().createNewFolder(frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
         }
         if(e.getActionCommand().equals("Copy left")){
@@ -51,7 +49,7 @@ public class HintPanelActionListener implements ActionListener {
             else
             {
                 int confirmation = JOptionPane.showConfirmDialog(frame,"Do you really want to delete this file?","Confirm action",2);
-                frame.getFileCommanderOperations().deleteFile(path);
+                if(confirmation==0)frame.getFileCommanderOperations().deleteFile(path);
             }
         }
         if(e.getActionCommand().equals("Delete right")){
@@ -61,7 +59,7 @@ public class HintPanelActionListener implements ActionListener {
             }
             else {
                 int confirmation = JOptionPane.showConfirmDialog(frame, "Do you really want to delete this file?", "Confirm action", 2);
-                frame.getFileCommanderOperations().deleteFile(path);
+                if(confirmation==0)frame.getFileCommanderOperations().deleteFile(path);
             }
         }
         if(e.getActionCommand().equals("Remove left")){

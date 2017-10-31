@@ -23,7 +23,6 @@ public class FileCommanderListPanel extends JPanel {
     }
 
     private FileCommanderListModel fileCommanderListModel;
-   ///FileCommanderListController fileCommanderListController;
     private FileCommanderListPanel anotherListPanel;
     private FileCommanderHintPanel hintPanel;
     private JScrollPane scrollPane;

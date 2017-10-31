@@ -2,34 +2,23 @@ package CommanderComponents;
 
 import Adapters.FileSystemObject;
 
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfWriter;
-import org.aioobe.cloudconvert.ProcessStatus;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import javax.swing.*;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.html.HTMLEditorKit;
-import javax.swing.text.rtf.RTFEditorKit;
+
 import java.awt.*;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import com.itextpdf.tool.xml.XMLWorkerHelper;
+
 
 public class FileCommanderOperations {
     private FileCommanderFrame frame;
-    public FileCommanderFrame getFrame(){
-        return frame;
-    }
     FileCommanderOperations(FileCommanderFrame frame){
         this.frame = frame;
     }
-    public FileCommanderOperations(){}
     void setFrame(FileCommanderFrame frame){
         this.frame=frame;
     }
@@ -77,44 +66,6 @@ public class FileCommanderOperations {
     void refreshLists(){
         refreshList(frame.getLeftListPanel(),frame.getLeftListPanel().getFileCommanderListModel().getSelectedExtension());
         refreshList(frame.getRightListPanel(),frame.getRightListPanel().getFileCommanderListModel().getSelectedExtension());
-        /*FileSystemObject selectedDirectoryFile = new FileSystemObject(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
-        if(!selectedDirectoryFile.toString().equals("")){
-            while(!selectedDirectoryFile.exists()){
-                selectedDirectoryFile=new FileSystemObject(selectedDirectoryFile.getParent());
-            }
-            frame.getLeftListPanel().getFileCommanderListModel().setSelectedDirectory(selectedDirectoryFile.toString());
-        }
-        if(!frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory().equals("")){
-            frame.getLeftListPanel().getFileCommanderListModel().getListModel().clear();
-            frame.getLeftListPanel().getFileCommanderListModel().getListModel().addElement("..");
-            for(File file: selectedDirectoryFile.listFiles()){
-                if(file!=null&&!file.isHidden())frame.getLeftListPanel().getFileCommanderListModel().getListModel().addElement(file.toString());
-            }
-        }
-        else
-        {
-            frame.getLeftListPanel().getFileCommanderListModel().getListModel().clear();
-            frame.getLeftListPanel().getFileCommanderListModel().getFileCommanderListController().addRootsToListModel();
-        }
-
-        selectedDirectoryFile = new FileSystemObject(frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory());
-        if(!selectedDirectoryFile.toString().equals("")){
-            while(!selectedDirectoryFile.exists()){
-                selectedDirectoryFile = new FileSystemObject(selectedDirectoryFile.getParent());
-            }
-        }
-        frame.getRightListPanel().getFileCommanderListModel().setSelectedDirectory(selectedDirectoryFile.toString());
-        if(!frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory().equals("")) {
-            frame.getRightListPanel().getFileCommanderListModel().getListModel().clear();
-            frame.getRightListPanel().getFileCommanderListModel().getListModel().addElement("..");
-            for (File file : selectedDirectoryFile.listFiles()) {
-                if(file!=null&&!file.isHidden())frame.getRightListPanel().getFileCommanderListModel().getListModel().addElement(file.toString());
-            }
-        }
-        else{
-            frame.getRightListPanel().getFileCommanderListModel().getListModel().clear();
-            frame.getRightListPanel().getFileCommanderListModel().getFileCommanderListController().addRootsToListModel();
-        }*/
     }
     void createNewFolder(String path){
         if(handleExistingFile(path))return;
@@ -172,7 +123,6 @@ public class FileCommanderOperations {
             FileSystemObject file = new FileSystemObject(path);
             com.sun.jna.platform.FileUtils fileUtils = com.sun.jna.platform.FileUtils.getInstance();
             fileUtils.moveToTrash(new File[] {file});
-            //FileUtils.forceDelete(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -205,9 +155,6 @@ public class FileCommanderOperations {
     void openFile(String path){
         try{
             FileSystemObject file = new FileSystemObject(path);
-            /*Editor.FileEditorFrame editor = new Editor.FileEditorFrame(file);
-            editor.setVisible(true);
-            editor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);*/
             Desktop.getDesktop().open(file);
         }
         catch (Exception e){
@@ -235,6 +182,7 @@ public class FileCommanderOperations {
     void copyFileWithoutRepeatingLines(String from, String to)  {
         FileSystemObject fromFile = new FileSystemObject(from);
         FileSystemObject toFile = new FileSystemObject(to+"\\"+fromFile.getName());
+        handleExistingFile(toFile.toString());
         if(handleExistingFile(toFile.toString()))return;
         try {
             toFile.createNewFile();
@@ -283,28 +231,21 @@ public class FileCommanderOperations {
         filesList.add(new FileSystemObject(htmlFile));
         try{
             org.jsoup.nodes.Document doc = Jsoup.parse(new File(htmlFile),"UTF-8");
-            //System.out.println(doc);
             Elements links = doc.select("a[href]");
             Elements media = doc.select("[src]");
             Elements imports = doc.select("link[href]");
             for(Element src : media){
-                //System.out.println(src.attr("abs:src"));
                 filesList.add(new FileSystemObject(src.attr("abs:src")));
             }
             for(Element link : links){
-                //System.out.println(link.attr("href"));
-                //System.out.println(link.text());
                 filesList.add(new FileSystemObject(link.attr("href")));
             }
             for(Element link : imports){
-                //System.out.println(link.attr("href"));
                 filesList.add(new FileSystemObject(link.attr("abs:href")));
             }
             for(FileSystemObject file : filesList){
-                System.out.println(file);
                 try{
                     String filePath = ((file.toString().startsWith("C:\\"))?"":(panel.getFileCommanderListModel().getSelectedDirectory()+"\\"))+file.toString();
-                    System.out.println(filePath);
                     copyFile(filePath,to);
                 }
                 catch (RuntimeException e){
@@ -345,19 +286,6 @@ public class FileCommanderOperations {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(frame,"Couldn't convert file: "+e.getCause(),"Error",1);
         }
-       /* com.itextpdf.text.Document document = new com.itextpdf.text.Document();
-        try {
-            PdfWriter writer = PdfWriter.getInstance(document,new FileOutputStream(pdfFilePath));
-            document.open();
-            XMLWorkerHelper.getInstance().parseXHtml(writer,document,new FileInputStream(htmlFilePath));
-            document.close();
-        } catch (DocumentException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
     void openSameDir(String half,String anotherHalf){
         FileCommanderListPanel panel = getPanelFromHalf(half);

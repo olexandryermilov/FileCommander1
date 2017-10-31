@@ -1,10 +1,6 @@
 package CommanderComponents;
 
-import CommanderComponents.FileCommanderFrame;
-
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 class FileCommanderHintPanel extends JPanel {
     private FileCommanderFrame frame;

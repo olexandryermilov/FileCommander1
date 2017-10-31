@@ -32,8 +32,6 @@ class FileCommanderListController {
             uploadChildren(file);
         }
         else {
-            System.out.println(frame);
-            //System.out.println(frame.getFileCommanderOperations());
             frame.getFileCommanderOperations().openFile(path);
         }
     }
