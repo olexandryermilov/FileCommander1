@@ -37,10 +37,10 @@ public class HintPanelActionListener implements ActionListener {
             if(name!=null)operations.createNewFolder(frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
         }
         if(e.getActionCommand().equals("Copy left")){
-            operations.copyFromLeft();
+            operations.copyFile("left","right");
         }
         if(e.getActionCommand().equals("Copy right")){
-            operations.copyFromRight();
+            operations.copyFile("right","left");
         }
 
         if(e.getActionCommand().equals("Delete left")){

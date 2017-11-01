@@ -34,15 +34,14 @@ public class FileCommanderOperations {
             }
             if (!handleExistingFile(path)) {
                 boolean isCreated = file.createNewFile();
-                System.out.println(file.createNewFile());
-                if (isCreated) {
+                if (!isCreated) {
                     JOptionPane.showMessageDialog(frame, "Can't create new file", "Error", 1);
                 }
-                refreshLists();
             }
         } catch(IOException e){
             e.printStackTrace();
         }
+
 
     }
     void refreshList(FileCommanderListPanel panel, String extension){
@@ -75,21 +74,11 @@ public class FileCommanderOperations {
         try{
             FileSystemObject file = new FileSystemObject(path);
             FileUtils.forceMkdir(file);
-            refreshLists();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    void copyFromLeft(){
-        String from = frame.getLeftListPanel().getList().getSelectedValue();
-        String to = frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory();
-        copyFile(from,to);
-    }
-    void copyFromRight(){
-        String from = frame.getRightListPanel().getList().getSelectedValue();
-        String to = frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory();
-        copyFile(from,to);
-    }
+
     public void copySelectedExtension(String selectedExtension, String chosenHalf){
         FileCommanderListPanel panel = (chosenHalf.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
         String directory = panel.getFileCommanderListModel().getSelectedDirectory();

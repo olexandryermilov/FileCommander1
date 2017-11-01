@@ -13,11 +13,14 @@ import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 
 public class FileCommanderOperationsFacade {
+    public FileCommanderOperations getOperations() {
+        return operations;
+    }
+
     private FileCommanderOperations operations;
     private FileCommanderFrame frame;
     FileCommanderOperationsFacade(FileCommanderFrame frame){
@@ -27,27 +30,11 @@ public class FileCommanderOperationsFacade {
     void setFrame(FileCommanderFrame frame){
         this.frame=frame;
     }
-    public void createNewFile(String path){
-        try {
-            FileSystemObject file = new FileSystemObject(path);
-            if (file.getExtension().equals("-dir")) {
-                createNewFolder(path);
-                return;
-            }
-            if (!handleExistingFile(path)) {
-                boolean isCreated = file.createNewFile();
-                System.out.println(file.createNewFile());
-                if (isCreated) {
-                    JOptionPane.showMessageDialog(frame, "Can't create new file", "Error", 1);
-                }
-                refreshLists();
-            }
-        } catch(IOException e){
-            e.printStackTrace();
-        }
-
+    public void createNewFile(String half){
+        FileCommanderListPanel panel = getPanelFromHalf(half);
+        operations.createNewFile(panel.getList().getSelectedValue());
     }
-    void refreshList(FileCommanderListPanel panel, String extension){
+    /*void refreshList(FileCommanderListPanel panel, String extension){
         FileSystemObject selectedDirectoryFile = new FileSystemObject(panel.getFileCommanderListModel().getSelectedDirectory());
         if(!selectedDirectoryFile.toString().equals("")){
             while(!selectedDirectoryFile.exists()){
@@ -67,10 +54,9 @@ public class FileCommanderOperationsFacade {
             panel.getFileCommanderListModel().getListModel().clear();
             panel.getFileCommanderListModel().getFileCommanderListController().addRootsToListModel();
         }
-    }
+    }*/
     void refreshLists(){
-        refreshList(frame.getLeftListPanel(),frame.getLeftListPanel().getFileCommanderListModel().getSelectedExtension());
-        refreshList(frame.getRightListPanel(),frame.getRightListPanel().getFileCommanderListModel().getSelectedExtension());
+        operations.refreshLists();
     }
     public void createNewFolder(String path){
         if(handleExistingFile(path))return;
@@ -106,7 +92,11 @@ public class FileCommanderOperationsFacade {
             }
         }
     }
-    public void copyFile(String from, String to){
+    public void copyFile(String half, String anotherHalf){
+        FileCommanderListPanel panel = getPanelFromHalf(half);
+        FileCommanderListPanel anotherPanel = getPanelFromHalf(anotherHalf);
+        String from = panel.getList().getSelectedValue();
+        String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
         operations.copyFile(from,to);
     }
     /*public void copyFile(String from, String to){
@@ -232,7 +222,7 @@ public class FileCommanderOperationsFacade {
         if(selectedItem.equals(".*"))extension="";
         else extension=selectedItem;
         panel.getFileCommanderListModel().setSelectedExtension(extension);
-        refreshList(panel,extension);
+        operations.refreshList(panel,extension);
     }
     FileCommanderListPanel getPanelFromHalf(String half){
         return (half.equals("left"))? frame.getLeftListPanel(): frame.getRightListPanel();

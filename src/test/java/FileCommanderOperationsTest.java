@@ -3,6 +3,7 @@ import CommanderComponents.FileCommanderOperations;
 import CommanderComponents.FileCommanderOperationsFacade;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,13 +21,12 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class FileCommanderOperationsTest {
-    FileCommanderOperationsFacade operations;
+    FileCommanderOperations operations;
     FileCommanderFrame frame;
     private final String TEST_DIR_PATH="C:\\TestDir";
     private File testDir;
@@ -35,7 +35,7 @@ public class FileCommanderOperationsTest {
     private void setupDirectory(){
         testDir=new File(TEST_DIR_PATH);
         testDir.mkdir();
-        sourceDir = new File(TEST_DIR_PATH+"\\TEST_DIR_PATH");
+        sourceDir = new File(TEST_DIR_PATH+"\\source");
         sourceDir.mkdir();
         targetDir=new File(TEST_DIR_PATH+"\\target");
         targetDir.mkdir();
@@ -43,14 +43,33 @@ public class FileCommanderOperationsTest {
     @Before
     public void prepareTesting(){
         frame=new FileCommanderFrame();
-        operations=frame.getFileCommanderOperationsFacade();
+        operations=frame.getFileCommanderOperationsFacade().getOperations();
         setupDirectory();
     }
+
     @Test
     public void createsNewFile(){
         String newFilePath = "test.txt";
-
+        operations.createNewFile(TEST_DIR_PATH+"\\"+newFilePath);
+        assertThat(Arrays.asList(testDir.list()),hasItem(newFilePath));
     }
+
+    @Test
+    public void checksForDirectory(){
+        String newDir = "test";
+        operations.createNewFile(TEST_DIR_PATH+"\\"+newDir);
+        File file = null;
+        for(File f: testDir.listFiles()){
+            //System.out.println(f);
+            if(f.getName().equals(newDir)) {
+                file = f;
+                //System.out.println(file.isDirectory());
+                break;
+            }
+        }
+        assertTrue(file!=null&&file.isDirectory());
+    }
+
     @Test
     public void copiesFile(){
         String fileToCopyPath = "test.txt";
@@ -64,6 +83,9 @@ public class FileCommanderOperationsTest {
         List<String> targetDirChildren = Arrays.asList(targetDir.list());
         assertThat(targetDirChildren,hasItem(fileToCopyPath));
     }
+
+    @Test
+    public void test(){}
     @After
     public void clean(){
         File[] toDelete = new File[1];
