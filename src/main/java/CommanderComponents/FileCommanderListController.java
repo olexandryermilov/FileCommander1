@@ -32,7 +32,7 @@ class FileCommanderListController {
             uploadChildren(file);
         }
         else {
-            frame.getFileCommanderOperations().openFile(path);
+            frame.getFileCommanderOperationsFacade().openFile(path);
         }
     }
     private void uploadParent(){

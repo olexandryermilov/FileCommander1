@@ -14,7 +14,7 @@ public class WatchServiceHelper {
     private volatile Thread watchThread;
     private String currentDirectory;
 
-    WatchServiceHelper(FileCommanderOperations operations, FileCommanderListPanel listPanel) {
+    WatchServiceHelper(FileCommanderOperationsFacade operations, FileCommanderListPanel listPanel) {
 
         try {
             watchService = FileSystems.getDefault().newWatchService();

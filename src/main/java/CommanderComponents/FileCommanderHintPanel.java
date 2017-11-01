@@ -113,7 +113,7 @@ class FileCommanderHintPanel extends JPanel {
         extensionLabel = new JLabel("Select extension filter to show");
         extensionComboBox = new JComboBox<>(extensions);
         extensionComboBox.addActionListener((e -> {
-            frame.getFileCommanderOperations().updateListWithExtension((String)extensionComboBox.getSelectedItem(),half);
+            frame.getFileCommanderOperationsFacade().updateListWithExtension((String)extensionComboBox.getSelectedItem(),half);
         }));
         this.add(extensionLabel);
         this.add(extensionComboBox);

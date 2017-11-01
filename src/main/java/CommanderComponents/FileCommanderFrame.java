@@ -11,7 +11,7 @@ public class FileCommanderFrame extends JFrame{
     private FileCommanderMenuBar menuBar;
     private JPanel mainPanel;
     private FileCommanderListPanel leftListPanel, rightListPanel;
-    private FileCommanderOperations fileCommanderOperations;
+    private FileCommanderOperationsFacade fileCommanderOperationsFacade;
     private JSplitPane splitPane;
 
     private void initializeMainPanel(){
@@ -31,13 +31,13 @@ public class FileCommanderFrame extends JFrame{
         this.setLayout(new GridBagLayout());
         setFrameSize();
         menuBar = new FileCommanderMenuBar(this);
-        this.fileCommanderOperations = new FileCommanderOperations(this);
-        this.fileCommanderOperations.setFrame(this);
+        this.fileCommanderOperationsFacade = new FileCommanderOperationsFacade(this);
+        this.fileCommanderOperationsFacade.setFrame(this);
         leftListPanel = new FileCommanderListPanel(this,"left");
-        leftListPanel.setWatchServiceHelper(new WatchServiceHelper(fileCommanderOperations,leftListPanel));
+        leftListPanel.setWatchServiceHelper(new WatchServiceHelper(fileCommanderOperationsFacade,leftListPanel));
 
         rightListPanel = new FileCommanderListPanel(this,"right");
-        rightListPanel.setWatchServiceHelper(new WatchServiceHelper(fileCommanderOperations,rightListPanel));
+        rightListPanel.setWatchServiceHelper(new WatchServiceHelper(fileCommanderOperationsFacade,rightListPanel));
         leftListPanel.setAnotherListPanel(rightListPanel);
         rightListPanel.setAnotherListPanel(leftListPanel);
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,leftListPanel,rightListPanel);
@@ -54,7 +54,7 @@ public class FileCommanderFrame extends JFrame{
         super.setSize((4 * x) / 5, 4 * y / 5);
     }
 
-    FileCommanderOperations getFileCommanderOperations() {
-        return fileCommanderOperations;
+    public FileCommanderOperationsFacade getFileCommanderOperationsFacade() {
+        return fileCommanderOperationsFacade;
     }
 }

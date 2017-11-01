@@ -17,10 +17,12 @@ import java.util.Iterator;
 import java.util.Map;
 
 
-public class FileCommanderOperations {
+public class FileCommanderOperationsFacade {
+    private FileCommanderOperations operations;
     private FileCommanderFrame frame;
-    FileCommanderOperations(FileCommanderFrame frame){
+    FileCommanderOperationsFacade(FileCommanderFrame frame){
         this.frame = frame;
+        this.operations=new FileCommanderOperations(frame);
     }
     void setFrame(FileCommanderFrame frame){
         this.frame=frame;
@@ -83,12 +85,12 @@ public class FileCommanderOperations {
     void copyFromLeft(){
         String from = frame.getLeftListPanel().getList().getSelectedValue();
         String to = frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory();
-        copyFile(from,to);
+        operations.copyFile(from,to);
     }
     void copyFromRight(){
         String from = frame.getRightListPanel().getList().getSelectedValue();
         String to = frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory();
-        copyFile(from,to);
+        operations.copyFile(from,to);
     }
     public void copySelectedExtension(String selectedExtension, String chosenHalf){
         FileCommanderListPanel panel = (chosenHalf.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
@@ -100,11 +102,14 @@ public class FileCommanderOperations {
         }
         for(File file: new FileSystemObject(directory).listFiles()){
             if(file!=null&&!file.isHidden()&&!file.isDirectory()&&file.toString().endsWith(selectedExtension)){
-                copyFile(file.toString(),to);
+                operations.copyFile(file.toString(),to);
             }
         }
     }
     public void copyFile(String from, String to){
+        operations.copyFile(from,to);
+    }
+    /*public void copyFile(String from, String to){
         try {
             FileSystemObject fileFrom = new FileSystemObject(from);
             FileSystemObject fileTo = new FileSystemObject(to + "\\" + fileFrom.getName());
@@ -120,7 +125,7 @@ public class FileCommanderOperations {
         catch (IOException e){
             e.printStackTrace();
         }
-    }
+    }*/
     public void deleteFile(String path){
         try{
             FileSystemObject file = new FileSystemObject(path);
@@ -134,7 +139,7 @@ public class FileCommanderOperations {
     public void removeFile(String from, String to){
         //if(handleExistingFile(to))return;
         try{
-            copyFile(from,to);
+            operations.copyFile(from,to);
             deleteFile(from);
         }
         catch (Exception e){
@@ -256,7 +261,7 @@ public class FileCommanderOperations {
             for(FileSystemObject file : filesList){
                 try{
                     String filePath = ((file.toString().startsWith("C:\\"))?"":(panel.getFileCommanderListModel().getSelectedDirectory()+"\\"))+file.toString();
-                    copyFile(filePath,to);
+                    operations.copyFile(filePath,to);
                 }
                 catch (RuntimeException e){
                     continue;
