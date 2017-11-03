@@ -3,6 +3,7 @@ import CommanderComponents.FileCommanderFrame;
 import CommanderComponents.FileCommanderListModel;
 import CommanderComponents.FileCommanderOperations;
 import CommanderComponents.WatchServiceHelper;
+import Editor.FileEditorFrame;
 
 import javax.swing.*;
 import java.awt.*;

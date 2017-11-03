@@ -28,6 +28,10 @@ public class FileCommanderListPanel extends JPanel {
     private JScrollPane scrollPane;
     private JSplitPane splitPane;
 
+    public String getHalf() {
+        return half;
+    }
+
     public FileCommanderHintPanel getHintPanel() {
         return hintPanel;
     }

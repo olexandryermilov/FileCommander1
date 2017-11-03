@@ -30,31 +30,11 @@ public class FileCommanderOperationsFacade {
     void setFrame(FileCommanderFrame frame){
         this.frame=frame;
     }
-    public void createNewFile(String half){
+    void createNewFile(String half, String name){
         FileCommanderListPanel panel = getPanelFromHalf(half);
-        operations.createNewFile(panel.getList().getSelectedValue());
+        operations.createNewFile(panel.getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
     }
-    /*void refreshList(FileCommanderListPanel panel, String extension){
-        FileSystemObject selectedDirectoryFile = new FileSystemObject(panel.getFileCommanderListModel().getSelectedDirectory());
-        if(!selectedDirectoryFile.toString().equals("")){
-            while(!selectedDirectoryFile.exists()){
-                selectedDirectoryFile=new FileSystemObject(selectedDirectoryFile.getParent());
-            }
-            panel.getFileCommanderListModel().setSelectedDirectory(selectedDirectoryFile.toString());
-        }
-        if(!panel.getFileCommanderListModel().getSelectedDirectory().equals("")){
-            panel.getFileCommanderListModel().getListModel().clear();
-            panel.getFileCommanderListModel().getListModel().addElement("..");
-            for(File file: selectedDirectoryFile.listFiles()){
-                if(file!=null&&!file.isHidden()&&file.toString().endsWith(extension))panel.getFileCommanderListModel().getListModel().addElement(file.toString());
-            }
-        }
-        else
-        {
-            panel.getFileCommanderListModel().getListModel().clear();
-            panel.getFileCommanderListModel().getFileCommanderListController().addRootsToListModel();
-        }
-    }*/
+
     void refreshLists(){
         operations.refreshLists();
     }
@@ -68,16 +48,7 @@ public class FileCommanderOperationsFacade {
             e.printStackTrace();
         }
     }
-    void copyFromLeft(){
-        String from = frame.getLeftListPanel().getList().getSelectedValue();
-        String to = frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory();
-        operations.copyFile(from,to);
-    }
-    void copyFromRight(){
-        String from = frame.getRightListPanel().getList().getSelectedValue();
-        String to = frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory();
-        operations.copyFile(from,to);
-    }
+
     public void copySelectedExtension(String selectedExtension, String chosenHalf){
         FileCommanderListPanel panel = (chosenHalf.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
         String directory = panel.getFileCommanderListModel().getSelectedDirectory();
@@ -99,23 +70,7 @@ public class FileCommanderOperationsFacade {
         String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
         operations.copyFile(from,to);
     }
-    /*public void copyFile(String from, String to){
-        try {
-            FileSystemObject fileFrom = new FileSystemObject(from);
-            FileSystemObject fileTo = new FileSystemObject(to + "\\" + fileFrom.getName());
-            if(handleExistingFile(fileTo.toString()))return;
-            if (!fileFrom.isDirectory()) FileUtils.copyFile(fileFrom, fileTo);
-            else FileUtils.copyDirectory(fileFrom,fileTo);
-        }
-        catch (FileNotFoundException e){
-            e.printStackTrace();
-            System.out.println("Got here!");
-            JOptionPane.showMessageDialog(frame,"Can't copy file here","Error",1);
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }*/
+
     public void deleteFile(String path){
         try{
             FileSystemObject file = new FileSystemObject(path);
@@ -150,15 +105,12 @@ public class FileCommanderOperationsFacade {
             e.printStackTrace();
         }
     }
-    public void openFile(String path){
-        try{
-            FileSystemObject file = new FileSystemObject(path);
-            Desktop.getDesktop().open(file);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+    void openFile(String half){
+        FileCommanderListPanel panel = getPanelFromHalf(half);
+        String path = panel.getList().getSelectedValue();
+        operations.openFile(path);
     }
+
     private String readLine(InputStream is, boolean flag) throws IOException{
         StringBuilder sb = new StringBuilder();
         char t;
@@ -305,10 +257,11 @@ public class FileCommanderOperationsFacade {
         }
         return true;
     }
-    public void calculateAppearances(String half){
+    void calculateAppearances(String half){
         FileCommanderListPanel panel = getPanelFromHalf(half);
         String path = (panel.getList().getSelectedValue());
-        if(!path.endsWith(".txt")){
+        operations.calculateAppearances(path);
+        /*if(!path.endsWith(".txt")){
             JOptionPane.showMessageDialog(frame,"Should be txt file","Error",1);
             return;
         }
@@ -336,6 +289,6 @@ public class FileCommanderOperationsFacade {
             os.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

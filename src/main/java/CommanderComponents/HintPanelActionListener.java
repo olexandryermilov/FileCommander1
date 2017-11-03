@@ -22,11 +22,11 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("New File left")){
             String name = JOptionPane.showInputDialog(frame,"Enter name of new file","Enter name",1);
             if(name!=null)
-                operations.createNewFile(frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
+                operations.createNewFile("left",name);
         }
         if(e.getActionCommand().equals("New File right")){
             String name = JOptionPane.showInputDialog(frame,"Enter name of new file","Enter name",1);
-            if(name!=null)operations.createNewFile(frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory()+"\\"+name);
+            if(name!=null)operations.createNewFile("right",name);
         }
         if(e.getActionCommand().equals("New Folder left")){
             String name = JOptionPane.showInputDialog(frame,"Enter name of new folder","Enter name",1);
@@ -77,10 +77,10 @@ public class HintPanelActionListener implements ActionListener {
             operations.renameFile(frame.getRightListPanel().getList().getSelectedValue(),name);
         }
         if(e.getActionCommand().equals("Open left")){
-            operations.openFile(frame.getLeftListPanel().getList().getSelectedValue());
+            operations.openFile("left");
         }
         if(e.getActionCommand().equals("Open right")) {
-            operations.openFile(frame.getRightListPanel().getList().getSelectedValue());
+            operations.openFile("right");
         }
         if(e.getActionCommand().equals("Copy without repeating lines left")){
             operations.copyFileWithoutRepeatingLines(frame.getLeftListPanel().getList().getSelectedValue(),frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory());

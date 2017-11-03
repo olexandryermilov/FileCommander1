@@ -2,6 +2,7 @@ package CommanderComponents;
 
 import Adapters.FileSystemObject;
 
+import Editor.FileEditorFrame;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -145,6 +146,9 @@ public class FileCommanderOperations {
         }
     }
     public void openFile(String path){
+        if(path.endsWith(".xlsx")||path.endsWith(".xls")){
+            openTable(path);
+        }
         try{
             FileSystemObject file = new FileSystemObject(path);
             Desktop.getDesktop().open(file);
@@ -299,11 +303,9 @@ public class FileCommanderOperations {
         }
         return true;
     }
-    public void calculateAppearances(String half){
-        FileCommanderListPanel panel = getPanelFromHalf(half);
-        String path = (panel.getList().getSelectedValue());
+    public void calculateAppearances(String path){
         if(!path.endsWith(".txt")){
-            JOptionPane.showMessageDialog(frame,"Should be txt file","Error",1);
+            showErrorMessageBox("Should be txt file");
             return;
         }
         File file = new File(path);
@@ -316,7 +318,6 @@ public class FileCommanderOperations {
                 line = readLine(is,true);
                 String[] words= line.split(" ");
                 for(String word:words){
-                    System.out.println(word);
                     if(!isWord(word))continue;
                     int v =(frequencyMap.containsKey(word))?frequencyMap.get(word):0;
                     frequencyMap.put(word,v+1);
@@ -325,11 +326,27 @@ public class FileCommanderOperations {
             OutputStream os = FileUtils.openOutputStream(resultFile);
             for(Map.Entry<String,Integer> entry : frequencyMap.entrySet()){
                 writeLine(os,entry.getKey()+": "+entry.getValue().toString());
-                System.out.println(entry.getKey());
             }
             os.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            showErrorMessageBox(e.getCause().toString());
+        }
+    }
+    private void showErrorMessageBox(String cause){
+        JOptionPane.showMessageDialog(frame,cause,"Error",1);
+    }
+
+    public void openTable(String path){
+        try {
+            FileSystemObject file = new FileSystemObject(path);
+            FileEditorFrame editorFrame = new FileEditorFrame(file);
+            editorFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            editorFrame.setVisible(true);
+            editorFrame.setLocation(0,0);
+        }
+        catch (RuntimeException e){
+            showErrorMessageBox(e.getCause().toString());
+            return;
         }
     }
 }

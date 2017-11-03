@@ -3,7 +3,7 @@ import CommanderComponents.FileCommanderOperations;
 import CommanderComponents.FileCommanderOperationsFacade;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
-import org.junit.Assert;
+import org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,14 +20,16 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class FileCommanderOperationsTest {
-    FileCommanderOperations operations;
-    FileCommanderFrame frame;
+    private FileCommanderOperations operations;
+    private FileCommanderFrame frame;
     private final String TEST_DIR_PATH="C:\\TestDir";
     private File testDir;
     private File sourceDir;
@@ -84,14 +86,54 @@ public class FileCommanderOperationsTest {
         assertThat(targetDirChildren,hasItem(fileToCopyPath));
     }
 
+    private void writeString(String line,FileOutputStream os){
+        for(int i=0;i<line.length();i++){
+            try{
+                os.write((byte)line.charAt(i));
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
     @Test
-    public void test(){}
+    public void calculatesFrequencies(){
+        String fileToCalculatePath = "test.txt";
+        File file = new File(sourceDir.toString()+"\\"+fileToCalculatePath);
+        try {
+            file.createNewFile();
+            FileOutputStream os = FileUtils.openOutputStream(file);
+            writeString("aaaa aaaa aaaa bb bb c 123",os);
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        operations.calculateAppearances(file.getPath());
+        String rightAnswer = "bb: 2\r\nc: 1\r\naaaa: 3\r\n";
+        String answer="";
+        try{
+            FileInputStream is = FileUtils.openInputStream(new File(file.getPath().
+                                        substring(0,file.getPath().length()-".txt".length())+"resultOfMapping.txt"));
+            StringBuilder sb = new StringBuilder();
+            while(is.available()>0){
+                sb.append((char)is.read());
+            }
+            is.close();
+            answer = new String(sb);
+            System.out.println(answer.length());
+            System.out.println(rightAnswer.length());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        assertTrue(rightAnswer.equals(answer));
+    }
     @After
     public void clean(){
         File[] toDelete = new File[1];
         toDelete[0]=testDir;
         try {
-            com.sun.jna.platform.FileUtils.getInstance().moveToTrash(toDelete);
+            FileUtils.forceDelete(toDelete[0]);
         } catch (IOException e) {
             e.printStackTrace();
         }
