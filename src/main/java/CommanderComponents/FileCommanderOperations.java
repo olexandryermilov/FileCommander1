@@ -148,6 +148,7 @@ public class FileCommanderOperations {
     public void openFile(String path){
         if(path.endsWith(".xlsx")||path.endsWith(".xls")){
             openTable(path);
+            return;
         }
         try{
             FileSystemObject file = new FileSystemObject(path);
@@ -338,11 +339,13 @@ public class FileCommanderOperations {
 
     public void openTable(String path){
         try {
-            FileSystemObject file = new FileSystemObject(path);
-            FileEditorFrame editorFrame = new FileEditorFrame(file);
-            editorFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            editorFrame.setVisible(true);
-            editorFrame.setLocation(0,0);
+            EventQueue.invokeLater(()-> {
+                FileSystemObject file = new FileSystemObject(path);
+                FileEditorFrame editorFrame = new FileEditorFrame(file);
+                editorFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                editorFrame.setVisible(true);
+                editorFrame.setLocation(0, 0);
+            });
         }
         catch (RuntimeException e){
             showErrorMessageBox(e.getCause().toString());
@@ -350,3 +353,4 @@ public class FileCommanderOperations {
         }
     }
 }
+

@@ -102,7 +102,7 @@ class FileCommanderHintPanel extends JPanel {
         initializeCopySelectedExtensionButton();
     }
     private JLabel extensionLabel;
-    private String[] extensions = {".*", ".txt",".jpg",".html",".rtf",".doc",".pdf"};
+    private String[] extensions = {".*", ".txt",".jpg",".html",".rtf",".doc",".pdf",".xlsx"};
 
     public JComboBox<String> getExtensionComboBox() {
         return extensionComboBox;
