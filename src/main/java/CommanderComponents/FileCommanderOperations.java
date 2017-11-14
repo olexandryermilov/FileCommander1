@@ -80,11 +80,7 @@ public class FileCommanderOperations {
         }
     }
 
-    public void copySelectedExtension(String selectedExtension, String chosenHalf){
-        FileCommanderListPanel panel = (chosenHalf.equals("left"))?frame.getLeftListPanel():frame.getRightListPanel();
-        String directory = panel.getFileCommanderListModel().getSelectedDirectory();
-        FileCommanderListPanel anotherPanel = (chosenHalf.equals("right"))?frame.getLeftListPanel():frame.getRightListPanel();
-        String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
+    public void copySelectedExtension(String selectedExtension, String directory, String to){
         if(directory.equals("")||to.equals("")){
             JOptionPane.showMessageDialog(frame,"Can't copy here", "Error",1);
         }
@@ -163,7 +159,7 @@ public class FileCommanderOperations {
         char t;
         do {
             t = (char)is.read();
-            if(flag&&t!='\n'&&t!='\r')sb.append(t);
+            if(t!='\n'&&t!='\r')sb.append(t);
         }while(is.available()>0&&t!='\n');
         return new String(sb);
     }
@@ -200,6 +196,7 @@ public class FileCommanderOperations {
                 }
                 prevLine=line;
             }
+            outputStream.close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -223,17 +220,16 @@ public class FileCommanderOperations {
         panel.getFileCommanderListModel().setSelectedExtension(extension);
         refreshList(panel,extension);
     }
+
+
     FileCommanderListPanel getPanelFromHalf(String half){
         return (half.equals("left"))? frame.getLeftListPanel(): frame.getRightListPanel();
     }
-    public void copyHtmlFile(String chosenHalf){
-        FileCommanderListPanel panel = getPanelFromHalf(chosenHalf);
-        FileCommanderListPanel anotherPanel = (chosenHalf.equals("right"))?frame.getLeftListPanel():frame.getRightListPanel();
-        String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
-        String htmlFile = panel.getList().getSelectedValue();
+    public void copyHtmlFile(String htmlFile, String to){
         ArrayList<FileSystemObject> filesList = new ArrayList<>();
         filesList.add(new FileSystemObject(htmlFile));
         try{
+            System.out.println(new File(htmlFile).exists());
             org.jsoup.nodes.Document doc = Jsoup.parse(new File(htmlFile),"UTF-8");
             Elements links = doc.select("a[href]");
             Elements media = doc.select("[src]");
@@ -249,7 +245,7 @@ public class FileCommanderOperations {
             }
             for(FileSystemObject file : filesList){
                 try{
-                    String filePath = ((file.toString().startsWith("C:\\"))?"":(panel.getFileCommanderListModel().getSelectedDirectory()+"\\"))+file.toString();
+                    String filePath = ((file.toString().startsWith("C:\\"))?"":(new File(htmlFile).getParent()+"\\"))+file.toString();
                     copyFile(filePath,to);
                 }
                 catch (RuntimeException e){
@@ -257,12 +253,10 @@ public class FileCommanderOperations {
                 }
             }
             Element title = doc.select("title").first();
-            JOptionPane.showMessageDialog(frame,title.text(),"Title",1);
-
+            //JOptionPane.showMessageDialog(frame,title.text(),"Title",1);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
     public void convertHtmlToPdf(String half)  {
         FileCommanderListPanel panel = getPanelFromHalf(half);
@@ -351,6 +345,10 @@ public class FileCommanderOperations {
             showErrorMessageBox(e.getCause().toString());
             return;
         }
+    }
+    private void newXlsxFile(String path){
+           createNewFile(path);
+           openTable(path);
     }
 }
 

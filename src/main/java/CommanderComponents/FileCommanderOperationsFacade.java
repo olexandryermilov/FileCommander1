@@ -54,14 +54,7 @@ public class FileCommanderOperationsFacade {
         String directory = panel.getFileCommanderListModel().getSelectedDirectory();
         FileCommanderListPanel anotherPanel = (chosenHalf.equals("right"))?frame.getLeftListPanel():frame.getRightListPanel();
         String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
-        if(directory.equals("")||to.equals("")){
-            JOptionPane.showMessageDialog(frame,"Can't copy here", "Error",1);
-        }
-        for(File file: new FileSystemObject(directory).listFiles()){
-            if(file!=null&&!file.isHidden()&&!file.isDirectory()&&file.toString().endsWith(selectedExtension)){
-                operations.copyFile(file.toString(),to);
-            }
-        }
+        operations.copySelectedExtension(selectedExtension,directory,to);
     }
     public void copyFile(String half, String anotherHalf){
         FileCommanderListPanel panel = getPanelFromHalf(half);
@@ -136,27 +129,12 @@ public class FileCommanderOperationsFacade {
             e.printStackTrace();
         }
     }
-    public void copyFileWithoutRepeatingLines(String from, String to)  {
-        FileSystemObject fromFile = new FileSystemObject(from);
-        FileSystemObject toFile = new FileSystemObject(to+"\\"+fromFile.getName());
-        handleExistingFile(toFile.toString());
-        if(handleExistingFile(toFile.toString()))return;
-        try {
-            toFile.createNewFile();
-            InputStream inputStream =FileUtils.openInputStream(fromFile);
-            OutputStream outputStream =  FileUtils.openOutputStream(toFile);
-            String prevLine = null;
-            while(inputStream.available()>0){
-                String line = readLine(inputStream,false);
-                if(prevLine == null || !line.equals(prevLine)){
-                    writeLine(outputStream,line);
-                }
-                prevLine=line;
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void copyFileWithoutRepeatingLines(String half, String anotherHalf)  {
+        FileCommanderListPanel panel = getPanelFromHalf(half);
+        FileCommanderListPanel anotherPanel = getPanelFromHalf(anotherHalf);
+        String from = panel.getList().getSelectedValue();
+        String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
+        operations.copyFileWithoutRepeatingLines(from,to);
     }
 
     private boolean handleExistingFile(String path){
@@ -184,38 +162,7 @@ public class FileCommanderOperationsFacade {
         FileCommanderListPanel anotherPanel = (chosenHalf.equals("right"))?frame.getLeftListPanel():frame.getRightListPanel();
         String to = anotherPanel.getFileCommanderListModel().getSelectedDirectory();
         String htmlFile = panel.getList().getSelectedValue();
-        ArrayList<FileSystemObject> filesList = new ArrayList<>();
-        filesList.add(new FileSystemObject(htmlFile));
-        try{
-            org.jsoup.nodes.Document doc = Jsoup.parse(new File(htmlFile),"UTF-8");
-            Elements links = doc.select("a[href]");
-            Elements media = doc.select("[src]");
-            Elements imports = doc.select("link[href]");
-            for(Element src : media){
-                filesList.add(new FileSystemObject(src.attr("abs:src")));
-            }
-            for(Element link : links){
-                filesList.add(new FileSystemObject(link.attr("href")));
-            }
-            for(Element link : imports){
-                filesList.add(new FileSystemObject(link.attr("abs:href")));
-            }
-            for(FileSystemObject file : filesList){
-                try{
-                    String filePath = ((file.toString().startsWith("C:\\"))?"":(panel.getFileCommanderListModel().getSelectedDirectory()+"\\"))+file.toString();
-                    operations.copyFile(filePath,to);
-                }
-                catch (RuntimeException e){
-                    continue;
-                }
-            }
-            Element title = doc.select("title").first();
-            JOptionPane.showMessageDialog(frame,title.text(),"Title",1);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        operations.copyHtmlFile(htmlFile,to);
     }
     public void convertHtmlToPdf(String half)  {
         FileCommanderListPanel panel = getPanelFromHalf(half);
@@ -261,34 +208,5 @@ public class FileCommanderOperationsFacade {
         FileCommanderListPanel panel = getPanelFromHalf(half);
         String path = (panel.getList().getSelectedValue());
         operations.calculateAppearances(path);
-        /*if(!path.endsWith(".txt")){
-            JOptionPane.showMessageDialog(frame,"Should be txt file","Error",1);
-            return;
-        }
-        File file = new File(path);
-        File resultFile = new File(path.substring(0,path.length()-".txt".length())+"resultOfMapping.txt");
-        String line;
-        HashMap<String, Integer> frequencyMap = new HashMap<>();
-        try {
-            InputStream is = FileUtils.openInputStream(file);
-            while(is.available()>0){
-                line = readLine(is,true);
-                String[] words= line.split(" ");
-                for(String word:words){
-                    System.out.println(word);
-                    if(!isWord(word))continue;
-                    int v =(frequencyMap.containsKey(word))?frequencyMap.get(word):0;
-                    frequencyMap.put(word,v+1);
-                }
-            }
-            OutputStream os = FileUtils.openOutputStream(resultFile);
-            for(Map.Entry<String,Integer> entry : frequencyMap.entrySet()){
-                writeLine(os,entry.getKey()+": "+entry.getValue().toString());
-                System.out.println(entry.getKey());
-            }
-            os.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 }

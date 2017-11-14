@@ -83,10 +83,10 @@ public class HintPanelActionListener implements ActionListener {
             operations.openFile("right");
         }
         if(e.getActionCommand().equals("Copy without repeating lines left")){
-            operations.copyFileWithoutRepeatingLines(frame.getLeftListPanel().getList().getSelectedValue(),frame.getRightListPanel().getFileCommanderListModel().getSelectedDirectory());
+            operations.copyFileWithoutRepeatingLines("left","right");
         }
         if(e.getActionCommand().equals("Copy without repeating lines right")) {
-            operations.copyFileWithoutRepeatingLines(frame.getRightListPanel().getList().getSelectedValue(),frame.getLeftListPanel().getFileCommanderListModel().getSelectedDirectory());
+            operations.copyFileWithoutRepeatingLines("left","right");
         }
         if(e.getActionCommand().equals("Html to PDF left")){
             operations.convertHtmlToPdf("left");
