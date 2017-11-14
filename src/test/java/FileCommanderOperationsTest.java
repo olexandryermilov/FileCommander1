@@ -171,7 +171,6 @@ public class FileCommanderOperationsTest {
                 "</body>";
         String htmlFilePath = "test.html";
         File htmlFile = new File(sourceDir.toString()+"\\"+htmlFilePath);
-        System.out.println(htmlFile.toString());
         File aFile = new File(sourceDir.toString()+"\\a.txt");
         try {
             operations.createNewFile(htmlFile.toString());
@@ -219,6 +218,14 @@ public class FileCommanderOperationsTest {
         operations.copySelectedExtension(".txt",sourceDir.toString(),targetDir.toString());
         List<String> targetDirChildren = Arrays.asList(targetDir.list());
         assertThat(targetDirChildren,not(hasItem("a3.html")));
+    }
+    @Test
+    public void convertsFileToPdf(){
+        File file = new File(testDir.toString()+"\\"+"test.html");
+        operations.createNewFile(file.toString());
+        operations.convertHtmlToPdf(file.toString());
+        List<String> testDirChildren = Arrays.asList(testDir.list());
+        assertThat(testDirChildren,hasItem("test.pdf"));
     }
     @After
     public void clean(){

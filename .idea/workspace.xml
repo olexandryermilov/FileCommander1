@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8bccdd8a-5dc6-484e-8dd9-9fa0fce93d51" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderOperations.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/FileCommanderOperations.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/CommanderComponents/HintPanelActionListener.class" afterPath="$PROJECT_DIR$/out/production/classes/CommanderComponents/HintPanelActionListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/Editor/FileEditorFrame.class" afterPath="$PROJECT_DIR$/out/production/classes/Editor/FileEditorFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/FileCommander_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/FileCommander_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/FileCommander_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/FileCommander_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" afterPath="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java" afterPath="$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java" afterPath="$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java" />
     </list>
@@ -35,23 +30,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FileCommanderOperations.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileCommanderOperations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="234" column="12" lean-forward="false" selection-start-line="234" selection-start-column="12" selection-end-line="234" selection-end-column="12" />
+            <state relative-caret-position="-1355">
+              <caret line="230" column="12" lean-forward="false" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#refreshList#0;class#FileCommanderOperations#0" expanded="false" />
                 <element signature="method#refreshLists#0;class#FileCommanderOperations#0" expanded="false" />
                 <element signature="method#createNewFolder#0;class#FileCommanderOperations#0" expanded="false" />
-                <element signature="method#copySelectedExtension#0;class#FileCommanderOperations#0" expanded="false" />
-                <element signature="method#copyFile#0;class#FileCommanderOperations#0" expanded="false" />
                 <element signature="method#deleteFile#0;class#FileCommanderOperations#0" expanded="false" />
                 <element signature="method#removeFile#0;class#FileCommanderOperations#0" expanded="false" />
                 <element signature="method#renameFile#0;class#FileCommanderOperations#0" expanded="false" />
+                <element signature="method#openFile#0;class#FileCommanderOperations#0" expanded="false" />
+                <element signature="method#readLine#0;class#FileCommanderOperations#0" expanded="false" />
                 <element signature="method#handleExistingFile#0;class#FileCommanderOperations#0" expanded="false" />
-                <element signature="method#convertHtmlToPdf#0;class#FileCommanderOperations#0" expanded="false" />
                 <element signature="method#openSameDir#0;class#FileCommanderOperations#0" expanded="false" />
                 <element signature="method#isWord#0;class#FileCommanderOperations#0" expanded="false" />
               </folding>
@@ -59,39 +53,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileCommanderListPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-43">
-              <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-              <folding>
-                <element signature="e#975#976#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileCommanderHintPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileCommanderOperationsTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FileCommanderOperationsTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="171" column="73" lean-forward="false" selection-start-line="171" selection-start-column="73" selection-end-line="171" selection-end-column="73" />
+            <state relative-caret-position="-250">
+              <caret line="168" column="28" lean-forward="true" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#createsNewFile#0;class#FileCommanderOperationsTest#0" expanded="false" />
-                <element signature="method#checksForDirectory#0;class#FileCommanderOperationsTest#0" expanded="false" />
                 <element signature="method#writeString#0;class#FileCommanderOperationsTest#0" expanded="false" />
-                <element signature="method#calculatesFrequencies#0;class#FileCommanderOperationsTest#0" expanded="false" />
                 <element signature="method#clean#0;class#FileCommanderOperationsTest#0" expanded="false" />
               </folding>
             </state>
@@ -101,7 +70,7 @@
       <file leaf-file-name="FileEditorFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="2635">
               <caret line="155" column="10" lean-forward="false" selection-start-line="155" selection-start-column="10" selection-end-line="155" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -113,8 +82,8 @@
       <file leaf-file-name="FileCommanderOperationsFacade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="166" column="48" lean-forward="false" selection-start-line="166" selection-start-column="48" selection-end-line="166" selection-end-column="48" />
+            <state relative-caret-position="1717">
+              <caret line="169" column="48" lean-forward="false" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#createNewFolder#0;class#FileCommanderOperationsFacade#0" expanded="false" />
@@ -124,7 +93,6 @@
                 <element signature="method#writeLine#0;class#FileCommanderOperationsFacade#0" expanded="false" />
                 <element signature="method#handleExistingFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
                 <element signature="method#getPanelFromHalf#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-                <element signature="method#convertHtmlToPdf#0;class#FileCommanderOperationsFacade#0" expanded="false" />
                 <element signature="method#openSameDir#0;class#FileCommanderOperationsFacade#0" expanded="false" />
                 <element signature="method#isWord#0;class#FileCommanderOperationsFacade#0" expanded="false" />
               </folding>
@@ -135,7 +103,7 @@
       <file leaf-file-name="HintPanelActionListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
+            <state relative-caret-position="1428">
               <caret line="88" column="66" lean-forward="false" selection-start-line="88" selection-start-column="66" selection-end-line="88" selection-end-column="66" />
               <folding />
             </state>
@@ -159,6 +127,7 @@
       <find>writeLine</find>
       <find>ref</find>
       <find>cop</find>
+      <find>pdf</find>
     </findStrings>
     <replaceStrings>
       <replace>operations</replace>
@@ -482,8 +451,8 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java" />
         <option value="$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" />
       </list>
@@ -516,6 +485,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -582,10 +554,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -837,15 +806,17 @@
       <workItem from="1510324871682" duration="4480000" />
       <workItem from="1510591751121" duration="1221000" />
       <workItem from="1510610067684" duration="5333000" />
+      <workItem from="1510660455318" duration="961000" />
+      <workItem from="1510666018902" duration="691000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FileCommanderOperationsTest_copiesHtmlFile - 2017.11.14 at 01h 10m 57s.xml">
-      <configuration name="FileCommanderOperationsTest.copiesHtmlFile" configurationId="JUnit" />
+    <history-entry file="FileCommanderOperationsTest - 2017.11.14 at 15h 24m 21s.xml">
+      <configuration name="FileCommanderOperationsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileCommanderOperationsTest_copiesHtmlFile - 2017.11.14 at 01h 11m 19s.xml">
-      <configuration name="FileCommanderOperationsTest.copiesHtmlFile" configurationId="JUnit" />
+    <history-entry file="FileCommanderOperationsTest - 2017.11.14 at 15h 29m 02s.xml">
+      <configuration name="FileCommanderOperationsTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="FileCommanderOperationsTest_copiesHtmlFile - 2017.11.14 at 01h 13m 09s.xml">
       <configuration name="FileCommanderOperationsTest.copiesHtmlFile" configurationId="JUnit" />
@@ -873,7 +844,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119208000" />
+    <option name="totallyTimeSpent" value="120860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -888,12 +859,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3534073" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40412045" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29575402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16544656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -956,12 +927,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java</url>
-          <line>148</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java</url>
           <line>126</line>
           <properties />
@@ -973,14 +938,8 @@
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java</url>
-          <line>161</line>
-          <properties />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1033,7 +992,6 @@
             <element signature="method#writeLine#0;class#FileCommanderOperationsFacade#0" expanded="false" />
             <element signature="method#handleExistingFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
             <element signature="method#getPanelFromHalf#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#convertHtmlToPdf#0;class#FileCommanderOperationsFacade#0" expanded="false" />
             <element signature="method#openSameDir#0;class#FileCommanderOperationsFacade#0" expanded="false" />
             <element signature="method#isWord#0;class#FileCommanderOperationsFacade#0" expanded="false" />
           </folding>
@@ -1073,13 +1031,12 @@
             <element signature="method#refreshList#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#refreshLists#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#createNewFolder#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#copySelectedExtension#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#copyFile#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#deleteFile#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#removeFile#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#renameFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#openFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#readLine#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#handleExistingFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#convertHtmlToPdf#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#openSameDir#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#isWord#0;class#FileCommanderOperations#0" expanded="false" />
           </folding>
@@ -1130,13 +1087,12 @@
             <element signature="method#refreshList#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#refreshLists#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#createNewFolder#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#copySelectedExtension#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#copyFile#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#deleteFile#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#removeFile#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#renameFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#openFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#readLine#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#handleExistingFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#convertHtmlToPdf#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#openSameDir#0;class#FileCommanderOperations#0" expanded="false" />
             <element signature="method#isWord#0;class#FileCommanderOperations#0" expanded="false" />
           </folding>
@@ -1341,7 +1297,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
+        <state relative-caret-position="1428">
           <caret line="88" column="66" lean-forward="false" selection-start-line="88" selection-start-column="66" selection-end-line="88" selection-end-column="66" />
           <folding />
         </state>
@@ -1349,7 +1305,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="2635">
           <caret line="155" column="10" lean-forward="false" selection-start-line="155" selection-start-column="10" selection-end-line="155" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1357,10 +1313,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding>
+            <element signature="e#975#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="115" column="44" lean-forward="false" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="166" column="48" lean-forward="false" selection-start-line="166" selection-start-column="48" selection-end-line="166" selection-end-column="48" />
+        <state relative-caret-position="1717">
+          <caret line="169" column="48" lean-forward="false" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createNewFolder#0;class#FileCommanderOperationsFacade#0" expanded="false" />
@@ -1370,64 +1344,41 @@
             <element signature="method#writeLine#0;class#FileCommanderOperationsFacade#0" expanded="false" />
             <element signature="method#handleExistingFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
             <element signature="method#getPanelFromHalf#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#convertHtmlToPdf#0;class#FileCommanderOperationsFacade#0" expanded="false" />
             <element signature="method#openSameDir#0;class#FileCommanderOperationsFacade#0" expanded="false" />
             <element signature="method#isWord#0;class#FileCommanderOperationsFacade#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        <state relative-caret-position="-1355">
+          <caret line="230" column="12" lean-forward="false" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="12" />
           <folding>
-            <element signature="e#975#976#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#refreshList#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#refreshLists#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#createNewFolder#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#deleteFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#removeFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#renameFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#openFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#readLine#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#handleExistingFile#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#openSameDir#0;class#FileCommanderOperations#0" expanded="false" />
+            <element signature="method#isWord#0;class#FileCommanderOperations#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="171" column="73" lean-forward="false" selection-start-line="171" selection-start-column="73" selection-end-line="171" selection-end-column="73" />
+        <state relative-caret-position="-250">
+          <caret line="168" column="28" lean-forward="true" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createsNewFile#0;class#FileCommanderOperationsTest#0" expanded="false" />
-            <element signature="method#checksForDirectory#0;class#FileCommanderOperationsTest#0" expanded="false" />
             <element signature="method#writeString#0;class#FileCommanderOperationsTest#0" expanded="false" />
-            <element signature="method#calculatesFrequencies#0;class#FileCommanderOperationsTest#0" expanded="false" />
             <element signature="method#clean#0;class#FileCommanderOperationsTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="234" column="12" lean-forward="false" selection-start-line="234" selection-start-column="12" selection-end-line="234" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#refreshList#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#refreshLists#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#createNewFolder#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#copySelectedExtension#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#copyFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#deleteFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#removeFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#renameFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#handleExistingFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#convertHtmlToPdf#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#openSameDir#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#isWord#0;class#FileCommanderOperations#0" expanded="false" />
           </folding>
         </state>
       </provider>

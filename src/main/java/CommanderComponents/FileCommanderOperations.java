@@ -94,7 +94,7 @@ public class FileCommanderOperations {
         try {
             FileSystemObject fileFrom = new FileSystemObject(from);
             FileSystemObject fileTo = new FileSystemObject(to + "\\" + fileFrom.getName());
-            if(handleExistingFile(fileTo.toString()))return;
+            //if(handleExistingFile(fileTo.toString()))return;
             if (!fileFrom.isDirectory()) FileUtils.copyFile(fileFrom, fileTo);
             else FileUtils.copyDirectory(fileFrom,fileTo);
         }
@@ -229,7 +229,6 @@ public class FileCommanderOperations {
         ArrayList<FileSystemObject> filesList = new ArrayList<>();
         filesList.add(new FileSystemObject(htmlFile));
         try{
-            System.out.println(new File(htmlFile).exists());
             org.jsoup.nodes.Document doc = Jsoup.parse(new File(htmlFile),"UTF-8");
             Elements links = doc.select("a[href]");
             Elements media = doc.select("[src]");
@@ -258,9 +257,7 @@ public class FileCommanderOperations {
             e.printStackTrace();
         }
     }
-    public void convertHtmlToPdf(String half)  {
-        FileCommanderListPanel panel = getPanelFromHalf(half);
-        String htmlFilePath =(String)panel.getList().getSelectedValue();
+    public void convertHtmlToPdf(String htmlFilePath)  {
         if(!htmlFilePath.endsWith(".html")){
             JOptionPane.showMessageDialog(frame,"Please, select html file.","Error",1);
             return;

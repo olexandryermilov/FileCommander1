@@ -167,29 +167,7 @@ public class FileCommanderOperationsFacade {
     public void convertHtmlToPdf(String half)  {
         FileCommanderListPanel panel = getPanelFromHalf(half);
         String htmlFilePath =(String)panel.getList().getSelectedValue();
-        if(!htmlFilePath.endsWith(".html")){
-            JOptionPane.showMessageDialog(frame,"Please, select html file.","Error",1);
-            return;
-        }
-        String pdfFilePath =htmlFilePath.substring(0,htmlFilePath.length()-"html".length())+"pdf";
-        System.out.println(pdfFilePath);
-        File pdfFile = new File(pdfFilePath);
-        File htmlFile = new File(htmlFilePath);
-        Runtime runtime = Runtime.getRuntime();
-        try {
-            Process process = runtime.exec("C:\\programming\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe C:\\programming\\phantomjs-2.1.1-windows\\examples\\rasterize.js "+
-                    htmlFile.getName()+" "+pdfFile.getName(),null,htmlFile.getParentFile());
-            BufferedReader input =
-                    new BufferedReader
-                            (new InputStreamReader(process.getInputStream()));
-            String line;
-            while ((line = input.readLine()) != null) {
-                System.out.println(line);
-            }
-            input.close();
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(frame,"Couldn't convert file: "+e.getCause(),"Error",1);
-        }
+        operations.convertHtmlToPdf(htmlFilePath);
     }
     public void openSameDir(String half, String anotherHalf){
         FileCommanderListPanel panel = getPanelFromHalf(half);
