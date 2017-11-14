@@ -7,6 +7,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.swing.*;
 import javax.swing.table.TableModel;
 import java.awt.*;
@@ -16,10 +18,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
+import java.util.*;
+import groovy.util.Eval;
+
 
 
 public class FileEditorFrame extends JFrame {
@@ -70,11 +71,11 @@ public class FileEditorFrame extends JFrame {
         XSSFRow row = sheet.createRow(0);
         TableModel model = table.getModel();
         for (int i = 0; i < model.getColumnCount(); i++) {
-            row.createCell(i).setCellValue(model.getColumnName(i+1));
+            if(i<WIDTH&&i<HEIGHT)row.createCell(i).setCellValue(model.getColumnName(i+1));
         }
-        for (int i = 0; i < model.getRowCount(); i++) {
+        for (int i = 0; i+1 < model.getRowCount(); i++) {
             row = sheet.createRow(i + 1);
-            for (int j = 0; j < model.getColumnCount(); j++) {
+            for (int j = 0; j+1 < model.getColumnCount(); j++) {
                 row.createCell(j).setCellValue(
                         model.getValueAt(i+1, j).toString()
                 );
@@ -142,14 +143,10 @@ public class FileEditorFrame extends JFrame {
         initializeTable();
         //initializeMenuBar();
         addListener();
-        try{
-            openFile();
-        }
-         catch (IOException e) {
-            e.printStackTrace();
-        }
         this.add(mainPanel);
     }
+
+
 //todo:add message is file exits
 }
 
