@@ -4,6 +4,8 @@ import CommanderComponents.FileCommanderListModel;
 import CommanderComponents.FileCommanderOperations;
 import CommanderComponents.WatchServiceHelper;
 import Editor.FileEditorFrame;
+import Editor.FileEditorMenuBar;
+import groovy.util.Eval;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +16,6 @@ public class Main {
 
     static FileCommanderFrame frame;
     public static void main(String args[]) {
-
         EventQueue.invokeLater(()-> {
             frame = new FileCommanderFrame();
             frame.setVisible(true);
