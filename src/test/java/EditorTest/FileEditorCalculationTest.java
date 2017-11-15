@@ -1,3 +1,5 @@
+package EditorTest;
+
 import Editor.FileEditorController;
 import Editor.FileEditorModel;
 import com.sun.jna.platform.win32.OaIdl;
@@ -108,6 +110,13 @@ public class FileEditorCalculationTest {
     public void findMaximumFromArray(){
         final String EXPRESSION = "max(3,2,7,18)";
         BigDecimal RIGHT_ANSWER = new BigDecimal(18);
+        BigDecimal answer = controller.calculateExpression(EXPRESSION);
+        assertTrue(compareBigDecimal(RIGHT_ANSWER,answer));
+    }
+    @Test
+    public void treatsIntDiv(){
+        final String EXPRESSION = "3 div 2";
+        BigDecimal RIGHT_ANSWER = new BigDecimal(1);
         BigDecimal answer = controller.calculateExpression(EXPRESSION);
         assertTrue(compareBigDecimal(RIGHT_ANSWER,answer));
     }

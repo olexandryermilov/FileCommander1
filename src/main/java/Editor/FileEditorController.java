@@ -3,7 +3,6 @@ package Editor;
 import groovy.util.Eval;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.Map;
 
 public class FileEditorController {
@@ -32,10 +31,24 @@ public class FileEditorController {
     }
     public BigDecimal calculateExpression(String exp) throws ArithmeticException{
         exp = exp.replaceAll("\\u005E","**");
+        exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
         StringBuilder values = new StringBuilder();
         for(Map.Entry<String,Double> entry : model.getCellsValues().entrySet()){
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
         }
         return (BigDecimal)((Eval.me(min+max+new String(values) + "\n return 1.0*("+exp+")")));
+    }
+    public Boolean calculateBooleanExpression(String exp){
+        exp = exp.replaceAll("\\u005E","**");
+        exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
+        exp = exp.replaceAll("(\\s)*XOR\\s*","^");
+        exp = exp.replaceAll("(\\s)*AND\\s*","&");
+        exp = exp.replaceAll("(\\s)*NOT\\s*","!");
+        exp = exp.replaceAll("(\\s)*OR\\s*","|");
+        StringBuilder values = new StringBuilder();
+        for(Map.Entry<String,Double> entry : model.getCellsValues().entrySet()){
+            values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
+        }
+        return (Boolean)((Eval.me(min+max+new String(values) + "\n return ("+exp+")")));
     }
 }
