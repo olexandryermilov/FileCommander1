@@ -130,4 +130,16 @@ public class BooleanCalculationTests {
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
         assertEquals(answer,RIGHT_ANSWER);
     }
+    @Test(expected = org.codehaus.groovy.control.MultipleCompilationErrorsException.class)
+    public void showsErrorWhenCalculatingSomeNonsense(){
+        final String EXPRESSION="5 XAND 3";
+        controller.calculateBooleanExpression(EXPRESSION);
+    }
+    @Test
+    public void understandsLowercase(){
+        final String EXPRESSION = "(1 and (0 xor 1))or(not 1)";
+        boolean RIGHT_ANSWER = true;
+        boolean answer = controller.calculateBooleanExpression(EXPRESSION);
+        assertEquals(RIGHT_ANSWER,answer);
+    }
 }

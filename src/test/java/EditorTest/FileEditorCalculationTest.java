@@ -54,7 +54,6 @@ public class FileEditorCalculationTest {
         final String EXPRESSION = "max(1,2)*3";
         final BigDecimal RIGHT_ANSWER = new BigDecimal(6.0);
         BigDecimal answer = controller.calculateExpression(EXPRESSION);
-        System.out.println(answer);
         assertTrue(compareBigDecimal(RIGHT_ANSWER,answer));
     }
     @Test
@@ -113,13 +112,7 @@ public class FileEditorCalculationTest {
         BigDecimal answer = controller.calculateExpression(EXPRESSION);
         assertTrue(compareBigDecimal(RIGHT_ANSWER,answer));
     }
-    @Test
-    public void treatsIntDiv(){
-        final String EXPRESSION = "3 div 2";
-        BigDecimal RIGHT_ANSWER = new BigDecimal(1);
-        BigDecimal answer = controller.calculateExpression(EXPRESSION);
-        assertTrue(compareBigDecimal(RIGHT_ANSWER,answer));
-    }
+
     @Test
     public void calculatesBigExpressionsWithAllOperations(){
         model.getCellsValues().put("A1",3.0);
@@ -128,5 +121,17 @@ public class FileEditorCalculationTest {
         final BigDecimal RIGHT_ANSWER = new BigDecimal( 103.8333333333);
         BigDecimal answer = controller.calculateExpression(EXPRESSION);
         assertTrue(compareBigDecimal(answer,RIGHT_ANSWER));
+    }
+    @Test
+    public void calculatesBigExpressionsWithAllOperationsAndBrackets(){
+        final String EXPRESSION = "5 * (-3)*(-2)+min(max(6, 9), -5)";
+        final BigDecimal RIGHT_ANSWER = new BigDecimal(25.0);
+        BigDecimal answer = controller.calculateExpression(EXPRESSION);
+        assertTrue(compareBigDecimal(answer,RIGHT_ANSWER));
+    }
+    @Test(expected = org.codehaus.groovy.control.MultipleCompilationErrorsException.class)
+    public void showsErrorWhenCalculatingSomeNonsense(){
+        final String EXPRESSION="5 div 3";
+        controller.calculateExpression(EXPRESSION);
     }
 }

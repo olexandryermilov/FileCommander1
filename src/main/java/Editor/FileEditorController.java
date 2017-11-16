@@ -31,7 +31,7 @@ public class FileEditorController {
     }
     public BigDecimal calculateExpression(String exp) throws ArithmeticException{
         exp = exp.replaceAll("\\u005E","**");
-        exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
+        //exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
         StringBuilder values = new StringBuilder();
         for(Map.Entry<String,Double> entry : model.getCellsValues().entrySet()){
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
@@ -40,11 +40,14 @@ public class FileEditorController {
     }
     public Boolean calculateBooleanExpression(String exp){
         exp = exp.replaceAll("\\u005E","**");
-        exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
         exp = exp.replaceAll("(\\s)*XOR\\s*","^");
-        exp = exp.replaceAll("(\\s)*AND\\s*","&");
+        exp = exp.replaceAll("(\\s)*AND\\s*","&&");
         exp = exp.replaceAll("(\\s)*NOT\\s*","!");
-        exp = exp.replaceAll("(\\s)*OR\\s*","|");
+        exp = exp.replaceAll("(\\s)*OR\\s*","||");
+        exp = exp.replaceAll("(\\s)*xor\\s*","^");
+        exp = exp.replaceAll("(\\s)*and\\s*","&&");
+        exp = exp.replaceAll("(\\s)*not\\s*","!");
+        exp = exp.replaceAll("(\\s)*or\\s*","||");
         StringBuilder values = new StringBuilder();
         for(Map.Entry<String,Double> entry : model.getCellsValues().entrySet()){
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
