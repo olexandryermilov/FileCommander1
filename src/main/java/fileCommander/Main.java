@@ -1,16 +1,9 @@
-import Adapters.FileSystemObject;
-import CommanderComponents.FileCommanderFrame;
-import CommanderComponents.FileCommanderListModel;
-import CommanderComponents.FileCommanderOperations;
-import CommanderComponents.WatchServiceHelper;
-import Editor.FileEditorFrame;
-import Editor.FileEditorMenuBar;
-import groovy.util.Eval;
+package fileCommander;
+
+import commanderComponents.FileCommanderFrame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.nio.file.*;
 
 public class Main {
 

@@ -1,9 +1,9 @@
-import CommanderComponents.FileCommanderFrame;
-import CommanderComponents.FileCommanderOperations;
-import CommanderComponents.FileCommanderOperationsFacade;
+package commanderTest;
+
+import commanderComponents.FileCommanderFrame;
+import commanderComponents.FileCommanderOperations;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
-import org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 

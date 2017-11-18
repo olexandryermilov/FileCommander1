@@ -2,10 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bccdd8a-5dc6-484e-8dd9-9fa0fce93d51" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/editor/ExpressionConstraints.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/editorTest/CheckingExpressionTypeTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/Main.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Adapters/Actions.java" afterPath="$PROJECT_DIR$/src/main/java/adapters/Actions.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Adapters/FileSystemObject.java" afterPath="$PROJECT_DIR$/src/main/java/adapters/FileSystemObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Adapters/GridBagConstraintsAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/adapters/GridBagConstraintsAdapter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderFrame.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderFrame.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderHintPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderListController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListModel.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderListModel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderListPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderMenuBar.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderMenuBar.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderOperations.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderOperationsFacade.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/HintPanelActionListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/CommanderComponents/WatchServiceHelper.java" afterPath="$PROJECT_DIR$/src/main/java/commanderComponents/WatchServiceHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Editor/FileEditorController.java" afterPath="$PROJECT_DIR$/src/main/java/editor/FileEditorController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java" afterPath="$PROJECT_DIR$/src/main/java/editor/FileEditorFrame.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Editor/FileEditorMenuBar.java" afterPath="$PROJECT_DIR$/src/main/java/editor/FileEditorMenuBar.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Editor/FileEditorModel.java" afterPath="$PROJECT_DIR$/src/main/java/editor/FileEditorModel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/fileCommander/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/EditorTest/BooleanCalculationTests.java" afterPath="$PROJECT_DIR$/src/test/java/editorTest/BooleanCalculationTests.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/EditorTest/FileEditorCalculationTest.java" afterPath="$PROJECT_DIR$/src/test/java/editorTest/FileEditorCalculationTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java" afterPath="$PROJECT_DIR$/src/test/java/commanderTest/FileCommanderOperationsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Editor/FileEditorController.java" afterPath="$PROJECT_DIR$/src/main/java/Editor/FileEditorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/EditorTest/BooleanCalculationTests.java" afterPath="$PROJECT_DIR$/src/test/java/EditorTest/BooleanCalculationTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/EditorTest/FileEditorCalculationTest.java" afterPath="$PROJECT_DIR$/src/test/java/EditorTest/FileEditorCalculationTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -18,7 +39,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/FileCommander$FileEditorCalculationTest.coverage" NAME="FileEditorCalculationTest Coverage Results" MODIFIED="1511041282391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/FileCommander$Main.coverage" NAME="Main Coverage Results" MODIFIED="1508691193088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/FileCommander$FileCommanderOperationsTest.coverage" NAME="FileCommanderOperationsTest Coverage Results" MODIFIED="1511041930699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/FileCommander$All_in_FileCommander_test.coverage" NAME="All in FileCommander_test Coverage Results" MODIFIED="1511042737567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/FileCommander$EditorTest_in_FileCommander_test.coverage" NAME="EditorTest in FileCommander_test Coverage Results" MODIFIED="1511045180985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>EditorTest.*</FILTER>
+    </SUITE>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -27,11 +54,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FileEditorController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorController.java">
+      <file leaf-file-name="CheckingExpressionTypeTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/editorTest/CheckingExpressionTypeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="49" column="50" lean-forward="false" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+            <state relative-caret-position="187">
+              <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileEditorController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/editor/FileEditorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,20 +79,57 @@
         </entry>
       </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fileCommander/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="109">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="FileEditorCalculationTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/EditorTest/FileEditorCalculationTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/editorTest/FileEditorCalculationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="135" column="5" lean-forward="false" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="137" column="5" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="137" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileCommanderOperationsTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/commanderTest/FileCommanderOperationsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-573">
+              <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#createsNewFile#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#checksForDirectory#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#copiesFile#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#writeString#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#calculatesFrequencies#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#copiesWithoutRepeatingLines#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#copiesHtmlFile#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#copiesSelectedExtension#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#copiesNotSelectedExtension#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#convertsFileToPdf#0;class#FileCommanderOperationsTest#0" expanded="false" />
+                <element signature="method#clean#0;class#FileCommanderOperationsTest#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileEditorFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/editor/FileEditorFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="138" column="10" lean-forward="false" selection-start-line="138" selection-start-column="10" selection-end-line="138" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,51 +138,13 @@
         </entry>
       </file>
       <file leaf-file-name="BooleanCalculationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/EditorTest/BooleanCalculationTests.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/editorTest/BooleanCalculationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <state relative-caret-position="202">
+              <caret line="137" column="14" lean-forward="false" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileEditorFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="144" column="22" lean-forward="false" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileEditorModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#396#397#0" expanded="true" />
-                <element signature="e#448#449#0" expanded="true" />
-                <element signature="e#483#484#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileEditorMenuBar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorMenuBar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -129,9 +167,20 @@
       <find>ref</find>
       <find>cop</find>
       <find>pdf</find>
+      <find>Boolean</find>
+      <find>false</find>
+      <find>answer,RIGHT_ANSWER</find>
+      <find>assertTrue</find>
+      <find>))</find>
+      <find>compareExpressionConstraints(answer,RIGHT_ANSWER)</find>
     </findStrings>
     <replaceStrings>
       <replace>operations</replace>
+      <replace>ExpressionConstraints.Boolean</replace>
+      <replace>RIGHT_ANSWER,answer</replace>
+      <replace>assertEquals</replace>
+      <replace>)</replace>
+      <replace>RIGHT_ANSWER,answer)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -469,13 +518,20 @@
         <option value="$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/Editor/FileEditorModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/FileEditorCalculationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java" />
         <option value="$PROJECT_DIR$/src/test/java/EditorTest/FileEditorCalculationTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/EditorTest/CheckingIfExpressionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Editor/ExpressionConstraints.java" />
+        <option value="C:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class" />
+        <option value="$PROJECT_DIR$/src/main/java/fileCommander/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/java/commanderTest/FileCommanderOperationsTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/EditorTest/BooleanCalculationTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/Editor/FileEditorController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/EditorTest/CheckingExpressionTypeTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/editorTest/CheckingExpressionTypeTest.java" />
       </list>
     </option>
   </component>
@@ -513,8 +569,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -547,7 +601,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Adapters" type="462c0819:PsiDirectoryNode" />
+              <item name="adapters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
@@ -555,7 +609,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CommanderComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="commanderComponents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
@@ -563,7 +617,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Editor" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FileCommander1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fileCommander" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
@@ -584,22 +646,32 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="EditorTest" type="462c0819:PsiDirectoryNode" />
+              <item name="commanderTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileCommander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FileCommander1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="editorTest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="org.rust.cargo.project.configurable.RustProjectConfigurable" />
   </component>
@@ -620,19 +692,39 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BooleanCalculationTests">
-    <configuration name="BooleanCalculationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.editorTest in FileCommander_test">
+    <configuration name="All in FileCommander_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="FileCommander_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="CheckingExpressionTypeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="EditorTest.*" />
+          <option name="PATTERN" value="editorTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="FileCommander_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="EditorTest" />
-      <option name="MAIN_CLASS_NAME" value="EditorTest.BooleanCalculationTests" />
+      <option name="PACKAGE_NAME" value="editorTest" />
+      <option name="MAIN_CLASS_NAME" value="editorTest.CheckingExpressionTypeTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -646,20 +738,45 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="EditorTest in FileCommander_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckingExpressionTypeTest.showsErrorWhenCalculatingNotImplementedOperations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="EditorTest.*" />
+          <option name="PATTERN" value="editorTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="FileCommander_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="EditorTest" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="editorTest" />
+      <option name="MAIN_CLASS_NAME" value="editorTest.CheckingExpressionTypeTest" />
+      <option name="METHOD_NAME" value="showsErrorWhenCalculatingNotImplementedOperations" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="CheckingExpressionTypeTest.understandsDivisionByZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="editorTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="FileCommander_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="editorTest" />
+      <option name="MAIN_CLASS_NAME" value="editorTest.CheckingExpressionTypeTest" />
+      <option name="METHOD_NAME" value="understandsDivisionByZero" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -676,85 +793,10 @@
       <module name="FileCommander_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="EditorTest" />
-      <option name="MAIN_CLASS_NAME" value="EditorTest.FileEditorCalculationTest" />
+      <option name="PACKAGE_NAME" value="editorTest" />
+      <option name="MAIN_CLASS_NAME" value="editorTest.FileEditorCalculationTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="FileEditorCalculationTest.dimesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="EditorTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="FileCommander_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="EditorTest" />
-      <option name="MAIN_CLASS_NAME" value="EditorTest.FileEditorCalculationTest" />
-      <option name="METHOD_NAME" value="dimesTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="FileEditorCalculationTest.showsErrorWhenCalculatingSomeNonsense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="EditorTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="FileCommander_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="EditorTest" />
-      <option name="MAIN_CLASS_NAME" value="EditorTest.FileEditorCalculationTest" />
-      <option name="METHOD_NAME" value="showsErrorWhenCalculatingSomeNonsense" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="FileEditorCalculationTest.treatsDivisionByZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="EditorTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="FileCommander_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="EditorTest" />
-      <option name="MAIN_CLASS_NAME" value="EditorTest.FileEditorCalculationTest" />
-      <option name="METHOD_NAME" value="treatsDivisionByZero" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -846,21 +888,46 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="editorTest in FileCommander_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="editorTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="FileCommander_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="editorTest" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.FileEditorCalculationTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BooleanCalculationTests" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.EditorTest in FileCommander_test" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.FileEditorCalculationTest.treatsDivisionByZero" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.FileEditorCalculationTest.dimesTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.FileEditorCalculationTest.showsErrorWhenCalculatingSomeNonsense" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CheckingExpressionTypeTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CheckingExpressionTypeTest.showsErrorWhenCalculatingNotImplementedOperations" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CheckingExpressionTypeTest.understandsDivisionByZero" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.All in FileCommander_test" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.editorTest in FileCommander_test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.BooleanCalculationTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.EditorTest in FileCommander_test" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FileEditorCalculationTest.showsErrorWhenCalculatingSomeNonsense" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FileEditorCalculationTest.dimesTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FileEditorCalculationTest.treatsDivisionByZero" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.editorTest in FileCommander_test" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in FileCommander_test" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CheckingExpressionTypeTest.understandsDivisionByZero" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CheckingExpressionTypeTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CheckingExpressionTypeTest.showsErrorWhenCalculatingNotImplementedOperations" />
       </list>
     </recent_temporary>
   </component>
@@ -897,81 +964,85 @@
       <workItem from="1510660455318" duration="961000" />
       <workItem from="1510666018902" duration="1085000" />
       <workItem from="1510667296973" duration="20659000" />
-      <workItem from="1510784743350" duration="2640000" />
+      <workItem from="1510784743350" duration="3059000" />
+      <workItem from="1510826598491" duration="109000" />
+      <workItem from="1510834284172" duration="3923000" />
+      <workItem from="1510908118634" duration="3405000" />
+      <workItem from="1510950016393" duration="3658000" />
+      <workItem from="1511041906031" duration="3912000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BooleanCalculationTests - 2017.11.16 at 02h 46m 50s.xml">
-      <configuration name="BooleanCalculationTests" configurationId="JUnit" />
+    <history-entry file="All_in_FileCommander_test - 2017.11.19 at 00h 41m 54s.xml">
+      <configuration name="All in FileCommander_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EditorTest_in_FileCommander_test - 2017.11.15 at 21h 14m 31s.xml">
+    <history-entry file="All_in_FileCommander_test - 2017.11.19 at 00h 42m 31s.xml">
+      <configuration name="All in FileCommander_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckingExpressionTypeTest - 2017.11.19 at 00h 33m 31s.xml">
+      <configuration name="CheckingExpressionTypeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckingExpressionTypeTest - 2017.11.19 at 00h 39m 48s.xml">
+      <configuration name="CheckingExpressionTypeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckingExpressionTypeTest_showsErrorWhenCalculatingNotImplementedOperations - 2017.11.19 at 00h 36m 22s.xml">
+      <configuration name="CheckingExpressionTypeTest.showsErrorWhenCalculatingNotImplementedOperations" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckingExpressionTypeTest_understandsDivisionByZero - 2017.11.19 at 00h 41m 23s.xml">
+      <configuration name="CheckingExpressionTypeTest.understandsDivisionByZero" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckingExpressionTypeTest_understandsLowercase - 2017.11.19 at 00h 35m 00s.xml">
+      <configuration name="CheckingExpressionTypeTest.understandsLowercase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckingExpressionTypeTest_understandsLowercase - 2017.11.19 at 00h 35m 14s.xml">
+      <configuration name="CheckingExpressionTypeTest.understandsLowercase" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EditorTest_in_FileCommander_test - 2017.11.19 at 00h 46m 21s.xml">
       <configuration name="EditorTest in FileCommander_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EditorTest_in_FileCommander_test - 2017.11.16 at 02h 38m 06s.xml">
+    <history-entry file="EditorTest_in_FileCommander_test - 2017.11.19 at 00h 47m 44s.xml">
       <configuration name="EditorTest in FileCommander_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EditorTest_in_FileCommander_test - 2017.11.16 at 02h 42m 06s.xml">
-      <configuration name="EditorTest in FileCommander_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EditorTest_in_FileCommander_test - 2017.11.16 at 02h 45m 05s.xml">
-      <configuration name="EditorTest in FileCommander_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EditorTest_in_FileCommander_test - 2017.11.16 at 02h 45m 37s.xml">
-      <configuration name="EditorTest in FileCommander_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileEditorCalculationTest_dimesTest - 2017.11.15 at 21h 18m 46s.xml">
-      <configuration name="FileEditorCalculationTest.dimesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileEditorCalculationTest_showsErrorWhenCalculatingSomeNonsense - 2017.11.16 at 02h 36m 31s.xml">
-      <configuration name="FileEditorCalculationTest.showsErrorWhenCalculatingSomeNonsense" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileEditorCalculationTest_showsErrorWhenCalculatingSomeNonsense - 2017.11.16 at 02h 37m 15s.xml">
-      <configuration name="FileEditorCalculationTest.showsErrorWhenCalculatingSomeNonsense" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FileEditorCalculationTest_showsErrorWhenCalculatingSomeNonsense - 2017.11.16 at 02h 37m 53s.xml">
-      <configuration name="FileEditorCalculationTest.showsErrorWhenCalculatingSomeNonsense" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144553000" />
+    <option name="totallyTimeSpent" value="159979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cargo" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3977813" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40412045" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40412045" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16544656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2920937" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3977813" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1017,95 +1088,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java</url>
-          <line>195</line>
+          <url>file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderOperations.java</url>
+          <line>194</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/commanderTest/FileCommanderOperationsTest.java</url>
           <line>206</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/editorTest/CheckingExpressionTypeTest.java</url>
+          <line>221</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#createNewFolder#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#deleteFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#renameFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#readLine#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#writeLine#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#handleExistingFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#getPanelFromHalf#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#openSameDir#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#isWord#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="104" column="90" lean-forward="false" selection-start-line="104" selection-start-column="90" selection-end-line="104" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderMenuBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="66" lean-forward="false" selection-start-line="72" selection-start-column="66" selection-end-line="72" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="44" column="32" lean-forward="false" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#refreshList#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#refreshLists#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#createNewFolder#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#deleteFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#removeFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#renameFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#openFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#readLine#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#handleExistingFile#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#openSameDir#0;class#FileCommanderOperations#0" expanded="false" />
-            <element signature="method#isWord#0;class#FileCommanderOperations#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/WatchServiceHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/HintPanelActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
           <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
@@ -1119,7 +1125,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
@@ -1133,7 +1139,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderOperations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1154,7 +1160,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/HintPanelActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
           <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
@@ -1175,7 +1181,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
@@ -1203,38 +1209,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/FileSystemObject.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/adapters/FileSystemObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="33" column="79" lean-forward="false" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderListController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="34" column="81" lean-forward="false" selection-start-line="34" selection-start-column="81" selection-end-line="34" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderListModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-220">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/WatchServiceHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1273,13 +1272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/statements/RunBefores.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -1301,13 +1293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="287" column="0" lean-forward="false" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/caf033a4a7c37b4a8ff3ea084cba591539b0b69/commons-io-2.5-sources.jar!/org/apache/commons/io/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39491">
@@ -1322,64 +1307,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/HintPanelActionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/HintPanelActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="88" column="66" lean-forward="false" selection-start-line="88" selection-start-column="66" selection-end-line="88" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="e#975#976#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderHintPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderHintPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1921">
           <caret line="115" column="44" lean-forward="false" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperationsFacade.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderOperationsFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="169" column="48" lean-forward="false" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#createNewFolder#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#deleteFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#renameFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#readLine#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#writeLine#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#handleExistingFile#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#getPanelFromHalf#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#openSameDir#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-            <element signature="method#isWord#0;class#FileCommanderOperationsFacade#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderMenuBar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1391,7 +1350,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommanderComponents/FileCommanderOperations.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/FileCommanderOperations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="306" column="13" lean-forward="true" selection-start-line="306" selection-start-column="13" selection-end-line="306" selection-end-column="13" />
@@ -1412,21 +1371,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/editor/FileEditorModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#362#363#0" expanded="false" />
+            <element signature="e#396#397#0" expanded="false" />
+            <element signature="e#448#449#0" expanded="false" />
+            <element signature="e#483#484#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorMenuBar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/editor/FileEditorMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
@@ -1434,18 +1393,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/commanderComponents/WatchServiceHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        <state relative-caret-position="187">
+          <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/FileCommanderOperationsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/editor/ExpressionConstraints.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="46" />
+        <state relative-caret-position="51">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/adapters/Actions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/commanderTest/FileCommanderOperationsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-573">
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createsNewFile#0;class#FileCommanderOperationsTest#0" expanded="false" />
@@ -1463,40 +1462,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorFrame.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/reflect/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="144" column="22" lean-forward="false" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+        <state relative-caret-position="117">
+          <caret line="497" column="0" lean-forward="false" selection-start-line="497" selection-start-column="0" selection-end-line="497" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/editor/FileEditorFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="138" column="10" lean-forward="false" selection-start-line="138" selection-start-column="10" selection-end-line="138" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/EditorTest/BooleanCalculationTests.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/editorTest/BooleanCalculationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="137" column="14" lean-forward="false" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/EditorTest/FileEditorCalculationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="135" column="5" lean-forward="false" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Editor/FileEditorController.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/editorTest/FileEditorCalculationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="49" column="50" lean-forward="false" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+          <caret line="137" column="5" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="137" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="331" column="0" lean-forward="false" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fileCommander/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/editor/FileEditorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/editorTest/CheckingExpressionTypeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1556,7 +1599,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>FileCommander_main|FileCommander</last-edited>
+          <last-edited>FileCommander</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
