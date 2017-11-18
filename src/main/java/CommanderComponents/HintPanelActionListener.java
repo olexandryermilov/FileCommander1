@@ -1,6 +1,4 @@
-package CommanderComponents;
-
-import CommanderComponents.FileCommanderFrame;
+package commanderComponents;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

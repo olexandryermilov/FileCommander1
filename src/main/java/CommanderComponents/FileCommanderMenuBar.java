@@ -1,4 +1,4 @@
-package CommanderComponents;
+package commanderComponents;
 
 import javax.swing.*;
 

@@ -1,7 +1,6 @@
-package CommanderComponents;
+package commanderComponents;
 
-import Adapters.FileSystemObject;
-import CommanderComponents.FileCommanderOperations;
+import adapters.FileSystemObject;
 
 import java.io.IOException;
 import java.nio.file.WatchKey;

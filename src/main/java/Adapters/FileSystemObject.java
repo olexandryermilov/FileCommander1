@@ -1,4 +1,4 @@
-package Adapters;
+package adapters;
 
 import java.io.File;
 

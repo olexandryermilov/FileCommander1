@@ -1,7 +1,6 @@
-package CommanderComponents;
+package commanderComponents;
 
-import Adapters.FileSystemObject;
-import CommanderComponents.FileCommanderFrame;
+import adapters.FileSystemObject;
 
 import java.io.File;
 

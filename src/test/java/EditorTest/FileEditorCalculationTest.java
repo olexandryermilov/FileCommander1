@@ -1,14 +1,11 @@
-package EditorTest;
+package editorTest;
 
-import Editor.FileEditorController;
-import Editor.FileEditorModel;
-import com.sun.jna.platform.win32.OaIdl;
+import editor.FileEditorController;
+import editor.FileEditorModel;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -130,8 +127,13 @@ public class FileEditorCalculationTest {
         assertTrue(compareBigDecimal(answer,RIGHT_ANSWER));
     }
     @Test(expected = org.codehaus.groovy.control.MultipleCompilationErrorsException.class)
-    public void showsErrorWhenCalculatingSomeNonsense(){
+    public void showsErrorWhenCalculatingNotImplementedOperations(){
         final String EXPRESSION="5 div 3";
+        controller.calculateExpression(EXPRESSION);
+    }
+    @Test(expected = groovy.lang.MissingMethodException.class)
+    public void showsErrorWhenCalculatingString(){
+        final String EXPRESSION = "String";
         controller.calculateExpression(EXPRESSION);
     }
 }

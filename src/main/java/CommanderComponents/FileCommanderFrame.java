@@ -1,6 +1,6 @@
-package CommanderComponents;
+package commanderComponents;
 
-import Adapters.GridBagConstraintsAdapter;
+import adapters.GridBagConstraintsAdapter;
 
 import javax.swing.*;
 import java.awt.*;

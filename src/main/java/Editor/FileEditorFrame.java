@@ -1,30 +1,25 @@
-package Editor;
+package editor;
 
-import Adapters.FileSystemObject;
-import Adapters.GridBagConstraintsAdapter;
+import adapters.FileSystemObject;
+import adapters.GridBagConstraintsAdapter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.swing.*;
 import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
-import groovy.util.Eval;
-
 
 
 public class FileEditorFrame extends JFrame {
-    private static final String TITLE = "File Editor";
+    private static final String TITLE = "File editor";
     private JPanel mainPanel;
     private JTable table;
     private JScrollPane scrollPane;

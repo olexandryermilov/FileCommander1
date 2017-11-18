@@ -1,8 +1,6 @@
-package Adapters;
+package adapters;
 
-import CommanderComponents.FileCommanderOperations;
-
-import javax.swing.*;
+import commanderComponents.FileCommanderOperations;
 
 public class Actions {
     FileCommanderOperations fileCommanderOperations;

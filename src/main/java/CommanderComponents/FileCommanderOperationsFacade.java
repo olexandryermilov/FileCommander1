@@ -1,19 +1,12 @@
-package CommanderComponents;
+package commanderComponents;
 
-import Adapters.FileSystemObject;
+import adapters.FileSystemObject;
 
 import org.apache.commons.io.FileUtils;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import javax.swing.*;
 
-import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class FileCommanderOperationsFacade {

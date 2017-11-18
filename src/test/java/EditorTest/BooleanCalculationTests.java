@@ -1,12 +1,9 @@
-package EditorTest;
+package editorTest;
 
-import Editor.FileEditorController;
-import Editor.FileEditorModel;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+import editor.FileEditorController;
+import editor.FileEditorModel;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.math.BigDecimal;
 
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.hasItems;
@@ -35,91 +32,91 @@ public class BooleanCalculationTests {
         final String EXPRESSION = "2<3";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateAnd_FalseAndTrue(){
         final String EXPRESSION = "(3<1)AND(2>1)";
         final Boolean RIGHT_ANSWER = false;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateOr_FalseAndTrue(){
         final String EXPRESSION = "(3<1)OR(2>1)";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateXor_FalseAndTrue(){
         final String EXPRESSION = "(3<1)XOR(2>1)";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateNot_False(){
         final String EXPRESSION = "NOT(3<1)";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateAnd_TrueAndTrue(){
         final String EXPRESSION = "(3>1)AND(2>1)";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateOr_TrueAndTrue(){
         final String EXPRESSION = "(3>1)OR(2>1)";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateXor_TrueAndTrue(){
         final String EXPRESSION = "(3>1)XOR(2>1)";
         final Boolean RIGHT_ANSWER = false;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateNot_True(){
         final String EXPRESSION = "NOT(3>1)";
         final Boolean RIGHT_ANSWER = false;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateAnd_FalseAndFalse(){
         final String EXPRESSION = "(3<1)AND(2<1)";
         final Boolean RIGHT_ANSWER = false;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateOr_FalseAndFalse(){
         final String EXPRESSION = "(3<1)OR(2<1)";
         final Boolean RIGHT_ANSWER = false;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void calculateXor_FalseAndFalse(){
         final String EXPRESSION = "(3<1)XOR(2<1)";
         final Boolean RIGHT_ANSWER = false;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void worksWithExpressions_SimpleExpressions(){
         final String EXPRESSION = "NOT((3+7)<(10-9))";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test
     public void worksWithExpressions_HardExpression(){
@@ -128,7 +125,7 @@ public class BooleanCalculationTests {
         final String EXPRESSION = "((-5*min(31.0,31.0,31.0,-18.0)+1/3+8.0/4-max(16,3)+A1/B2+3^A1)<110)AND(A1^B2>10)";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
-        assertEquals(answer,RIGHT_ANSWER);
+        assertEquals(RIGHT_ANSWER,answer);
     }
     @Test(expected = org.codehaus.groovy.control.MultipleCompilationErrorsException.class)
     public void showsErrorWhenCalculatingSomeNonsense(){
@@ -138,7 +135,7 @@ public class BooleanCalculationTests {
     @Test
     public void understandsLowercase(){
         final String EXPRESSION = "(1 and (0 xor 1))or(not 1)";
-        boolean RIGHT_ANSWER = true;
+        final boolean RIGHT_ANSWER = true;
         boolean answer = controller.calculateBooleanExpression(EXPRESSION);
         assertEquals(RIGHT_ANSWER,answer);
     }

@@ -1,19 +1,11 @@
-package CommanderComponents;
+package commanderComponents;
 
-import Adapters.GridBagConstraintsAdapter;
-import CommanderComponents.FileCommanderFrame;
-import CommanderComponents.FileCommanderHintPanel;
-import CommanderComponents.FileCommanderListController;
-import CommanderComponents.FileCommanderListModel;
+import adapters.GridBagConstraintsAdapter;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
-import java.nio.file.WatchService;
 
 public class FileCommanderListPanel extends JPanel {
     private JList<String> list;

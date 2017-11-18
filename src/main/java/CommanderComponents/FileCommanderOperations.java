@@ -1,8 +1,8 @@
-package CommanderComponents;
+package commanderComponents;
 
-import Adapters.FileSystemObject;
+import adapters.FileSystemObject;
 
-import Editor.FileEditorFrame;
+import editor.FileEditorFrame;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -14,7 +14,6 @@ import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 

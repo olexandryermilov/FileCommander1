@@ -1,7 +1,4 @@
-package CommanderComponents;
-
-import CommanderComponents.FileCommanderFrame;
-import CommanderComponents.FileCommanderListController;
+package commanderComponents;
 
 import javax.swing.*;
 

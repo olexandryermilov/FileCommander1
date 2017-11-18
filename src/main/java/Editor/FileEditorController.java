@@ -1,9 +1,10 @@
-package Editor;
+package editor;
 
 import groovy.util.Eval;
 
 import java.math.BigDecimal;
 import java.util.Map;
+
 
 public class FileEditorController {
     FileEditorModel model;
@@ -37,6 +38,23 @@ public class FileEditorController {
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
         }
         return (BigDecimal)((Eval.me(min+max+new String(values) + "\n return 1.0*("+exp+")")));
+    }
+    public ExpressionConstraints checkExpressionType(String exp){
+        try{
+            calculateExpression(exp);
+            return ExpressionConstraints.BigDecimal;
+        }
+        catch (Exception e){
+            try{
+                if(e instanceof java.lang.ArithmeticException)return ExpressionConstraints.BigDecimal;
+                calculateBooleanExpression(exp);
+                return ExpressionConstraints.Boolean;
+            }
+            catch (Exception e2){
+                return ExpressionConstraints.NotAnExpression;
+            }
+        }
+        //return null;
     }
     public Boolean calculateBooleanExpression(String exp){
         exp = exp.replaceAll("\\u005E","**");
