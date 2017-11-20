@@ -141,7 +141,7 @@ public class FileCommanderOperations {
         }
     }
     public void openFile(String path){
-        if(path.endsWith(".xlsx")||path.endsWith(".xls")){
+        if(path.endsWith(".tbl")/*path.endsWith(".xlsx")||path.endsWith(".xls")*/){
             openTable(path);
             return;
         }
@@ -345,6 +345,11 @@ public class FileCommanderOperations {
     private void newXlsxFile(String path){
            createNewFile(path);
            openTable(path);
+    }
+    public void createNewTable(String dir){
+        String fileName  = JOptionPane.showInputDialog(frame,"Please, enter name of table","New table");
+        String filePath = dir+"\\"+fileName+".tbl";
+        createNewFile(filePath);
     }
 }
 

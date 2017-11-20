@@ -1,12 +1,17 @@
 package commanderComponents;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 class FileCommanderHintPanel extends JPanel {
     private FileCommanderFrame frame;
     private String half;
-    private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton, renameFileButton, openFileButton;
-    private JButton editFileButton,copyFileWithoutRepeatingLinesButton,convertFileFromHtmlToRtfButton,copySelectedExtensionButton,copyHtmlButton,frequencyButton;
+    private JButton newFileButton, newFolderButton, copyFileButton, deleteFileButton, removeFileButton,
+            renameFileButton, openFileButton;
+    private JButton editFileButton,copyFileWithoutRepeatingLinesButton,convertFileFromHtmlToRtfButton,
+            copySelectedExtensionButton,copyHtmlButton,frequencyButton;
+    private JButton newTableButton;
     private HintPanelActionListener actionListener;
     private void initializeNewFileButton(){
         newFileButton = new JButton("New File");
@@ -86,9 +91,16 @@ class FileCommanderHintPanel extends JPanel {
         frequencyButton.addActionListener(actionListener);
         this.add(frequencyButton);
     }
+    private void initializeNewTableButton(){
+        newTableButton = new JButton("New Table");
+        newTableButton.setActionCommand("New table "+half);
+        newTableButton.addActionListener(actionListener);
+        this.add(newTableButton);
+    }
     private void addButtons(){
         initializeNewFileButton();
         initializeNewFolderButton();
+        initializeNewTableButton();
         initializeCopyFileButton();
         initializeOpenFileButton();
         initializeDeleteFileButton();

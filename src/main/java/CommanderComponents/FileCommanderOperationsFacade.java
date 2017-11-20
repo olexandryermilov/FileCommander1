@@ -167,17 +167,14 @@ public class FileCommanderOperationsFacade {
         FileCommanderListPanel anotherPanel = getPanelFromHalf(anotherHalf);
         panel.getFileCommanderListModel().setSelectedDirectory(anotherPanel.getFileCommanderListModel().getSelectedDirectory());
     }
-    private boolean isWord(String word){
-        if(word.length()<1)return false;
-        for(int i=0;i<word.length();i++){
-            char ch = word.charAt(i);
-            if(!((ch>='a'&&ch<='z')||(ch<='Z'&&ch>='A'))){System.out.println("qdfsafdas");return false;}
-        }
-        return true;
-    }
     void calculateAppearances(String half){
         FileCommanderListPanel panel = getPanelFromHalf(half);
         String path = (panel.getList().getSelectedValue());
         operations.calculateAppearances(path);
+    }
+    void createNewTable(String half){
+        FileCommanderListPanel panel = getPanelFromHalf(half);
+        String path = (panel.getFileCommanderListModel().getSelectedDirectory());
+        operations.createNewTable(path);
     }
 }

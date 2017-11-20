@@ -116,6 +116,12 @@ public class HintPanelActionListener implements ActionListener {
         if(e.getActionCommand().equals("Frequency right")){
             operations.calculateAppearances("right");
         }
+        if(e.getActionCommand().equals("New table left")){
+            operations.createNewTable("left");
+        }
+        if(e.getActionCommand().equals("New table right")){
+            operations.createNewTable("right");
+        }
         operations.refreshLists();
     }
 }
