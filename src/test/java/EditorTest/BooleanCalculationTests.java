@@ -1,7 +1,7 @@
 package editorTest;
 
+import editor.EditorTableModel;
 import editor.FileEditorController;
-import editor.FileEditorModel;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,11 +21,12 @@ import static org.junit.Assert.assertTrue;
 
 public class BooleanCalculationTests {
     private FileEditorController controller;
-    private FileEditorModel model;
+    private EditorTableModel model;
     @Before
     public void prepareController(){
-        model = new FileEditorModel();
+        model = new EditorTableModel();
         controller = new FileEditorController(model);
+        model.setController(controller);
     }
     @Test
     public void calculateSimpleExpression(){
@@ -120,8 +121,8 @@ public class BooleanCalculationTests {
     }
     @Test
     public void worksWithExpressions_HardExpression(){
-        model.getCellsValues().put("A1",3.0);
-        model.getCellsValues().put("B2",6.0);
+        model.getCellsValues().put("A1","3.0");
+        model.getCellsValues().put("B2","6.0");
         final String EXPRESSION = "((-5*min(31.0,31.0,31.0,-18.0)+1/3+8.0/4-max(16,3)+A1/B2+3^A1)<110)AND(A1^B2>10)";
         final Boolean RIGHT_ANSWER = true;
         Boolean answer = controller.calculateBooleanExpression(EXPRESSION);

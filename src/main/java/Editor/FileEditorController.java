@@ -2,12 +2,19 @@ package editor;
 
 import groovy.util.Eval;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.io.File;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 
 
 public class FileEditorController {
-    FileEditorModel model;
+
+    EditorTableModel tableModel;
+    FileEditorFrame frame;
     private final String min = "def min(BigDecimal[] a){\n" +
             "    BigDecimal m = a[0];\n" +
             "    for(int i=1;i<a.length;i++){\n" +
@@ -27,19 +34,31 @@ public class FileEditorController {
             "    return m;\n" +
             "}\n";
 
-    public FileEditorController(FileEditorModel model){
-        this.model=model;
+    public FileEditorController(EditorTableModel tableModel, FileEditorFrame frame){
+        this.frame=frame;
+        this.tableModel = tableModel;
+    }
+    public FileEditorController(EditorTableModel tableModel){
+        this.tableModel = tableModel;
     }
     public BigDecimal calculateExpression(String exp) throws ArithmeticException{
         exp = exp.replaceAll("\\u005E","**");
         //exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
         StringBuilder values = new StringBuilder();
-        for(Map.Entry<String,Double> entry : model.getCellsValues().entrySet()){
+        for(Map.Entry<String,String> entry : tableModel.getCellsValues().entrySet()){
+            try{
+                Double d = Double.parseDouble(entry.getValue());
+            }
+            catch (Exception e){
+                throw e;
+            }
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
         }
         return (BigDecimal)((Eval.me(min+max+new String(values) + "\n return 1.0*("+exp+")")));
     }
     public ExpressionConstraints checkExpressionType(String exp){
+        if(exp.charAt(0)!='=')return ExpressionConstraints.NotAnExpression;
+        exp=exp.substring(1);
         try{
             calculateExpression(exp);
             return ExpressionConstraints.BigDecimal;
@@ -67,9 +86,58 @@ public class FileEditorController {
         exp = exp.replaceAll("(\\s)*not\\s*","!");
         exp = exp.replaceAll("(\\s)*or\\s*","||");
         StringBuilder values = new StringBuilder();
-        for(Map.Entry<String,Double> entry : model.getCellsValues().entrySet()){
+        for(Map.Entry<String,String> entry : tableModel.getCellsValues().entrySet()){
+            try{
+                Double d = Double.parseDouble(entry.getValue());
+            }
+            catch (Exception e){
+                throw e;
+            }
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
         }
         return (Boolean)((Eval.me(min+max+new String(values) + "\n return ("+exp+")")));
+    }
+    String getColumnName(int number){
+        StringBuilder sb = new StringBuilder();
+        while(number>0){
+            sb.append((char)(number%26+(int)'A'-((number<26)?1:0)));
+            number/=26;
+        }
+        return new String(sb.reverse());
+    }
+    public void addColumn(){
+        String newColumnName = getColumnName(tableModel.getColumnCount()+1);
+        tableModel.getColumnNames().add(newColumnName);
+        //columnMap.put(newColumnName, columnCount);
+        for (ArrayList<String> row : tableModel.getData()) {
+            row.add(null);
+        }
+
+        tableModel.incColumnCount();
+        tableModel.fireTableStructureChanged();
+        tableModel.setSaved(false);
+    }
+    public void addRow(){
+        ArrayList<String> dataRow = new ArrayList<>(Collections.nCopies(tableModel.getColumnCount(), null));
+        String newRowName = Integer.toString(tableModel.getRowCount()+1);
+        tableModel.getRowNames().add(newRowName);
+        tableModel.getData().add(dataRow);
+        tableModel.incRowCount();
+        tableModel.fireTableRowsInserted(tableModel.getRowCount() - 1,tableModel.getRowCount() - 1);
+        tableModel.setSaved(false);
+        updateTable();
+    }
+    public void updateTable(){
+        /*Object[][] dataAsArray= new Object[tableModel.getData().size()][tableModel.getData().get(0).size()];
+        for(int i=0;i<tableModel.getData().size();i++){
+            for(int j=0;j<tableModel.getData().get(0).size();j++){
+                dataAsArray[i][j]=(Object)tableModel.getData().get(i).get(j);
+            }
+        }
+        Object[] columns = new Object[tableModel.getData().get(0).size()];
+        for(int i=0;i<tableModel.getData().get(0).size();i++){
+            columns[i]=tableModel.getData().get(0).get(i);
+        }
+        frame.setTable(new JTable(new DefaultTableModel(dataAsArray,columns)));*/
     }
 }

@@ -13,6 +13,16 @@ class FileCommanderHintPanel extends JPanel {
             copySelectedExtensionButton,copyHtmlButton,frequencyButton;
     private JButton newTableButton;
     private HintPanelActionListener actionListener;
+
+    FileCommanderHintPanel(FileCommanderFrame frame, String half){
+        super();
+        this.frame = frame;
+        this.half = half;
+        actionListener = new HintPanelActionListener(frame);
+        addButtons();
+        addExtensionSelection();
+    }
+
     private void initializeNewFileButton(){
         newFileButton = new JButton("New File");
         newFileButton.setActionCommand("New File "+half);
@@ -129,13 +139,5 @@ class FileCommanderHintPanel extends JPanel {
         }));
         this.add(extensionLabel);
         this.add(extensionComboBox);
-    }
-    FileCommanderHintPanel(FileCommanderFrame frame, String half){
-        super();
-        this.frame = frame;
-        this.half = half;
-        actionListener = new HintPanelActionListener(frame);
-        addButtons();
-        addExtensionSelection();
     }
 }

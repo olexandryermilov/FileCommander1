@@ -1,7 +1,7 @@
 package editorTest;
 
+import editor.EditorTableModel;
 import editor.FileEditorController;
-import editor.FileEditorModel;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,11 +18,12 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 public class FileEditorCalculationTest {
     private FileEditorController controller;
-    private FileEditorModel model;
+    private EditorTableModel model;
     @Before
     public void prepareController(){
-        model = new FileEditorModel();
+        model = new EditorTableModel();
         controller = new FileEditorController(model);
+        model.setController(controller);
     }
     private boolean compareBigDecimal(BigDecimal a, BigDecimal b){
         BigDecimal sub = a.subtract(b);
@@ -55,8 +56,8 @@ public class FileEditorCalculationTest {
     }
     @Test
     public void canGetValuesFromCells(){
-        model.getCellsValues().put("A1",3.0);
-        model.getCellsValues().put("B2",9.0);
+        model.getCellsValues().put("A1","3.0");
+        model.getCellsValues().put("B2","9.0");
         final String EXPRESSION = "A1*B2";
         final BigDecimal RIGHT_ANSWER = new BigDecimal(27.0);
         BigDecimal answer = controller.calculateExpression(EXPRESSION);
@@ -112,8 +113,8 @@ public class FileEditorCalculationTest {
 
     @Test
     public void calculatesBigExpressionsWithAllOperations(){
-        model.getCellsValues().put("A1",3.0);
-        model.getCellsValues().put("B2",6.0);
+        model.getCellsValues().put("A1","3.0");
+        model.getCellsValues().put("B2","6.0");
         final String EXPRESSION = "-5*min(31.0,31.0,31.0,-18.0)+1/3+8.0/4-max(16,3)+A1/B2+3^A1";
         final BigDecimal RIGHT_ANSWER = new BigDecimal( 103.8333333333);
         BigDecimal answer = controller.calculateExpression(EXPRESSION);
