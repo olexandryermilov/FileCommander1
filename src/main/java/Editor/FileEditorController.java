@@ -1,10 +1,11 @@
 package editor;
 
+import com.google.gson.Gson;
 import groovy.util.Eval;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.io.File;
+import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,7 +51,8 @@ public class FileEditorController {
                 Double d = Double.parseDouble(entry.getValue());
             }
             catch (Exception e){
-                throw e;
+                //throw e;
+                continue;
             }
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
         }
@@ -91,7 +93,13 @@ public class FileEditorController {
                 Double d = Double.parseDouble(entry.getValue());
             }
             catch (Exception e){
-                throw e;
+                try{
+                    Boolean b = Boolean.parseBoolean(entry.getValue());
+                }
+                catch (Exception e1){
+                    continue;
+                }
+                //throw e;
             }
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
         }
@@ -125,19 +133,7 @@ public class FileEditorController {
         tableModel.incRowCount();
         tableModel.fireTableRowsInserted(tableModel.getRowCount() - 1,tableModel.getRowCount() - 1);
         tableModel.setSaved(false);
-        updateTable();
     }
-    public void updateTable(){
-        /*Object[][] dataAsArray= new Object[tableModel.getData().size()][tableModel.getData().get(0).size()];
-        for(int i=0;i<tableModel.getData().size();i++){
-            for(int j=0;j<tableModel.getData().get(0).size();j++){
-                dataAsArray[i][j]=(Object)tableModel.getData().get(i).get(j);
-            }
-        }
-        Object[] columns = new Object[tableModel.getData().get(0).size()];
-        for(int i=0;i<tableModel.getData().get(0).size();i++){
-            columns[i]=tableModel.getData().get(0).get(i);
-        }
-        frame.setTable(new JTable(new DefaultTableModel(dataAsArray,columns)));*/
-    }
+
+
 }

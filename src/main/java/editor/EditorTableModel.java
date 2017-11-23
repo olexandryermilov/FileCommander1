@@ -54,7 +54,6 @@ public class EditorTableModel extends AbstractTableModel {
         for(int i=0;i<columnCount;i++){
             columnNames.add(getNewColumnName(i));
         }
-        System.out.println(rowNames.size()+" "+columnNames.size());
     }
 
     public void setController(FileEditorController controller) {
@@ -63,7 +62,6 @@ public class EditorTableModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int column) {
-        System.out.println(columnNames.size()+" "+column);
         return columnNames.get(column);
     }
     String getNewColumnName(int number){
@@ -92,17 +90,14 @@ public class EditorTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int row, int column) {
         if (column == 0) {
-            System.out.println(row);
             return rowNames.get(row);
         } else {
-            System.out.println(row+" "+column);
             return data.get(row).get(column);
         }
     }
 
     private String getId(int row, int column){
         String res = getColumnName(column)+""+(row+1);
-        System.out.println(res);
         return res;
     }
     @Override
@@ -110,11 +105,21 @@ public class EditorTableModel extends AbstractTableModel {
         String result=(String)value;
         ExpressionConstraints expType = controller.checkExpressionType((String)value);
         if(expType.equals(ExpressionConstraints.BigDecimal)){
-            result =controller.calculateExpression(((String) value).substring(1)).toString();
+            try{
+                result =controller.calculateExpression(((String) value).substring(1)).toString();
+            }
+            catch(ArithmeticException e){
+                result="Division by zero";
+            }
         }
         else{
             if(expType.equals(ExpressionConstraints.Boolean)){
-                result=controller.calculateBooleanExpression(((String)value).substring(1)).toString();
+                try{
+                    result=controller.calculateBooleanExpression(((String)value).substring(1)).toString();
+                }
+                catch(ArithmeticException e){
+                    result="Division by zero";
+                }
             }
         }
         String id = getId(row,column);
@@ -123,8 +128,46 @@ public class EditorTableModel extends AbstractTableModel {
         data.get(row).set(column,result);
         fireTableCellUpdated(row, column);
         saved = false;
+        recalculateAll(row,column);
     }
 
+    public void recalculateAll(int row, int column){
+        for(int i=0;i<rowCount;i++){
+            for(int j=0;j<columnCount;j++){
+                if(i==row&&column==j)continue;
+                String id = getId(i,j);
+                String exp = cellsRawData.get(id);
+                if(exp==null||exp.equals(""))continue;
+                String result;
+                ExpressionConstraints type = controller.checkExpressionType(exp);
+                if(type.equals(ExpressionConstraints.BigDecimal)){
+                    try{
+                        result= String.valueOf(controller.calculateExpression(exp.substring(1)));
+                    }
+                    catch (ArithmeticException e){
+                        result="Division by zero";
+                    }
+                }
+                else{
+                    if(type.equals(ExpressionConstraints.Boolean)){
+                        try{
+                            result= String.valueOf(controller.calculateBooleanExpression(exp.substring(1)));
+                        }
+                        catch (ArithmeticException e){
+                            result="Division by zero";
+                        }
+                    }
+                    else{
+                        result=exp;
+                    }
+                }
+                data.get(i).set(j,result);
+                cellsValues.put(id,result);
+                fireTableCellUpdated(i,j);
+                saved = false;
+            }
+        }
+    }
     public ArrayList<ArrayList<String>> getData() {
         return data;
     }

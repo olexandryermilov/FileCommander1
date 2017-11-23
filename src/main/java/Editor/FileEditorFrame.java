@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -32,13 +33,14 @@ public class FileEditorFrame extends JFrame {
     private FileEditorMenuBar menuBar;
     private FileEditorController controller;
     private JSplitPane splitPane;
-    private FileSystemObject file;
     //private ArrayList<ArrayList<Object>> tableContent;
     private Object[][] tableContent;
     private String[] columns;
     private EditorTableModel tableModel;
-    FileEditorButtonPanel buttonPanel;
-    public FileEditorFrame(FileSystemObject file){
+    private FileEditorButtonPanel buttonPanel;
+
+    private File file;
+    public FileEditorFrame(File file){
         super();
         this.setTitle(TITLE);
         this.file=file;
@@ -58,7 +60,9 @@ public class FileEditorFrame extends JFrame {
         this.add(mainPanel);
     }
 
-
+    public File getFile() {
+        return file;
+    }
 
     private void initializeMainPanel(){
         mainPanel = new JPanel();

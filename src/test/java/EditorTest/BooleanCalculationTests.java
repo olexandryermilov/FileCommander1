@@ -5,6 +5,8 @@ import editor.FileEditorController;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.EOFException;
+
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.not;
@@ -137,6 +139,14 @@ public class BooleanCalculationTests {
     public void understandsLowercase(){
         final String EXPRESSION = "(1 and (0 xor 1))or(not 1)";
         final boolean RIGHT_ANSWER = true;
+        boolean answer = controller.calculateBooleanExpression(EXPRESSION);
+        assertEquals(RIGHT_ANSWER,answer);
+    }
+    @Test
+    public void simpleLinkTest(){
+        model.getCellsValues().put("C1","true");
+        final String EXPRESSION = "!C1";
+        final boolean RIGHT_ANSWER = false;
         boolean answer = controller.calculateBooleanExpression(EXPRESSION);
         assertEquals(RIGHT_ANSWER,answer);
     }
