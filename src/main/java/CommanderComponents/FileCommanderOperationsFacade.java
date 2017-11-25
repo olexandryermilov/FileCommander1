@@ -97,31 +97,6 @@ public class FileCommanderOperationsFacade {
         operations.openFile(path);
     }
 
-    private String readLine(InputStream is, boolean flag) throws IOException{
-        StringBuilder sb = new StringBuilder();
-        char t;
-        do {
-            t = (char)is.read();
-            if(flag&&t!='\n'&&t!='\r')sb.append(t);
-        }while(is.available()>0&&t!='\n');
-        return new String(sb);
-    }
-    private void writeLine(OutputStream os, String line){
-        for(int i=0;i<line.length();i++){
-            try{
-                os.write((byte)line.charAt(i));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try{
-            os.write((byte)'\r');
-            os.write((byte)'\n');
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-    }
     public void copyFileWithoutRepeatingLines(String half, String anotherHalf)  {
         FileCommanderListPanel panel = getPanelFromHalf(half);
         FileCommanderListPanel anotherPanel = getPanelFromHalf(anotherHalf);

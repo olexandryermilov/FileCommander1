@@ -1,5 +1,6 @@
 package editor;
 
+import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import groovy.util.Eval;
 
@@ -135,5 +136,44 @@ public class FileEditorController {
         tableModel.setSaved(false);
     }
 
+    private String tableToJson(){
+        Gson gson = new Gson();
+        gson.toJson(tableModel);
+        String result="";
+        return result;
+    }
+    public void saveTable(){
+        File file = frame.getFile();
+        String toWrite = tableToJson();
+        OutputStream os;
+        try{
+            os = new FileOutputStream(file);
+            for(int i=0;i<toWrite.length();i++){
+                os.write((byte)(toWrite.charAt(i)));
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(frame,"Couldn't save to file: "+e.getCause().toString());
+        }
+    }
 
+    public EditorTableModel parseJson(String jsonString) {
+        return tableModel;
+    }
+
+    public EditorTableModel readTableModel() {
+        File file = frame.getFile();
+        String toParse;
+        StringBuilder sb = new StringBuilder();
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while((line=br.readLine())!=null){
+                sb.append(line);
+            }
+        }  catch (IOException e) {
+            JOptionPane.showMessageDialog(frame,"Couldn't read file: "+e.getCause().toString());
+        }
+        toParse=new String(sb);
+        return parseJson(toParse);
+    }
 }

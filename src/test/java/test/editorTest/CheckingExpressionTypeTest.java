@@ -1,4 +1,4 @@
-package editorTest;
+package test.editorTest;
 
 import editor.EditorTableModel;
 import editor.ExpressionConstraints;

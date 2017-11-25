@@ -11,7 +11,7 @@ public class GridBagConstraintsAdapter extends GridBagConstraints {
 
     public static final int REMAINDER = GridBagConstraints.REMAINDER, RELATIVE = GridBagConstraints.RELATIVE;
 
-    public GridBagConstraintsAdapter(int gridx, int gridy) {
+   /* public GridBagConstraintsAdapter(int gridx, int gridy) {
         this.gridx = gridx;
         this.gridy = gridy;
     }
@@ -21,7 +21,7 @@ public class GridBagConstraintsAdapter extends GridBagConstraints {
         this.gridy = gridy;
         this.gridwidth = gridwidth;
         this.gridheight = gridheight;
-    }
+    }*/
 
     public GridBagConstraintsAdapter(int gridx, int gridy, int gridwidth, int gridheight, int weightx, int weighty) {
         this.gridx = gridx;
@@ -32,17 +32,17 @@ public class GridBagConstraintsAdapter extends GridBagConstraints {
         this.weighty = weighty;
     }
 
-    public GridBagConstraintsAdapter setAnchor(int anchor) {
+    /*public GridBagConstraintsAdapter setAnchor(int anchor) {
         this.anchor = anchor;
         return this;
-    }
+    }*/
 
     public GridBagConstraintsAdapter setFill(int fill) {
         this.fill = fill;
         return this;
     }
 
-    public GridBagConstraintsAdapter setWeight(int weightx, int weighty) {
+    /*public GridBagConstraintsAdapter setWeight(int weightx, int weighty) {
         this.weightx = weightx;
         this.weighty = weighty;
         return this;
@@ -57,5 +57,5 @@ public class GridBagConstraintsAdapter extends GridBagConstraints {
         this.ipadx = ipadx;
         this.ipady = ipady;
         return this;
-    }
+    }*/
 }

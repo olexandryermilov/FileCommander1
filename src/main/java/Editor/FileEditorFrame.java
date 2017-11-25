@@ -121,49 +121,6 @@ public class FileEditorFrame extends JFrame {
     }
 
     //------------------------------------------------------------------------------------------------
-    private void openFile() throws IOException {
-        FileInputStream ExcelFileToRead = new FileInputStream(this.file);
-        XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
-        XSSFSheet sheet = wb.getSheetAt(0);
-        XSSFRow row;
-        XSSFCell cell;
-
-        Iterator rows = sheet.rowIterator();
-        int i=0,j=0;
-        while (i<height&&rows.hasNext())
-        {
-            row=(XSSFRow) rows.next();
-            Iterator cells = row.cellIterator();
-            while (j<width&&cells.hasNext())
-            {
-                cell=(XSSFCell)cells.next();
-                System.out.print(cell+" ");
-                tableContent[i][j++]=cell.getStringCellValue();
-            }
-            i++;
-            System.out.println();
-        }
-    }
-    private void saveFile() throws IOException {
-        XSSFWorkbook wb = new XSSFWorkbook();
-        XSSFSheet sheet = wb.createSheet();
-        XSSFRow row = sheet.createRow(0);
-        TableModel model = table.getModel();
-        for (int i = 0; i < model.getColumnCount(); i++) {
-            if(i<WIDTH&&i<HEIGHT)row.createCell(i).setCellValue(model.getColumnName(i+1));
-        }
-        for (int i = 0; i+1 < model.getRowCount(); i++) {
-            row = sheet.createRow(i + 1);
-            for (int j = 0; j+1 < model.getColumnCount(); j++) {
-                row.createCell(j).setCellValue(
-                        model.getValueAt(i+1, j).toString()
-                );
-            }
-        }
-        FileOutputStream fileOut = new FileOutputStream(file);
-        wb.write(fileOut);
-        fileOut.close();
-    }
 
 
 

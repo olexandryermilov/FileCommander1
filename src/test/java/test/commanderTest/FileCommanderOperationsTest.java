@@ -1,4 +1,4 @@
-package commanderTest;
+package test.commanderTest;
 
 import commanderComponents.FileCommanderFrame;
 import commanderComponents.FileCommanderOperations;
