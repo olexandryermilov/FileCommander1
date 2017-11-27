@@ -44,8 +44,6 @@ public class EditorTableModel extends AbstractTableModel {
         cellsValues = new HashMap<>();
         columnNames = new ArrayList<>();
         rowNames=new ArrayList<>();
-        //columnNames = new ArrayList<>(Collections.nCopies(columnCount, null));
-        //rowNames = new ArrayList<>(Collections.nCopies(rowCount, null));
         data = new ArrayList<>(rowCount);
         for (int i = 0; i < rowCount; i++) {
             data.add(new ArrayList<>(Collections.nCopies(columnCount, null)));
@@ -123,8 +121,14 @@ public class EditorTableModel extends AbstractTableModel {
             }
         }
         String id = getId(row,column);
-        cellsRawData.put(id,(String)value);
-        cellsValues.put(id,result);
+        if(((String)value).equals("")){
+            cellsValues.remove(id);
+            cellsRawData.remove(id);
+        }
+        else {
+            cellsRawData.put(id, (String) value);
+            cellsValues.put(id, result);
+        }
         data.get(row).set(column,result);
         fireTableCellUpdated(row, column);
         saved = false;
@@ -205,4 +209,6 @@ public class EditorTableModel extends AbstractTableModel {
     public void incRowCount(){
         rowCount++;
     }
+    //todo: make recalculate while has changes
+    //todo: check for cycles
 }

@@ -122,9 +122,6 @@ public class FileEditorFrame extends JFrame {
 
     //------------------------------------------------------------------------------------------------
 
-
-
-
 //todo:add message is file exits
 }
 
