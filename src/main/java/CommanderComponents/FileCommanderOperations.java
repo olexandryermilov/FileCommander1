@@ -342,10 +342,7 @@ public class FileCommanderOperations {
             return;
         }
     }
-    private void newXlsxFile(String path){
-           createNewFile(path);
-           openTable(path);
-    }
+
     public void createNewTable(String dir){
         String fileName  = JOptionPane.showInputDialog(frame,"Please, enter name of table","New table");
         String filePath = dir+"\\"+fileName+".tbl";

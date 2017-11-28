@@ -27,6 +27,13 @@ public class BooleanCalculationTests {
         model.setController(controller);
     }
     @Test
+    public void calculatesConstants(){
+        final String EXPRESSION = "true xor true";
+        final Boolean RIGHT_ANSWER = false;
+        Boolean answer = controller.calculateBooleanExpression(EXPRESSION);
+        assertEquals(RIGHT_ANSWER,answer);
+    }
+    @Test
     public void calculateSimpleExpression(){
         final String EXPRESSION = "2<3";
         final Boolean RIGHT_ANSWER = true;

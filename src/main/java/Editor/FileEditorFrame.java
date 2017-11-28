@@ -33,9 +33,6 @@ public class FileEditorFrame extends JFrame {
     private FileEditorMenuBar menuBar;
     private FileEditorController controller;
     private JSplitPane splitPane;
-    //private ArrayList<ArrayList<Object>> tableContent;
-    private Object[][] tableContent;
-    private String[] columns;
     private EditorTableModel tableModel;
     private FileEditorButtonPanel buttonPanel;
 
@@ -46,12 +43,18 @@ public class FileEditorFrame extends JFrame {
         this.file=file;
         setFrameSize();
         initializeMainPanel();
-        tableModel = new EditorTableModel();
-        initializeTable();
+
 
         //initializeMenuBar();
-        controller = new FileEditorController(tableModel,this);
+        controller = new FileEditorController(this);
+        try{
+            tableModel = controller.readTableModel();
+        }catch (Exception e){
+            tableModel = new EditorTableModel();
+        }
+        initializeTable();
         tableModel.setController(controller);
+        controller.setTableModel(tableModel);
         buttonPanel=new FileEditorButtonPanel(controller,this,tableModel);
         splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,scrollPane,buttonPanel);
         splitPane.setResizeWeight(0.9);
@@ -83,18 +86,12 @@ public class FileEditorFrame extends JFrame {
                         null, "Do you want to save file before closing?",
                         "Exit Confirmation", JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE, null, null, null);
-                /*if (confirm == 0) {
-                    try{
-                        //saveFile();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                }*/
+                if (confirm == 0) {
+                        controller.saveTableModel();
+                }
             }
         });
     }
-
-
     public void setTable(JTable table) {
         this.removeAll();
         this.revalidate();

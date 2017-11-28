@@ -1,22 +1,23 @@
 package editor;
 
-import com.google.gson.FieldAttributes;
-import com.google.gson.Gson;
+import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
 import groovy.util.Eval;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.io.*;
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 
 public class FileEditorController {
-
-    EditorTableModel tableModel;
-    FileEditorFrame frame;
+    private EditorTableModel tableModel;
+    private FileEditorFrame frame;
     private final String min = "def min(BigDecimal[] a){\n" +
             "    BigDecimal m = a[0];\n" +
             "    for(int i=1;i<a.length;i++){\n" +
@@ -39,6 +40,9 @@ public class FileEditorController {
     public FileEditorController(EditorTableModel tableModel, FileEditorFrame frame){
         this.frame=frame;
         this.tableModel = tableModel;
+    }
+    public FileEditorController(FileEditorFrame frame){
+        this.frame=frame;
     }
     public FileEditorController(EditorTableModel tableModel){
         this.tableModel = tableModel;
@@ -106,7 +110,7 @@ public class FileEditorController {
         }
         return (Boolean)((Eval.me(min+max+new String(values) + "\n return ("+exp+")")));
     }
-    String getColumnName(int number){
+    private String getColumnName(int number){
         StringBuilder sb = new StringBuilder();
         while(number>0){
             sb.append((char)(number%26+(int)'A'-((number<26)?1:0)));
@@ -121,7 +125,6 @@ public class FileEditorController {
         for (ArrayList<String> row : tableModel.getData()) {
             row.add(null);
         }
-
         tableModel.incColumnCount();
         tableModel.fireTableStructureChanged();
         tableModel.setSaved(false);
@@ -136,13 +139,16 @@ public class FileEditorController {
         tableModel.setSaved(false);
     }
 
-    private String tableToJson(){
+    public String tableToJson(){
         Gson gson = new Gson();
-        gson.toJson(tableModel);
-        String result="";
-        return result;
+        EditorTableToSave tableToSave = new EditorTableToSave(tableModel.getCellsValues(),tableModel.getCellsRawData(),
+                tableModel.getRowCount(),tableModel.getColumnCount());
+        StringBuilder result = new StringBuilder();
+        result.append(gson.toJson(tableToSave,tableToSave.getClass()));
+        System.out.println(result);
+        return new String(result);
     }
-    public void saveTable(){
+    public void saveTableModel(){
         File file = frame.getFile();
         String toWrite = tableToJson();
         OutputStream os;
@@ -156,8 +162,46 @@ public class FileEditorController {
         }
     }
 
+    private String getId(int row, int column){
+        String res = getColumnName(column)+""+(row+1);
+        return res;
+    }
+
+    //int rowCount, int columnCount, ArrayList<ArrayList<String>> data,
+    //boolean saved, Map<String, String> cellsValues, Map<String, String> cellsRawData,
+    //ArrayList<String> columnNames, ArrayList<String> rowNames, FileEditorController controller
     public EditorTableModel parseJson(String jsonString) {
-        return tableModel;
+        Gson gson = new GsonBuilder().create();
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(jsonString).getAsJsonObject();
+        System.out.println(object);
+        Type mapType = new TypeToken<Map<String,String>>(){}.getType();
+        Map<String,String> cellsValues = gson.fromJson(object.get("cellsValues"),mapType);
+        Map<String,String> cellsRawData = gson.fromJson(object.get("cellsRawData"),mapType);
+        int rowCount = gson.fromJson(object.get("rowCount"),Integer.class);
+        int columnCount = gson.fromJson(object.get("columnCount"),Integer.class);
+        boolean isSaved = true;
+        ArrayList<ArrayList<String>> data = new ArrayList<>();
+        ArrayList<String>columnNames = new ArrayList<>();
+        ArrayList<String>rowNames = new ArrayList<>();
+        for(int i=0;i<rowCount;i++){
+            data.add(new ArrayList<>());
+            rowNames.add(Integer.toString(i+1));
+        }
+        for(int i=0;i<columnCount;i++){
+            columnNames.add(getColumnName(i));
+        }
+        for(int i=0;i<rowCount;i++){
+            for(int j=0;j<columnCount;j++){
+                data.get(i).add(null);
+                String id = getId(i,j);
+                if(cellsValues.containsKey(id))data.get(i).set(j,cellsValues.get(id));
+            }
+        }
+        EditorTableModel newTableModel = new EditorTableModel(rowCount,columnCount,data,isSaved,cellsValues,
+                cellsRawData,columnNames,rowNames);
+        newTableModel.fireTableDataChanged();
+        return newTableModel;
     }
 
     public EditorTableModel readTableModel() {
@@ -176,4 +220,9 @@ public class FileEditorController {
         toParse=new String(sb);
         return parseJson(toParse);
     }
+
+    public void setTableModel(EditorTableModel tableModel) {
+        this.tableModel = tableModel;
+    }
+
 }

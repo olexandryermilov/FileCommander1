@@ -19,7 +19,7 @@ public class EditorTableModel extends AbstractTableModel {
 
     public EditorTableModel(int rowCount, int columnCount, ArrayList<ArrayList<String>> data,
                             boolean saved, Map<String, String> cellsValues, Map<String, String> cellsRawData,
-                            ArrayList<String> columnNames, ArrayList<String> rowNames, FileEditorController controller){
+                            ArrayList<String> columnNames, ArrayList<String> rowNames){
         this.rowCount = rowCount;
         this.columnCount = columnCount;
         this.data = data;
@@ -28,7 +28,6 @@ public class EditorTableModel extends AbstractTableModel {
         this.cellsRawData = cellsRawData;
         this.columnNames = columnNames;
         this.rowNames = rowNames;
-        this.controller = controller;
     }
 
     public EditorTableModel(){
@@ -38,7 +37,7 @@ public class EditorTableModel extends AbstractTableModel {
     }
 
     private void initializeTableModel(){
-        saved = true;
+        saved = false;
         data=  new ArrayList<>();
         cellsRawData= new HashMap<>();
         cellsValues = new HashMap<>();
@@ -133,6 +132,7 @@ public class EditorTableModel extends AbstractTableModel {
         fireTableCellUpdated(row, column);
         saved = false;
         recalculateAll(row,column);
+        controller.tableToJson();
     }
 
     public void recalculateAll(int row, int column){
