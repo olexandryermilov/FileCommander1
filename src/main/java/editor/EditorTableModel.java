@@ -136,39 +136,42 @@ public class EditorTableModel extends AbstractTableModel {
     }
 
     public void recalculateAll(int row, int column){
-        for(int i=0;i<rowCount;i++){
-            for(int j=0;j<columnCount;j++){
-                if(i==row&&column==j)continue;
-                String id = getId(i,j);
-                String exp = cellsRawData.get(id);
-                if(exp==null||exp.equals(""))continue;
-                String result;
-                ExpressionConstraints type = controller.checkExpressionType(exp);
-                if(type.equals(ExpressionConstraints.BigDecimal)){
-                    try{
-                        result= String.valueOf(controller.calculateExpression(exp.substring(1)));
+        boolean hasChanges = true;
+        while(hasChanges) {
+            hasChanges=false;
+            for (int i = 0; i < rowCount; i++) {
+                for (int j = 0; j < columnCount; j++) {
+                    if (i == row && column == j) continue;
+                    String id = getId(i, j);
+                    String exp = cellsRawData.get(id);
+                    if (exp == null || exp.equals("")) continue;
+                    String result;
+                    ExpressionConstraints type = controller.checkExpressionType(exp);
+                    if (type.equals(ExpressionConstraints.BigDecimal)) {
+                        try {
+                            result = String.valueOf(controller.calculateExpression(exp.substring(1)));
+                        } catch (ArithmeticException e) {
+                            result = "Division by zero";
+                        }
+                    } else {
+                        if (type.equals(ExpressionConstraints.Boolean)) {
+                            try {
+                                result = String.valueOf(controller.calculateBooleanExpression(exp.substring(1)));
+                            } catch (ArithmeticException e) {
+                                result = "Division by zero";
+                            }
+                        } else {
+                            result = exp;
+                        }
                     }
-                    catch (ArithmeticException e){
-                        result="Division by zero";
+                    if(!result.equals(data.get(i).get(j))) {
+                        hasChanges = true;
+                        data.get(i).set(j, result);
+                        cellsValues.put(id, result);
+                        fireTableCellUpdated(i, j);
+                        saved = false;
                     }
                 }
-                else{
-                    if(type.equals(ExpressionConstraints.Boolean)){
-                        try{
-                            result= String.valueOf(controller.calculateBooleanExpression(exp.substring(1)));
-                        }
-                        catch (ArithmeticException e){
-                            result="Division by zero";
-                        }
-                    }
-                    else{
-                        result=exp;
-                    }
-                }
-                data.get(i).set(j,result);
-                cellsValues.put(id,result);
-                fireTableCellUpdated(i,j);
-                saved = false;
             }
         }
     }
