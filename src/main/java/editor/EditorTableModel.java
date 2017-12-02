@@ -100,6 +100,16 @@ public class EditorTableModel extends AbstractTableModel {
     @Override
     public void setValueAt(Object value, int row, int column) {
         String result=(String)value;
+        if(result.equals("")||result==null){
+            result=" ";
+            cellsRawData.remove(getId(row,column));
+            cellsValues.remove(getId(row,column));
+            data.get(row).set(column,result);
+            fireTableCellUpdated(row, column);
+            saved = false;
+            recalculateAll(row,column);
+            return;
+        }
         cellsRawData.remove(getId(row,column));
         cellsValues.remove(getId(row,column));
         ExpressionConstraints expType = controller.checkExpressionType((String)value);
@@ -134,11 +144,12 @@ public class EditorTableModel extends AbstractTableModel {
         fireTableCellUpdated(row, column);
         saved = false;
         recalculateAll(row,column);
-        controller.tableToJson();
     }
 
     public void recalculateAll(int row, int column){
         boolean hasChanges = true;
+        ArrayList<String>changedCellsIDs = new ArrayList<>();
+        changedCellsIDs.add(getId(row,column));
         while(hasChanges) {
             hasChanges=false;
             for (int i = 0; i < rowCount; i++) {
@@ -146,7 +157,14 @@ public class EditorTableModel extends AbstractTableModel {
                     if (i == row && column == j) continue;
                     String id = getId(i, j);
                     String exp = cellsRawData.get(id);
-                    if (exp == null || exp.equals("")) continue;
+                    boolean toContinue=false;
+                    for(String cellId:changedCellsIDs){
+                        if(exp!=null&&exp.contains(cellId)){
+                            toContinue=true;
+                            break;
+                        }
+                    }
+                    if (!toContinue||exp == null || exp.equals("")) continue;
                     String result;
                     ExpressionConstraints type = controller.checkExpressionType(exp);
                     if (type.equals(ExpressionConstraints.BigDecimal)) {
@@ -214,6 +232,9 @@ public class EditorTableModel extends AbstractTableModel {
     public void incRowCount(){
         rowCount++;
     }
-    //todo: make recalculate while has changes
+
+    //todo: formula textpane
+    //todo: zeroes for empty cells
     //todo: check for cycles
+    //
 }
