@@ -6,6 +6,8 @@ import editor.FileEditorController;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -115,7 +117,13 @@ public class CheckingExpressionTypeTest {
         ExpressionConstraints answer = controller.checkExpressionType(EXPRESSION);
         assertEquals(RIGHT_ANSWER,answer);
     }
-    
+    @Test
+    public void understandsExpressionWhenCellIsEmpty(){
+        final String EXPRESSION = "=(5 * (-3)*(-2)+min(max(6, 9), -5))*A1";
+        final ExpressionConstraints RIGHT_ANSWER = ExpressionConstraints.BigDecimal;
+        ExpressionConstraints answer = controller.checkExpressionType(EXPRESSION);
+        assertEquals(RIGHT_ANSWER,answer);
+    }
     //ExpressionConstraints.Boolean block
     @Test
     public void understandsSimpleBooleanExpression(){

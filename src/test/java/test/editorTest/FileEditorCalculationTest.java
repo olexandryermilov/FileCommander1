@@ -137,4 +137,11 @@ public class FileEditorCalculationTest {
         final String EXPRESSION = "String";
         controller.calculateExpression(EXPRESSION);
     }
+    @Test
+    public void calculatesExpressionWhenCellIsEmpty(){
+        final String EXPRESSION = "(5 * (-3)*(-2)+min(max(6, 9), -5))*A1";
+        final BigDecimal RIGHT_ANSWER = new BigDecimal(0.0);
+        BigDecimal answer = controller.calculateExpression(EXPRESSION);
+        assertTrue(compareBigDecimal(answer,RIGHT_ANSWER));
+    }
 }

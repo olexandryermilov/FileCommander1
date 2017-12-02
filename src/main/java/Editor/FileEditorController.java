@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class FileEditorController {
@@ -41,6 +43,36 @@ public class FileEditorController {
         this.frame=frame;
         this.tableModel = tableModel;
     }
+    public String getValuesFromMapForExpression(String exp){
+        StringBuilder result = new StringBuilder();
+        Pattern pattern = Pattern.compile("([A-Z])+[1-9][0-9]*");
+        Matcher matcher = pattern.matcher(exp);
+        HashMap<String, Boolean> used = new HashMap<>();
+        while(matcher.find()){
+            String id = matcher.group();
+            if(used.containsKey(id))continue;
+            String val;
+            if(!tableModel.getCellsValues().containsKey(id))val="0";else
+            val = tableModel.getCellsValues().get(id);
+            try{
+                Double d = Double.parseDouble(val);
+            }
+            catch (Exception e){
+                try{
+                    Boolean b;
+                    if (val.equals("true")) b = true;
+                    else  if(val.equals("false"))  b= false; else throw e;
+                }
+                catch (Exception e1){
+                    continue;
+                }
+                //throw e;
+            }
+            used.put(id,true);
+            result.append("def ").append(id).append(" = ").append(val).append("\n");
+        }
+        return new String(result);
+    }
     public FileEditorController(FileEditorFrame frame){
         this.frame=frame;
     }
@@ -68,7 +100,7 @@ public class FileEditorController {
         exp = exp.replaceAll("\\u005E","**");
         //exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
         StringBuilder values = new StringBuilder();
-        for(Map.Entry<String,String> entry : tableModel.getCellsValues().entrySet()){
+        /*for(Map.Entry<String,String> entry : tableModel.getCellsValues().entrySet()){
             try{
                 Double d = Double.parseDouble(entry.getValue());
             }
@@ -77,8 +109,8 @@ public class FileEditorController {
                 continue;
             }
             values.append("def "+ entry.getKey()+" = "+((entry.getValue().startsWith("="))?entry.getValue().substring(1):entry.getValue())+"\n");
-        }
-        return (BigDecimal)((Eval.me(min+max+new String(values) + "\n return 1.0*("+exp+")")));
+        }*/
+        return (BigDecimal)((Eval.me(min+max+getValuesFromMapForExpression(exp) + "\n return 1.0*("+exp+")")));
     }
     public ExpressionConstraints checkExpressionType(String exp){
         if(exp.contains("System"))return ExpressionConstraints.NotAnExpression;
@@ -147,7 +179,7 @@ public class FileEditorController {
         }
         Boolean res=null;
         try{
-            res =  (Boolean)((Eval.me(min+max+new String(values) + "\n return ("+exp+")")));
+            res =  (Boolean)((Eval.me(min+max+getValuesFromMapForExpression(exp) + "\n return ("+exp+")")));
         }catch (ArithmeticException e){
             throw e;
         }
