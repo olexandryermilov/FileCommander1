@@ -48,6 +48,23 @@ public class FileEditorController {
         this.tableModel = tableModel;
     }
     public BigDecimal calculateExpression(String exp) throws ArithmeticException{
+        if(exp.startsWith("if")){
+            String ifExp = exp.substring(3,exp.indexOf("then")-1);
+            String trueExp = exp.substring(exp.indexOf("then")+4,exp.indexOf("else")-1);
+            if(trueExp.endsWith(";"))trueExp=trueExp.substring(0,trueExp.length()-1);
+            String falseExp = exp.substring(exp.indexOf("else")+4);
+            if(falseExp.endsWith(";"))falseExp=falseExp.substring(0,trueExp.length());
+            try{
+                if(calculateBooleanExpression(ifExp)){
+                    return calculateExpression(trueExp);
+                }
+                else{
+                    return calculateExpression(falseExp);
+                }
+            }catch (Exception e){
+               // JOptionPane.showMessageDialog(frame,"Wrong expression syntax");
+            }
+        }
         exp = exp.replaceAll("\\u005E","**");
         //exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
         StringBuilder values = new StringBuilder();
@@ -59,11 +76,12 @@ public class FileEditorController {
                 //throw e;
                 continue;
             }
-            values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
+            values.append("def "+ entry.getKey()+" = "+((entry.getValue().startsWith("="))?entry.getValue().substring(1):entry.getValue())+"\n");
         }
         return (BigDecimal)((Eval.me(min+max+new String(values) + "\n return 1.0*("+exp+")")));
     }
     public ExpressionConstraints checkExpressionType(String exp){
+        if(exp.contains("System"))return ExpressionConstraints.NotAnExpression;
         if(exp.charAt(0)!='=')return ExpressionConstraints.NotAnExpression;
         exp=exp.substring(1);
         try{
@@ -82,7 +100,7 @@ public class FileEditorController {
         }
         //return null;
     }
-    public Boolean calculateBooleanExpression(String exp){
+    public Boolean calculateBooleanExpression (String exp)throws ArithmeticException{
         exp = exp.replaceAll("\\u005E","**");
         exp = exp.replaceAll("(\\s)*XOR\\s*","^");
         exp = exp.replaceAll("(\\s)*AND\\s*","&&");
@@ -92,6 +110,23 @@ public class FileEditorController {
         exp = exp.replaceAll("(\\s)*and\\s*","&&");
         exp = exp.replaceAll("(\\s)*not\\s*","!");
         exp = exp.replaceAll("(\\s)*or\\s*","||");
+        if(exp.startsWith("if")){
+            String ifExp = exp.substring(3,exp.indexOf("then")-1);
+            String trueExp = exp.substring(exp.indexOf("then")+4,exp.indexOf("else")-1);
+            if(trueExp.endsWith(";"))trueExp=trueExp.substring(0,trueExp.length()-1);
+            String falseExp = exp.substring(exp.indexOf("else")+4);
+            if(falseExp.endsWith(";"))falseExp=falseExp.substring(0,falseExp.length()-1);
+            try{
+                if(calculateBooleanExpression(ifExp)){
+                    return calculateBooleanExpression(trueExp);
+                }
+                else{
+                    return calculateBooleanExpression(falseExp);
+                }
+            }catch (Exception e){
+                //JOptionPane.showMessageDialog(frame,"Wrong expression syntax");
+            }
+        }
         StringBuilder values = new StringBuilder();
         for(Map.Entry<String,String> entry : tableModel.getCellsValues().entrySet()){
             try{
@@ -99,7 +134,9 @@ public class FileEditorController {
             }
             catch (Exception e){
                 try{
-                    Boolean b = Boolean.parseBoolean(entry.getValue());
+                    Boolean b;
+                    if (entry.getValue().equals("true")) b = true;
+                    else  if(entry.getValue().equals("false"))  b= false; else throw e;
                 }
                 catch (Exception e1){
                     continue;
@@ -108,8 +145,16 @@ public class FileEditorController {
             }
             values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
         }
-        return (Boolean)((Eval.me(min+max+new String(values) + "\n return ("+exp+")")));
+        Boolean res=null;
+        try{
+            res =  (Boolean)((Eval.me(min+max+new String(values) + "\n return ("+exp+")")));
+        }catch (ArithmeticException e){
+            throw e;
+        }
+        return res;
     }
+
+
     private String getColumnName(int number){
         StringBuilder sb = new StringBuilder();
         while(number>0){
@@ -145,7 +190,6 @@ public class FileEditorController {
                 tableModel.getRowCount(),tableModel.getColumnCount());
         StringBuilder result = new StringBuilder();
         result.append(gson.toJson(tableToSave,tableToSave.getClass()));
-        System.out.println(result);
         return new String(result);
     }
     public void saveTableModel(){
@@ -174,7 +218,6 @@ public class FileEditorController {
         Gson gson = new GsonBuilder().create();
         JsonParser parser = new JsonParser();
         JsonObject object = parser.parse(jsonString).getAsJsonObject();
-        System.out.println(object);
         Type mapType = new TypeToken<Map<String,String>>(){}.getType();
         Map<String,String> cellsValues = gson.fromJson(object.get("cellsValues"),mapType);
         Map<String,String> cellsRawData = gson.fromJson(object.get("cellsRawData"),mapType);

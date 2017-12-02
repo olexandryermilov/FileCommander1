@@ -100,6 +100,8 @@ public class EditorTableModel extends AbstractTableModel {
     @Override
     public void setValueAt(Object value, int row, int column) {
         String result=(String)value;
+        cellsRawData.remove(getId(row,column));
+        cellsValues.remove(getId(row,column));
         ExpressionConstraints expType = controller.checkExpressionType((String)value);
         if(expType.equals(ExpressionConstraints.BigDecimal)){
             try{

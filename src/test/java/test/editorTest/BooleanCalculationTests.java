@@ -153,4 +153,9 @@ public class BooleanCalculationTests {
         boolean answer = controller.calculateBooleanExpression(EXPRESSION);
         assertEquals(RIGHT_ANSWER,answer);
     }
+    @Test
+    public void ifTest(){
+        model.getCellsValues().put("C1","true");
+        //final String EXPRESSION = "If"
+    }
 }
