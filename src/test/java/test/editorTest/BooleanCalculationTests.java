@@ -5,6 +5,8 @@ import editor.FileEditorController;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -156,6 +158,9 @@ public class BooleanCalculationTests {
     @Test
     public void ifTest(){
         model.getCellsValues().put("C1","true");
-        //final String EXPRESSION = "If"
+        final String EXPRESSION = "if(C1 xor true ==true) then true; else false;";
+        final boolean RIGHT_ANSWER = false;
+        boolean answer = controller.calculateBooleanExpression(EXPRESSION);
+        assertEquals(RIGHT_ANSWER,answer);
     }
 }

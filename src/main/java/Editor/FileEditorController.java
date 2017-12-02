@@ -81,7 +81,7 @@ public class FileEditorController {
     }
     public BigDecimal calculateExpression(String exp) throws ArithmeticException{
         if(exp.startsWith("if")){
-            String ifExp = exp.substring(3,exp.indexOf("then")-1);
+            String ifExp = exp.substring(3,exp.indexOf("then")-2);
             String trueExp = exp.substring(exp.indexOf("then")+4,exp.indexOf("else")-1);
             if(trueExp.endsWith(";"))trueExp=trueExp.substring(0,trueExp.length()-1);
             String falseExp = exp.substring(exp.indexOf("else")+4);
@@ -133,17 +133,9 @@ public class FileEditorController {
         //return null;
     }
     public Boolean calculateBooleanExpression (String exp)throws ArithmeticException{
-        exp = exp.replaceAll("\\u005E","**");
-        exp = exp.replaceAll("(\\s)*XOR\\s*","^");
-        exp = exp.replaceAll("(\\s)*AND\\s*","&&");
-        exp = exp.replaceAll("(\\s)*NOT\\s*","!");
-        exp = exp.replaceAll("(\\s)*OR\\s*","||");
-        exp = exp.replaceAll("(\\s)*xor\\s*","^");
-        exp = exp.replaceAll("(\\s)*and\\s*","&&");
-        exp = exp.replaceAll("(\\s)*not\\s*","!");
-        exp = exp.replaceAll("(\\s)*or\\s*","||");
+
         if(exp.startsWith("if")){
-            String ifExp = exp.substring(3,exp.indexOf("then")-1);
+            String ifExp = exp.substring(3,exp.indexOf("then")-2);
             String trueExp = exp.substring(exp.indexOf("then")+4,exp.indexOf("else")-1);
             if(trueExp.endsWith(";"))trueExp=trueExp.substring(0,trueExp.length()-1);
             String falseExp = exp.substring(exp.indexOf("else")+4);
@@ -157,8 +149,18 @@ public class FileEditorController {
                 }
             }catch (Exception e){
                 //JOptionPane.showMessageDialog(frame,"Wrong expression syntax");
+                return null;
             }
         }
+        exp = exp.replaceAll("\\u005E","**");
+        exp = exp.replaceAll("(\\s)*XOR\\s*","^");
+        exp = exp.replaceAll("(\\s)*AND\\s*","&&");
+        exp = exp.replaceAll("(\\s)*NOT\\s*","!");
+        exp = exp.replaceAll("(\\s)*OR\\s*","||");
+        exp = exp.replaceAll("(\\s)*xor\\s*","^");
+        exp = exp.replaceAll("(\\s)*and\\s*","&&");
+        exp = exp.replaceAll("(\\s)*not\\s*","!");
+        exp = exp.replaceAll("(\\s)*or\\s*","||");
         StringBuilder values = new StringBuilder();
         for(Map.Entry<String,String> entry : tableModel.getCellsValues().entrySet()){
             try{
