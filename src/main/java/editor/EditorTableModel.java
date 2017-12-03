@@ -1,5 +1,6 @@
 package editor;
 
+import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -100,18 +101,23 @@ public class EditorTableModel extends AbstractTableModel {
     @Override
     public void setValueAt(Object value, int row, int column) {
         String result=(String)value;
+        String id = getId(row,column);
+        if(!controller.hasCycle(result,id)){
+            JOptionPane.showMessageDialog(null,"There is a cycle in your formula, please remove it");
+            return;
+        }
         if(result==null||result.equals("")){
             result=" ";
-            cellsRawData.remove(getId(row,column));
-            cellsValues.remove(getId(row,column));
+            cellsRawData.remove(id);
+            cellsValues.remove(id);
             data.get(row).set(column,result);
             fireTableCellUpdated(row, column);
             saved = false;
             recalculateAll(row,column);
             return;
         }
-        cellsRawData.remove(getId(row,column));
-        cellsValues.remove(getId(row,column));
+        cellsRawData.remove(id);
+        cellsValues.remove(id);
         ExpressionConstraints expType = controller.checkExpressionType((String)value);
         if(expType.equals(ExpressionConstraints.BigDecimal)){
             try{
@@ -131,8 +137,7 @@ public class EditorTableModel extends AbstractTableModel {
                 }
             }
         }
-        String id = getId(row,column);
-        if(((String)value).equals("")){
+        if(value.equals("")){
             cellsValues.remove(id);
             cellsRawData.remove(id);
         }
@@ -232,7 +237,7 @@ public class EditorTableModel extends AbstractTableModel {
     public void incRowCount(){
         rowCount++;
     }
-    
+
     //todo: check for cycles
     //
 }

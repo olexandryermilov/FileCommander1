@@ -302,4 +302,26 @@ public class FileEditorController {
         this.tableModel = tableModel;
     }
 
+    public boolean hasCycle(String exp, String id){
+        return dfs(tableModel.getCellsRawData().getOrDefault(id,"0"),id,new ArrayList<>());
+    }
+    private boolean dfs(String exp, String id, ArrayList<String> path){
+        Pattern pattern = Pattern.compile("([A-Z])+[1-9][0-9]*");
+        Matcher matcher = pattern.matcher(exp);
+        HashMap<String, Boolean> used = new HashMap<>();
+        boolean res = true;
+        while(matcher.find()){
+            String nextId = matcher.group();
+            if(used.containsKey(nextId))continue;
+            if(path.contains(nextId)){
+                return false;
+            }
+            ArrayList<String>newPath=new ArrayList<>(path);
+            newPath.add(id);
+            res = dfs(tableModel.getCellsRawData().getOrDefault(nextId,"0"), nextId, newPath);
+            if(!res)break;
+        }
+        return res;
+    }
+
 }
