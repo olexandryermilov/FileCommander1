@@ -8,6 +8,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,6 +37,7 @@ public class FileEditorFrame extends JFrame {
     private JSplitPane splitPane;
     private EditorTableModel tableModel;
     private FileEditorButtonPanel buttonPanel;
+    private JTextField textField;
 
     private File file;
     public FileEditorFrame(File file){
@@ -53,12 +56,40 @@ public class FileEditorFrame extends JFrame {
             tableModel = new EditorTableModel();
         }
         initializeTable();
+        textField= new JTextField();
         tableModel.setController(controller);
+        table.setCellSelectionEnabled(true);
+        ListSelectionModel cellSelectionModel = table.getSelectionModel();
+        cellSelectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        cellSelectionModel.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent e) {
+                textField.setEditable(true);
+                String selectedData = null;
+                int row = table.getSelectedRow();
+                int column = table.getSelectedColumn();
+                textField.setText((String)tableModel.getCellsRawData().getOrDefault(tableModel.getId(row,column),""));
+            }
+
+        });
         controller.setTableModel(tableModel);
         buttonPanel=new FileEditorButtonPanel(controller,this,tableModel);
         splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,scrollPane,buttonPanel);
         splitPane.setResizeWeight(0.9);
         addListener();
+
+        textField.setEditable(false);
+        textField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                String text = textField.getText();
+                int row = table.getSelectedRow();
+                int column = table.getSelectedColumn();
+                tableModel.setValueAt(text,row,column);
+                textField.selectAll();
+            }
+        });
+        mainPanel.add(textField,new GridBagConstraintsAdapter(1,0,1,1,1,0).setFill(GridBagConstraintsAdapter.BOTH));
         mainPanel.add(splitPane,new GridBagConstraintsAdapter(1,1,1,1,1,1).setFill(GridBagConstraintsAdapter.BOTH));
         this.add(mainPanel);
     }

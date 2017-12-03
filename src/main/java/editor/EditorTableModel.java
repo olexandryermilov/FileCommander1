@@ -93,14 +93,14 @@ public class EditorTableModel extends AbstractTableModel {
         }
     }
 
-    private String getId(int row, int column){
+    public String getId(int row, int column){
         String res = getColumnName(column)+""+(row+1);
         return res;
     }
     @Override
     public void setValueAt(Object value, int row, int column) {
         String result=(String)value;
-        if(result.equals("")||result==null){
+        if(result==null||result.equals("")){
             result=" ";
             cellsRawData.remove(getId(row,column));
             cellsValues.remove(getId(row,column));
@@ -232,9 +232,7 @@ public class EditorTableModel extends AbstractTableModel {
     public void incRowCount(){
         rowCount++;
     }
-
-    //todo: formula textpane
-    //todo: zeroes for empty cells
+    
     //todo: check for cycles
     //
 }
