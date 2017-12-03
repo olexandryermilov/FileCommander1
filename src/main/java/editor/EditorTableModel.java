@@ -2,10 +2,7 @@ package editor;
 
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class EditorTableModel extends AbstractTableModel {
     private int rowCount, columnCount;
@@ -102,8 +99,18 @@ public class EditorTableModel extends AbstractTableModel {
     public void setValueAt(Object value, int row, int column) {
         String result=(String)value;
         String id = getId(row,column);
-        if(!controller.hasCycle(result,id)){
-            JOptionPane.showMessageDialog(null,"There is a cycle in your formula, please remove it");
+        cellsRawData.remove(id);
+        cellsValues.remove(id);
+        cellsRawData.put(id,result);
+        Optional<ArrayList<String>>expressionCycle = controller.getCycle(result,id);
+        if(expressionCycle.isPresent()){
+            StringBuilder cycle = new StringBuilder();
+            for(String s : expressionCycle.get()){
+                cycle.append(s);
+                cycle.append("->");
+            }
+            cycle.delete(cycle.length()-2,cycle.length());
+            JOptionPane.showMessageDialog(null,"There is a cycle "+new String(cycle)+" in your formula, please remove it");
             return;
         }
         if(result==null||result.equals("")){
@@ -116,8 +123,7 @@ public class EditorTableModel extends AbstractTableModel {
             recalculateAll(row,column);
             return;
         }
-        cellsRawData.remove(id);
-        cellsValues.remove(id);
+
         ExpressionConstraints expType = controller.checkExpressionType((String)value);
         if(expType.equals(ExpressionConstraints.BigDecimal)){
             try{

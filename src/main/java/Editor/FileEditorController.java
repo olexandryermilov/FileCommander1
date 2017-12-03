@@ -9,10 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -302,26 +299,30 @@ public class FileEditorController {
         this.tableModel = tableModel;
     }
 
-    public boolean hasCycle(String exp, String id){
-        return dfs(tableModel.getCellsRawData().getOrDefault(id,"0"),id,new ArrayList<>());
+    public Optional<ArrayList<String>>  getCycle(String exp, String id){
+        ArrayList<String> path = new ArrayList<>();
+        path.add(id);
+        return dfs(tableModel.getCellsRawData().getOrDefault(id,"0"),id,path);
     }
-    private boolean dfs(String exp, String id, ArrayList<String> path){
+    private Optional<ArrayList<String>> dfs(String exp, String id, ArrayList<String> path){
         Pattern pattern = Pattern.compile("([A-Z])+[1-9][0-9]*");
         Matcher matcher = pattern.matcher(exp);
         HashMap<String, Boolean> used = new HashMap<>();
-        boolean res = true;
         while(matcher.find()){
             String nextId = matcher.group();
             if(used.containsKey(nextId))continue;
             if(path.contains(nextId)){
-                return false;
+                path.add(nextId);
+                return Optional.of(path);
             }
             ArrayList<String>newPath=new ArrayList<>(path);
-            newPath.add(id);
-            res = dfs(tableModel.getCellsRawData().getOrDefault(nextId,"0"), nextId, newPath);
-            if(!res)break;
+            newPath.add(nextId);
+            Optional<ArrayList<String>> res = dfs(tableModel.getCellsRawData().getOrDefault(nextId,"0"), nextId, newPath);
+            if(res.isPresent()){
+                return res;
+            }
         }
-        return res;
+        return Optional.empty();
     }
 
 }
