@@ -1,0 +1,8 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<software name = "Windows"
+		description = "Operation system for students and educators"
+		version = "10.0">
+		<type>OS</type>
+		<author>Microsoft</author>
+		<license>educational</license>
+</software>

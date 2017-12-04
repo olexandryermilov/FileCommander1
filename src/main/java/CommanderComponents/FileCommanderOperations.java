@@ -3,6 +3,7 @@ package commanderComponents;
 import adapters.FileSystemObject;
 
 import editor.tableditor.FileEditorFrame;
+import editor.xmleditor.XMLEditorFrame;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -141,8 +142,12 @@ public class FileCommanderOperations {
         }
     }
     public void openFile(String path){
-        if(path.endsWith(".tbl")/*path.endsWith(".xlsx")||path.endsWith(".xls")*/){
+        if(path.endsWith(".tbl")){
             openTable(path);
+            return;
+        }
+        if(path.endsWith(".xml")){
+            openXMLParser(path);
             return;
         }
         try{
@@ -343,6 +348,21 @@ public class FileCommanderOperations {
         }
     }
 
+    public void openXMLParser(String path){
+        try {
+            EventQueue.invokeLater(()-> {
+                File file = new File(path);
+                XMLEditorFrame xmlEditorFrame = new XMLEditorFrame(file);
+                xmlEditorFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                xmlEditorFrame.setVisible(true);
+                xmlEditorFrame.setLocation(0, 0);
+            });
+        }
+        catch (RuntimeException e){
+            showErrorMessageBox(e.getCause().toString());
+            return;
+        }
+    }
     public void createNewTable(String dir){
         String fileName  = JOptionPane.showInputDialog(frame,"Please, enter name of table","New table");
         String filePath = dir+"\\"+fileName+".tbl";

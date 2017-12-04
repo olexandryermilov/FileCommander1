@@ -1,0 +1,38 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<facultySoftwareDatabase>
+	<software name = "Windows"
+		description = "Operation system for students and educators"
+		version = "10.0">
+		<type>OS</type>
+		<author>Microsoft</author>
+		<license>educational</license>
+	</software>
+	<software name = "WolframAlpha"
+		description = "Advanced calculator for students"
+		version = "1.03">
+		<type>Calculator</type>
+		<author>Wolfram</author>
+		<license>educational</license>
+	</software>
+	<software name = "VisualStudio"
+		description = "IDE for C#, C++, C and Basic"
+		version = "17">
+		<type>IDE</type>
+		<author>Microsoft</author>
+		<license>free</license>
+	</software>
+	<software name = "Intellij Idea"
+		description = "IDE for JVM-based languages"
+		version = "17.3">
+		<type>IDE</type>
+		<author>JetBrains</author>
+		<license>paid</license>
+	</software>
+	<software name = "PyCharm"
+		description = "IDE for Python"
+		version = "17.2">
+		<type>IDE</type>
+		<author>JetBrains</author>
+		<license>paid</license>
+	</software> 
+</facultySoftwareDatabase>

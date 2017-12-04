@@ -1,14 +1,30 @@
 package editor.xmleditor;
 
 
+import adapters.FileSystemObject;
+
+import javax.swing.*;
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.SAXParser;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+
 public class XMLEditorFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form XMLEditorFrame
      */
-    public XMLEditorFrame() {
+    private File file;
+    public XMLEditorFrame(File file) {
+        this.file=file;
         this.setTitle("XML Editor");
         initComponents();
+        initButtonsListeners();
+        infoTextArea.setLineWrap(true);
+        infoTextArea.setWrapStyleWord(true);
+        infoTextArea.setEditable(false);
     }
 
     /**
@@ -45,6 +61,7 @@ public class XMLEditorFrame extends javax.swing.JFrame {
         textPanePanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         infoTextArea = new javax.swing.JTextArea();
+        xslButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,7 +163,7 @@ public class XMLEditorFrame extends javax.swing.JFrame {
                                                 .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(controlPanelLayout.createSequentialGroup()
                                                 .addComponent(descriptionCheckBox)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                                                 .addComponent(descriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(controlPanelLayout.createSequentialGroup()
                                                 .addComponent(versionCheckBox)
@@ -162,8 +179,8 @@ public class XMLEditorFrame extends javax.swing.JFrame {
                                                         .addComponent(licenseCheckBox))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(authorTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
-                                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                        .addComponent(authorTextField)
+                                                        .addComponent(jComboBox1, 0, 243, Short.MAX_VALUE)))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                                                 .addComponent(parserChoosingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -213,40 +230,50 @@ public class XMLEditorFrame extends javax.swing.JFrame {
         textPanePanel.setLayout(textPanePanelLayout);
         textPanePanelLayout.setHorizontalGroup(
                 textPanePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(textPanePanelLayout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
         );
         textPanePanelLayout.setVerticalGroup(
                 textPanePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1)
         );
+
+        xslButton.setText("To XSL");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(9, 9, 9)
                                                 .addComponent(dataLabel)
-                                                .addGap(324, 324, 324))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(xslButton)
+                                                .addGap(30, 30, 30)))
                                 .addComponent(textPanePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(textPanePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(dataLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGap(25, 25, 25)
+                                                .addComponent(textPanePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(25, 25, 25)
+                                                                .addComponent(dataLabel)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(xslButton)
+                                                                .addGap(11, 11, 11)))
                                                 .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
@@ -259,41 +286,44 @@ public class XMLEditorFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+    private Software constructFilterSoftware(){
+        return new Software(null,null,null,null,null,null);
+    }
+    private String newLine="\n";
+    private void initButtonsListeners(){
+        jButton1.setActionCommand("Search");
+        jButton1.addActionListener(e -> {
+            if(domRadioButton.isSelected()){
+                infoTextArea.append(DOMParser.getDOMXML(file,constructFilterSoftware())+newLine);
+            }
+            else{
+                if(marshallingRadioButton.isSelected()){
+                    try {
+                        infoTextArea.append(Unmarshalling.unmarshall(file,constructFilterSoftware()).toString()+newLine);
+                    } catch (JAXBException e1) {
+                        e1.printStackTrace();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+                else{
+                    if(SAXRadioButton.isSelected()){
+
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null,"Please select parser");
+                    }
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(XMLEditorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(XMLEditorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(XMLEditorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(XMLEditorFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new XMLEditorFrame().setVisible(true);
+        });
+        jButton2.addActionListener(e -> infoTextArea.setText(""));
+        xslButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                XSLConverter.convert(file);
             }
         });
     }
-
     // Variables declaration - do not modify                     
     private javax.swing.JRadioButton SAXRadioButton;
     private javax.swing.JCheckBox authorCheckBox;
@@ -320,5 +350,6 @@ public class XMLEditorFrame extends javax.swing.JFrame {
     private javax.swing.JTextField typeTextField;
     private javax.swing.JCheckBox versionCheckBox;
     private javax.swing.JTextField versionTextField;
+    private javax.swing.JButton xslButton;
     // End of variables declaration                   
 }
