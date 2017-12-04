@@ -2,7 +2,7 @@ package commanderComponents;
 
 import adapters.FileSystemObject;
 
-import editor.FileEditorFrame;
+import editor.tableditor.FileEditorFrame;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;

@@ -1,4 +1,4 @@
-package editor;
+package editor.tableditor;
 
 import javax.swing.*;
 

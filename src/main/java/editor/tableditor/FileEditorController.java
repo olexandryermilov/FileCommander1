@@ -1,11 +1,10 @@
-package editor;
+package editor.tableditor;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import groovy.util.Eval;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
@@ -159,23 +158,6 @@ public class FileEditorController {
         exp = exp.replaceAll("(\\s)*not\\s*","!");
         exp = exp.replaceAll("(\\s)*or\\s*","||");
         StringBuilder values = new StringBuilder();
-        for(Map.Entry<String,String> entry : tableModel.getCellsValues().entrySet()){
-            try{
-                Double d = Double.parseDouble(entry.getValue());
-            }
-            catch (Exception e){
-                try{
-                    Boolean b;
-                    if (entry.getValue().equals("true")) b = true;
-                    else  if(entry.getValue().equals("false"))  b= false; else throw e;
-                }
-                catch (Exception e1){
-                    continue;
-                }
-                //throw e;
-            }
-            values.append("def "+ entry.getKey()+" = "+entry.getValue().toString()+"\n");
-        }
         Boolean res=null;
         try{
             res =  (Boolean)((Eval.me(min+max+getValuesFromMapForExpression(exp) + "\n return ("+exp+")")));

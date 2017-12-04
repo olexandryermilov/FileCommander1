@@ -1,7 +1,7 @@
 package test.editorTest;
 
-import editor.EditorTableModel;
-import editor.FileEditorController;
+import editor.tableditor.EditorTableModel;
+import editor.tableditor.FileEditorController;
 import org.junit.Before;
 import org.junit.Test;
 

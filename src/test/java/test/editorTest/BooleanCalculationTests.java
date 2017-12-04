@@ -1,11 +1,9 @@
 package test.editorTest;
 
-import editor.EditorTableModel;
-import editor.FileEditorController;
+import editor.tableditor.EditorTableModel;
+import editor.tableditor.FileEditorController;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.math.BigDecimal;
 
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertArrayEquals;

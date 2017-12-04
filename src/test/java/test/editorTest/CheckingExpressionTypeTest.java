@@ -1,12 +1,10 @@
 package test.editorTest;
 
-import editor.EditorTableModel;
-import editor.ExpressionConstraints;
-import editor.FileEditorController;
+import editor.tableditor.EditorTableModel;
+import editor.tableditor.ExpressionConstraints;
+import editor.tableditor.FileEditorController;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.math.BigDecimal;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

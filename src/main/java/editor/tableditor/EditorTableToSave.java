@@ -1,4 +1,4 @@
-package editor;
+package editor.tableditor;
 
 import java.util.Map;
 
