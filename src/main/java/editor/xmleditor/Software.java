@@ -12,7 +12,12 @@ public class Software {
     private String name,description,version,type,author;
     private License license;
     public Software(){
-
+        name=null;
+        description=null;
+        version=null;
+        type=null;
+        author=null;
+        license=null;
     }
     public Software(String name, String description, String version, String type, String author, License license) {
         this.name = name;
@@ -57,5 +62,34 @@ public class Software {
                 ",\n    author='" + author + '\'' +
                 ",\n    license=" + license +
                 "\n}";
+    }
+    public void setLicense(String license){
+        if(license.toLowerCase().equals("paid"))this.license=License.PAID;
+        if(license.toLowerCase().equals("educational"))this.license=License.EDUCATIONAL;
+        if(license.toLowerCase().equals("free"))this.license=License.FREE;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public License getLicense() {
+        return license;
     }
 }

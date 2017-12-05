@@ -19,7 +19,7 @@ public class XMLEditorFrame extends javax.swing.JFrame {
     private File file;
     public XMLEditorFrame(File file) {
         this.file=file;
-        this.setTitle("XML Editor");
+        this.setTitle("XML Editor Yermilov");
         initComponents();
         initButtonsListeners();
         infoTextArea.setLineWrap(true);
@@ -287,7 +287,7 @@ public class XMLEditorFrame extends javax.swing.JFrame {
     }
 
     private Software constructFilterSoftware(){
-        return new Software(null,null,null,null,null,null);
+        return getFilter();
     }
     private String newLine="\n";
     private void initButtonsListeners(){
@@ -323,6 +323,29 @@ public class XMLEditorFrame extends javax.swing.JFrame {
                 XSLConverter.convert(file);
             }
         });
+    }
+
+    public Software getFilter(){
+        Software filter = new Software();
+        if(nameCheckBox.isSelected()){
+            filter.setName(nameTextField.getText());
+        }
+        if(typeCheckBox.isSelected()){
+            filter.setType(typeTextField.getText());
+        }
+        if(versionCheckBox.isSelected()){
+            filter.setVersion(versionTextField.getText());
+        }
+        if(descriptionCheckBox.isSelected()){
+            filter.setDescription(descriptionTextField.getText());
+        }
+        if(authorCheckBox.isSelected()){
+            filter.setAuthor(authorTextField.getText());
+        }
+        if(licenseCheckBox.isSelected()){
+            filter.setLicense(jComboBox1.getSelectedItem().toString());
+        }
+        return filter;
     }
     // Variables declaration - do not modify                     
     private javax.swing.JRadioButton SAXRadioButton;
