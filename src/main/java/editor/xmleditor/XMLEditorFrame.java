@@ -6,6 +6,7 @@ import adapters.FileSystemObject;
 import javax.swing.*;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.SAXParser;
+import javax.xml.stream.XMLStreamException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -308,7 +309,11 @@ public class XMLEditorFrame extends javax.swing.JFrame {
                 }
                 else{
                     if(SAXRadioButton.isSelected()){
-
+                        try {
+                            infoTextArea.append(StaxParser.readXML(file,constructFilterSoftware()).toString()+newLine);
+                        } catch (XMLStreamException e1) {
+                            e1.printStackTrace();
+                        }
                     }
                     else{
                         JOptionPane.showMessageDialog(null,"Please select parser");
