@@ -22,8 +22,6 @@ public class XSLConverter {
                     )
             ));
 
-            //StreamResult consoleOut = new StreamResult(System.out);
-            //transformer.transform(xmlsource, consoleOut);
         } catch (TransformerException e) {
             e.printStackTrace();
         }
