@@ -34,6 +34,13 @@ public class FileEditorController {
             "    }\n" +
             "    return m;\n" +
             "}\n";
+    private final String sum = "def sum(BigDecimal[] a){\n" +
+            "    BigDecimal m = 0;\n" +
+            "    for(int i=0;i<a.length;i++){\n" +
+            "            m+=a[i]\n" +
+            "    }\n" +
+            "    return m;\n" +
+            "}\n";
 
     public FileEditorController(EditorTableModel tableModel, FileEditorFrame frame){
         this.frame=frame;
@@ -77,11 +84,11 @@ public class FileEditorController {
     }
     public BigDecimal calculateExpression(String exp) throws ArithmeticException{
         if(exp.startsWith("if")){
-            String ifExp = exp.substring(3,exp.indexOf("then")-2);
+            String ifExp = exp.substring(3,exp.indexOf("then")-1);
             String trueExp = exp.substring(exp.indexOf("then")+4,exp.indexOf("else")-1);
             if(trueExp.endsWith(";"))trueExp=trueExp.substring(0,trueExp.length()-1);
             String falseExp = exp.substring(exp.indexOf("else")+4);
-            if(falseExp.endsWith(";"))falseExp=falseExp.substring(0,trueExp.length());
+            if(falseExp.endsWith(";"))falseExp=falseExp.substring(0,falseExp.length());
             try{
                 if(calculateBooleanExpression(ifExp)){
                     return calculateExpression(trueExp);
@@ -106,7 +113,7 @@ public class FileEditorController {
             }
             values.append("def "+ entry.getKey()+" = "+((entry.getValue().startsWith("="))?entry.getValue().substring(1):entry.getValue())+"\n");
         }*/
-        return (BigDecimal)((Eval.me(min+max+getValuesFromMapForExpression(exp) + "\n return 1.0*("+exp+")")));
+        return (BigDecimal)((Eval.me(sum+min+max+getValuesFromMapForExpression(exp) + "\n return 1.0*("+exp+")")));
     }
     public ExpressionConstraints checkExpressionType(String exp){
         if(exp.contains("System"))return ExpressionConstraints.NotAnExpression;
@@ -160,7 +167,7 @@ public class FileEditorController {
         StringBuilder values = new StringBuilder();
         Boolean res=null;
         try{
-            res =  (Boolean)((Eval.me(min+max+getValuesFromMapForExpression(exp) + "\n return ("+exp+")")));
+            res =  (Boolean)((Eval.me(sum+min+max+getValuesFromMapForExpression(exp) + "\n return ("+exp+")")));
         }catch (ArithmeticException e){
             throw e;
         }
