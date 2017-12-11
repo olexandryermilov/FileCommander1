@@ -97,22 +97,9 @@ public class FileEditorController {
                     return calculateExpression(falseExp);
                 }
             }catch (Exception e){
-               // JOptionPane.showMessageDialog(frame,"Wrong expression syntax");
             }
         }
         exp = exp.replaceAll("\\u005E","**");
-        //exp = exp.replaceAll("(\\s)*div\\s*","intdiv(");
-        StringBuilder values = new StringBuilder();
-        /*for(Map.Entry<String,String> entry : tableModel.getCellsValues().entrySet()){
-            try{
-                Double d = Double.parseDouble(entry.getValue());
-            }
-            catch (Exception e){
-                //throw e;
-                continue;
-            }
-            values.append("def "+ entry.getKey()+" = "+((entry.getValue().startsWith("="))?entry.getValue().substring(1):entry.getValue())+"\n");
-        }*/
         return (BigDecimal)((Eval.me(sum+min+max+getValuesFromMapForExpression(exp) + "\n return 1.0*("+exp+")")));
     }
     public ExpressionConstraints checkExpressionType(String exp){
@@ -133,7 +120,6 @@ public class FileEditorController {
                 return ExpressionConstraints.NotAnExpression;
             }
         }
-        //return null;
     }
     public Boolean calculateBooleanExpression (String exp)throws ArithmeticException{
 
@@ -151,7 +137,6 @@ public class FileEditorController {
                     return calculateBooleanExpression(falseExp);
                 }
             }catch (Exception e){
-                //JOptionPane.showMessageDialog(frame,"Wrong expression syntax");
                 return null;
             }
         }
