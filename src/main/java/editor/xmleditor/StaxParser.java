@@ -34,7 +34,7 @@ public class StaxParser {
                 if (event.isStartElement()) {
                     StartElement start = event.asStartElement();
                     if(start.getEventType()== XMLEvent.START_ELEMENT){
-                        if(start.getName().toString().equals("software")){
+                        if(start.getName().toString().equals("{https://www.w3schools.com}software")){
                             entity = new Software();
                             Iterator attrs = start.getAttributes();
                             while(attrs.hasNext()){
@@ -50,13 +50,13 @@ public class StaxParser {
                                 }
                             }
                         }
-                        if(start.getName().toString().equals("type")){
+                        if(start.getName().toString().equals("{https://www.w3schools.com}type")){
                             entity.setType(r.nextEvent().asCharacters().getData());
                         }
-                        if(start.getName().toString().equals("author")){
+                        if(start.getName().toString().equals("{https://www.w3schools.com}author")){
                             entity.setAuthor(r.nextEvent().asCharacters().getData());
                         }
-                        if(start.getName().toString().equals("license")){
+                        if(start.getName().toString().equals("{https://www.w3schools.com}license")){
                             entity.setLicense(r.nextEvent().asCharacters().getData());
                         }
                     }
@@ -64,7 +64,7 @@ public class StaxParser {
                 }
                 if(event.isEndElement()){
                     EndElement element = event.asEndElement();
-                    if(element.getName().toString().equals("software")){
+                    if(element.getName().toString().equals("{https://www.w3schools.com}software")){
                         if(Filter.goodForFilter(entity,filter)){
                             fsd.getSoftwares().add(entity);
                         }

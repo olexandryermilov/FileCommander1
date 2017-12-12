@@ -147,7 +147,7 @@ public class FileEditorCalculationTest {
     @Test
     public void ifTest(){
         model.getCellsValues().put("C1","5");
-        final String EXPRESSION = "if(C1==5) then 3; else 7;";
+        final String EXPRESSION = "if(C1==5)then 3; else 7;";
         final BigDecimal RIGHT_ANSWER = new BigDecimal(3.0);
         BigDecimal answer = controller.calculateExpression(EXPRESSION);
         assertTrue(compareBigDecimal(answer,RIGHT_ANSWER));
