@@ -3,9 +3,12 @@ package editor.xmleditor;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
 
@@ -13,7 +16,13 @@ public class DOMParser {
     public static String getDOMXML(File file, Software filter){
         StringBuilder sb = new StringBuilder();
         try {
-            DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = sf.newSchema(new File("facultySoftwareDatabase.xsd"));
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            documentBuilderFactory.setValidating(false);
+            documentBuilderFactory.setSchema(schema);
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            documentBuilder.setErrorHandler(new XMLErrorHandler());
             Document document =documentBuilder.parse(file);
             Node root = document.getDocumentElement();
             sb.append("List of software for filter:\n");

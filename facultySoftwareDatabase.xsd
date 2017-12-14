@@ -3,9 +3,7 @@
            targetNamespace="https://www.w3schools.com"
            xmlns="https://www.w3schools.com"
            elementFormDefault="qualified">
-
     <xsd:element name="facultySoftwareDatabase" type="facultySoftwareDatabaseType"/>
-
 <xsd:complexType name="facultySoftwareDatabaseType">
     <xsd:sequence>
         <xsd:element name="software" minOccurs="1" maxOccurs="unbounded">
@@ -22,6 +20,4 @@
         </xsd:element>
     </xsd:sequence>
 </xsd:complexType>
-
-
 </xsd:schema>
